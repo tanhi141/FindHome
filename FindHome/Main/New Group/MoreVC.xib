@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MoreVC" customModule="FindHome" customModuleProvider="target">
+            <connections>
+                <outlet property="tfTitle" destination="fvd-0C-wQX" id="dwm-Gg-XvP"/>
+                <outlet property="tvMore" destination="MOh-V9-WXf" id="Rcp-lJ-hFy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewMore" destination="bKS-uJ-lqn" id="8pB-qD-bU4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tiêu đề" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvd-0C-wQX">
+                    <rect key="frame" x="20" y="70" width="335" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKS-uJ-lqn">
+                    <rect key="frame" x="20" y="130" width="335" height="407"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MOh-V9-WXf">
+                            <rect key="frame" x="5" y="5" width="325" height="397"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="MOh-V9-WXf" firstAttribute="top" secondItem="bKS-uJ-lqn" secondAttribute="top" constant="5" id="AJc-6S-UfG"/>
+                        <constraint firstItem="MOh-V9-WXf" firstAttribute="leading" secondItem="bKS-uJ-lqn" secondAttribute="leading" constant="5" id="NLi-NK-0gb"/>
+                        <constraint firstAttribute="trailing" secondItem="MOh-V9-WXf" secondAttribute="trailing" constant="5" id="WgT-jQ-ghJ"/>
+                        <constraint firstAttribute="bottom" secondItem="MOh-V9-WXf" secondAttribute="bottom" constant="5" id="vPv-pK-Abj"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gJ-CV-pvF">
+                    <rect key="frame" x="97" y="557" width="180" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="4Su-Ta-ANZ"/>
+                        <constraint firstAttribute="width" constant="180" id="Hqa-3Z-j1X"/>
+                    </constraints>
+                    <state key="normal" title="Tiếp tục"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="bKS-uJ-lqn" firstAttribute="top" secondItem="fvd-0C-wQX" secondAttribute="bottom" constant="30" id="0FS-7u-Av8"/>
+                <constraint firstItem="fvd-0C-wQX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7dO-k4-Lit"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bKS-uJ-lqn" secondAttribute="trailing" constant="20" id="7zU-SR-oyT"/>
+                <constraint firstItem="fvd-0C-wQX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="E15-6j-GvY"/>
+                <constraint firstItem="5gJ-CV-pvF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Tzg-9w-Oat"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="5gJ-CV-pvF" secondAttribute="bottom" constant="50" id="era-Ti-Df9"/>
+                <constraint firstItem="5gJ-CV-pvF" firstAttribute="top" secondItem="bKS-uJ-lqn" secondAttribute="bottom" constant="20" id="evj-1p-HGO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fvd-0C-wQX" secondAttribute="trailing" constant="20" id="oM7-Ic-Zma"/>
+                <constraint firstItem="bKS-uJ-lqn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rLT-vd-2hp"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>
