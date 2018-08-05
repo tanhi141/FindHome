@@ -69,7 +69,8 @@ extension DetailVC: DetailView{
     }
     
     func showHome(_ animate: Any?) {
-        
+        let vc = HomeVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func showPhoneNumber(_ phoneNumber: String) {
@@ -93,6 +94,7 @@ extension DetailVC: DetailView{
             self.navigationItem.title = "Chi tiết"
         }
     }
+    
 }
 
 

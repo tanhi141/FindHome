@@ -23,8 +23,14 @@ class ReviewVC: UIViewController {
         self.navigationItem.title = "Mô tả"
         btnNext.setNextStyle()
         viewText.layer.borderColor = UIColor.gray.cgColor
+        viewText.layer.borderWidth = 1;
+        
+        tvMore.layer.borderColor = UIColor.clear.cgColor;
+        tvMore.layer.borderWidth = 7;
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
+        
         
     }
 }

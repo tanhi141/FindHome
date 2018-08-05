@@ -1,6 +1,6 @@
 
 import Foundation
-
+import Firebase
 class DetailPresenter: DetailPresenting{
 
     private var view: DetailView?;
@@ -8,9 +8,10 @@ class DetailPresenter: DetailPresenting{
     let currentPost = DetailPost.shared
     
     var idImage: Int = 0;
+    
     init(view: DetailView, type: TypePost) {
         self.view = view;
-        self.type = type
+        self.type = type;
     }
     
     func viewOnReady(){
@@ -43,7 +44,7 @@ class DetailPresenter: DetailPresenting{
             currentPost.phoneNumber?.makeAColl()
             break
         case .write:
-            currentPost.phoneNumber?.makeAColl()
+            postData(post: currentPost);
             break
         }
     }
@@ -71,6 +72,33 @@ class DetailPresenter: DetailPresenting{
     }
 }
 
+extension DetailPresenter{
+    func postData(post: DetailPost){
+        
+        var ref: DatabaseReference?
+        ref = Database.database().reference()
+        
+        
+        
+        var dict = [String:Any]()
+        
+        dict.updateValue(currentPost.idUser ?? "", forKey: "idUser")
+        dict.updateValue(currentPost.title ?? "", forKey: "title")
+        dict.updateValue(currentPost.address?.city ?? "", forKey: "address")
+        dict.updateValue(currentPost.area ?? "", forKey: "area")
+        dict.updateValue(currentPost.more ?? "", forKey: "more")
+        dict.updateValue(currentPost.price ?? "", forKey: "price")
+        dict.updateValue(currentPost.phoneNumber ?? "", forKey: "phoneNumber")
+        dict.updateValue(currentPost.type?.rawValue ?? "", forKey: "type")
+//        dict.updateValue(currentPost.phoneNumber ?? "", forKey: "phoneNumber")
+        
+        let idUser = ref?.child("Post").childByAutoId()
+        idUser?.setValue(dict, withCompletionBlock: { (error, result) in
+//            guard error.
+        })
+        view?.showHome(nil);
+    }
+}
 
 
 

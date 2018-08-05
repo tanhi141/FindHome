@@ -36,9 +36,18 @@ extension UIButton {
     
     func setNextStyle() {
         titleColor = Colors.masterColor;
-        titleLabel?.font = UIFont(name: "Trebuchet MN", size: 20);
+        titleLabel?.font = UIFont(name: "Trebuchet MN", size: 24);
         backgroundColor = UIColor.clear
         setBorder(color: Colors.masterColor , lineWidth: 2);
+        layer.cornerRadius = 18;
+        setShadow(shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 2), shadowRadius: 5, shadowColor: UIColor.lightGray);
+    }
+    
+    func setLoginStyle() {
+        titleColor = .white
+        titleLabel?.font = UIFont(name: "Trebuchet MN", size: 24);
+        backgroundColor = UIColor.clear
+        setBorder(color: .white , lineWidth: 2);
         layer.cornerRadius = 18;
         setShadow(shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 2), shadowRadius: 5, shadowColor: UIColor.lightGray);
     }

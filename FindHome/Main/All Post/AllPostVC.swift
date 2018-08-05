@@ -14,6 +14,8 @@ class AllPostVC: UIViewController {
     @IBOutlet weak var tbPost: UITableView!
     
     override func viewDidLoad() {
+        
+        presenter = AllPostPresenter(view: self)
         super.viewDidLoad()
         setUp()
         presenter?.viewOnReady()

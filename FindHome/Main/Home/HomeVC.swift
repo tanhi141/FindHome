@@ -1,5 +1,7 @@
 
 import UIKit
+import FirebaseCore
+import FirebaseStorage
 
 class HomeVC: UITabBarController {
 
@@ -9,6 +11,13 @@ class HomeVC: UITabBarController {
     var optionVC: UIViewController?
 
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "Trang chủ"
+//        navigationController?.setNavigationTitle(title: "Trang chủ", isHide: true)
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -16,18 +25,68 @@ class HomeVC: UITabBarController {
         setUp()
         addTabBar()
         
+//        updaloaImage(image: #imageLiteral(resourceName: "navi"))
+        
+        
     }
+    
+    func updaloaImage(image: UIImage){
+        
+//        let storageRef = Storage.storage().reference(withPath: "images/image.png")
+//        let data = UIImagePNGRepresentation(image)
+//        let uploadMetadata = StorageMetadata()
+//        uploadMetadata.contentType = "images/jpeg"
+//        let uploadTask = storageRef.putData(data!, metadata: uploadMetadata) { (metadata, error) in
+//            if error != nil{
+//
+//            } else {
+//
+//            }
+//        }
+        
+//        storageRef.putData(data!, metadata: nil) { (meta, error) in
+//            guard let meta = meta else {
+//
+//
+//                return
+//            }
+        
+//            storageRef.downloadURL { (url, error) in
+//                guard let downloadURL = url else {
+//                    return
+//                }
+//            }
+//        }
+
+    }
+    
     
     func setUp(){
         
         allPostVC = AllPostVC()
-        myPostVC = AllPostVC()
-        optionVC = OptionVC()
+//        allPostVC = ReviewVC()
+        
+        myPostVC = ReviewVC()
+        
+        let vcOption = OptionVC()
+        vcOption.presenter = OptionPresenter(view: vcOption, user: nil)
+        optionVC = vcOption
+        
         
         if Check.checkAll.isLogin == true{
-            postVC = PhoneNumberVC()
+            let vc = PhoneNumberVC()
+            vc.presenter = PhoneNumberPresenter(view: vc, phoneNumber: DetailPost.shared.phoneNumber ?? User.share.phonenNumber ?? "");
+            postVC = vc;
+            
         } else {
-            postVC = Login()
+            let vc = Login()
+            var account = UserAccount()
+            
+            account.email = defaults.string(forKey: "email")
+            account.password = defaults.string(forKey: "password")
+            vc.presenter = LoginPresenter(view: vc, userAccount: account);
+            
+            postVC = vc;
         }
 
         self.navigationItem.title = "Trang chủ"
@@ -45,7 +104,6 @@ extension HomeVC{
         let imgMore = UIImage(named: "ic_more");
         
         
-//        allPostVC?.tabBarItem.image = uii
         allPostVC?.tabBarItem = UITabBarItem.init(title: "Trang Chủ", image: imgHomes, tag: 0);
         myPostVC?.tabBarItem = UITabBarItem.init(title: "Của Tôi", image: imgHome, tag: 1);
         postVC?.tabBarItem = UITabBarItem.init(title: "Đăng bài", image: imgPost, tag: 2);
@@ -60,20 +118,25 @@ extension HomeVC{
     }
     
     override func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        
         if item === allPostVC?.tabBarItem{
-            navigationItem.title = "Trang chủ";
+            
         } else if item === myPostVC?.tabBarItem{
             navigationItem.title = "Của tôi";
+//            navigationController?.setNavigationTitle(title: "Của tôi", isHide: false)
         } else if item === postVC?.tabBarItem{
             
             if Check.checkAll.isLogin == true{
-                navigationItem.title = "Số điện thoại";
+                navigationItem.title = "Số điện thoại"
+//                navigationController?.setNavigationTitle(title: "Số điện thoại", isHide: false)
             } else {
-                navigationItem.title = "Đăng nhập";
+                navigationItem.title = "Đăng nhập"
+//                navigationController?.setNavigationTitle(title: "Đăng nhập", isHide: false)
             }
             
         } else if item === optionVC?.tabBarItem{
-            navigationItem.title = "Thêm";
+            navigationItem.title = "Thêm"
+//            navigationController?.setNavigationTitle(title: "Thêm", isHide: false)
         }
     }
 }

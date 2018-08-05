@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		240A3C822106EB4C00342229 /* CurrentLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A3C812106EB4C00342229 /* CurrentLogin.swift */; };
+		243000E32115EABA00250134 /* Navigation+ Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243000E22115EABA00250134 /* Navigation+ Extension.swift */; };
 		2431D46C20FF923A0003A3EA /* DetailPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431D46B20FF923A0003A3EA /* DetailPost.swift */; };
 		2431D47020FF997B0003A3EA /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431D46F20FF997B0003A3EA /* Messages.swift */; };
 		2431D47420FFA8310003A3EA /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431D47220FFA8310003A3EA /* AddressVC.swift */; };
@@ -73,16 +74,12 @@
 		24945CE92104A51900A2F65C /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945CE82104A51900A2F65C /* ImagePresenter.swift */; };
 		24945CED2104A69300A2F65C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945CEB2104A69300A2F65C /* ImageCell.swift */; };
 		24945CEE2104A69300A2F65C /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24945CEC2104A69300A2F65C /* ImageCell.xib */; };
-		24945CF02104AA6F00A2F65C /* MoreContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945CEF2104AA6F00A2F65C /* MoreContract.swift */; };
-		24945CF22104AA7E00A2F65C /* MorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945CF12104AA7E00A2F65C /* MorePresenter.swift */; };
 		2494BFDA20F7BE1D00206B11 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2494BFD920F7BE1D00206B11 /* ViewControllerPresenter.swift */; };
 		24BC29E62105D8F6001F8511 /* TypeAddImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC29E52105D8F5001F8511 /* TypeAddImage.swift */; };
 		24CCB82D2111A78400A5B7A9 /* Check.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CCB82C2111A78400A5B7A9 /* Check.swift */; };
 		24D2DAF221077BE900EE799B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24D2DAF121077BE900EE799B /* GoogleService-Info.plist */; };
 		24D2E44921003A5300B7C14B /* AreaAndPriceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2E44721003A5300B7C14B /* AreaAndPriceVC.swift */; };
 		24D2E44A21003A5300B7C14B /* AreaAndPriceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D2E44821003A5300B7C14B /* AreaAndPriceVC.xib */; };
-		24D2E44E21003BB000B7C14B /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2E44C21003BB000B7C14B /* MoreVC.swift */; };
-		24D2E44F21003BB000B7C14B /* MoreVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D2E44D21003BB000B7C14B /* MoreVC.xib */; };
 		24D2E4532100503D00B7C14B /* ReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D2E4512100503D00B7C14B /* ReviewVC.swift */; };
 		24D2E4542100503D00B7C14B /* ReviewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24D2E4522100503D00B7C14B /* ReviewVC.xib */; };
 		24D97BB3210DBF5A00A6BAD0 /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D97BB2210DBF5A00A6BAD0 /* CurrentUser.swift */; };
@@ -132,6 +129,7 @@
 
 /* Begin PBXFileReference section */
 		240A3C812106EB4C00342229 /* CurrentLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLogin.swift; sourceTree = "<group>"; };
+		243000E22115EABA00250134 /* Navigation+ Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+ Extension.swift"; sourceTree = "<group>"; };
 		2431D46B20FF923A0003A3EA /* DetailPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPost.swift; sourceTree = "<group>"; };
 		2431D46F20FF997B0003A3EA /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		2431D47220FFA8310003A3EA /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
@@ -197,16 +195,12 @@
 		24945CE82104A51900A2F65C /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
 		24945CEB2104A69300A2F65C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		24945CEC2104A69300A2F65C /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
-		24945CEF2104AA6F00A2F65C /* MoreContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreContract.swift; sourceTree = "<group>"; };
-		24945CF12104AA7E00A2F65C /* MorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorePresenter.swift; sourceTree = "<group>"; };
 		2494BFD920F7BE1D00206B11 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		24BC29E52105D8F5001F8511 /* TypeAddImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAddImage.swift; sourceTree = "<group>"; };
 		24CCB82C2111A78400A5B7A9 /* Check.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Check.swift; sourceTree = "<group>"; };
 		24D2DAF121077BE900EE799B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		24D2E44721003A5300B7C14B /* AreaAndPriceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaAndPriceVC.swift; sourceTree = "<group>"; };
 		24D2E44821003A5300B7C14B /* AreaAndPriceVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AreaAndPriceVC.xib; sourceTree = "<group>"; };
-		24D2E44C21003BB000B7C14B /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
-		24D2E44D21003BB000B7C14B /* MoreVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreVC.xib; sourceTree = "<group>"; };
 		24D2E4512100503D00B7C14B /* ReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewVC.swift; sourceTree = "<group>"; };
 		24D2E4522100503D00B7C14B /* ReviewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewVC.xib; sourceTree = "<group>"; };
 		24D97BB2210DBF5A00A6BAD0 /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -288,6 +282,14 @@
 				B07A1999BEDF137E94C34497 /* Pods-FindHomeUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		243000E42115EB5700250134 /* Navigartion */ = {
+			isa = PBXGroup;
+			children = (
+				243000E22115EABA00250134 /* Navigation+ Extension.swift */,
+			);
+			path = Navigartion;
 			sourceTree = "<group>";
 		};
 		2431D47120FFA7FD0003A3EA /* Address */ = {
@@ -373,6 +375,7 @@
 		2471885D20F869E3008B0EAD /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				243000E42115EB5700250134 /* Navigartion */,
 				2471885F20F86A0A008B0EAD /* UIButton+Extension.swift */,
 				2482B4602110CDED00A953C7 /* Extension+String.swift */,
 			);
@@ -536,10 +539,6 @@
 		24D2E44B21003B9600B7C14B /* More */ = {
 			isa = PBXGroup;
 			children = (
-				24945CEF2104AA6F00A2F65C /* MoreContract.swift */,
-				24945CF12104AA7E00A2F65C /* MorePresenter.swift */,
-				24D2E44C21003BB000B7C14B /* MoreVC.swift */,
-				24D2E44D21003BB000B7C14B /* MoreVC.xib */,
 			);
 			name = More;
 			path = "New Group";
@@ -819,7 +818,6 @@
 				2431D47E20FFA9300003A3EA /* AddressCell.xib in Resources */,
 				248B539C20F9BD3900B6421F /* Login.xib in Resources */,
 				248794CC2110AA2200048003 /* OptionCell.xib in Resources */,
-				24D2E44F21003BB000B7C14B /* MoreVC.xib in Resources */,
 				2477211E2100F20C00B7452E /* PreviewVC.xib in Resources */,
 				24F4C53F20F7837D00A6D5A8 /* LaunchScreen.storyboard in Resources */,
 				24945CE52104A4FE00A2F65C /* ImageVC.xib in Resources */,
@@ -977,6 +975,7 @@
 				2431D47020FF997B0003A3EA /* Messages.swift in Sources */,
 				24CCB82D2111A78400A5B7A9 /* Check.swift in Sources */,
 				24439AEA20FE558000D4726E /* PhoneNumberPresenter.swift in Sources */,
+				243000E32115EABA00250134 /* Navigation+ Extension.swift in Sources */,
 				2431D47D20FFA9300003A3EA /* AddressCell.swift in Sources */,
 				24D97BB3210DBF5A00A6BAD0 /* CurrentUser.swift in Sources */,
 				247721202100F21700B7452E /* PreviewContract.swift in Sources */,
@@ -1000,17 +999,14 @@
 				247721172100EE1000B7452E /* ReviewContract.swift in Sources */,
 				24D97BB7210DCC6100A6BAD0 /* FileStorage.swift in Sources */,
 				24439AF020FE578400D4726E /* TypeVC.swift in Sources */,
-				24D2E44E21003BB000B7C14B /* MoreVC.swift in Sources */,
 				24F4C56B20F7891200A6D5A8 /* WelcomeContract.swift in Sources */,
 				24439AE820FE557000D4726E /* PhoneNumberContract.swift in Sources */,
 				248ADAF920FAE48E00AB435C /* RegisterContract.swift in Sources */,
 				248B539B20F9BD3900B6421F /* Login.swift in Sources */,
 				248794BE2110A9C500048003 /* OptionVC.swift in Sources */,
-				24945CF22104AA7E00A2F65C /* MorePresenter.swift in Sources */,
 				24F4C53A20F7837B00A6D5A8 /* FindHome.xcdatamodeld in Sources */,
 				24439AE520FE50CD00D4726E /* PhoneNumberVC.swift in Sources */,
 				24E180EF2108CACF00714086 /* TypePost.swift in Sources */,
-				24945CF02104AA6F00A2F65C /* MoreContract.swift in Sources */,
 				24E180EA2108B9DC00714086 /* DetailPresenter.swift in Sources */,
 				247721222100F22400B7452E /* PreviewPresenter.swift in Sources */,
 				2471886620F89911008B0EAD /* PostCell.swift in Sources */,

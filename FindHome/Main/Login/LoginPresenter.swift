@@ -13,10 +13,13 @@ class LoginPresenter: LoginPresenting{
         self.view = view
         
         self.email = userAccount?.email ?? ""
-        self.password = ""
+        self.password = userAccount?.password ?? ""
     }
     
     func viewOnReady() {
+        
+        view?.showEmail(self.email ?? "")
+        view?.showPassword(self.password ?? "")
         view?.showIndicatorView(false)
     }
     
@@ -59,37 +62,36 @@ extension LoginPresenter{
         
         func getData(){
             
-//            let ref = Database.database().reference(withPath: "User\(self.email!)")
+            let ref = Database.database().reference().child("User").queryOrdered(byChild: "email").queryEqual(toValue: self.email ?? "")
             
-            let ref = Database.database().reference().child("User").queryOrdered(byChild: "email").queryEqual(toValue: self.email!)
-            
-            ref.observeSingleEvent(of: .value, with: { snapshot in
+            ref.observeSingleEvent(of: .value, with: {[weak self] snapshot in
 
-                if !snapshot.exists() { print("loi\n");print(snapshot.key); return }
-                print(snapshot.key)
-                let user = snapshot.value;
-                print(user ?? "")
-                
-                
-//                []
-//                User.share.email =
-                print(User.share.email)
-                
-                
-                
+                if !snapshot.exists() {
+                    return
+                }
+
+                let user = snapshot.value as! [String: Any]
+                let infoUser = user.values.first as? [String: String]
+
+                User.share.email = infoUser?["email"]  ?? ""
+                User.share.fullName = infoUser?["fullName"] ?? ""
+                User.share.phonenNumber = infoUser?["phoneNumber"] ?? ""
+                User.share.idUser = infoUser?["idUser"] ?? ""
+
             })
         }
         
         Auth.auth().signIn(withEmail: (self.email)!, password: (self.password)!) {[weak self] (user, error) in
             
             if error == nil {
-                let defaults = UserDefaults.standard
                 
-                defaults.set(self?.email, forKey: "username")
+                
+                defaults.set(self?.email, forKey: "email")
                 defaults.set(self?.password, forKey: "password")
+                defaults.synchronize()
                 
                 print("Successfully")
-                
+                print("user login: \(String(describing: user?.description))")
                 Check.checkAll.isLogin = true
                 self?.view?.showIndicatorView(false)
                 getData()

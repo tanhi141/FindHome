@@ -59,10 +59,9 @@ class RegisterPresenter: RegisterPresenting{
                 
                 var ref: DatabaseReference?
                 ref = Database.database().reference()
-                
-//                let idUser = ref?.child("User").childByAutoId()
+                    
                 let idUser = ref?.child("User").childByAutoId()
-                idUser?.setValue(["idUser": idUser?.key,
+                idUser?.setValue(["idUser": idUser?.key ?? "",
                                   "email" : self.email,
                                   "fullName": self.fullName,
                                   "phoneNumber": self.phoneNumber]);

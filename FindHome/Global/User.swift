@@ -12,6 +12,7 @@ struct User{
     var fullName: String?
     var phonenNumber: String?
     var idUser: String?
+    
     init() {
         email = ""
         fullName = ""

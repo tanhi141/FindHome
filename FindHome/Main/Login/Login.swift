@@ -13,22 +13,43 @@ class Login: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = LoginPresenter(view: self, userAccount: nil)
         presenter?.viewOnReady()
         setUp()
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.navigationBar.isHidden = true
+
+    }
     func setUp(){
+        
         navigationItem.title = "Login"
-        btnLogin.setNextStyle()
+        btnLogin.setLoginStyle()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
+        
+        let imageView = UIImageView()
+        imageView.image = #imageLiteral(resourceName: "navigation");
+        imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height);
+        
+        
+//        self.navigationController?.navigationBar.isHidden = true
+        
     }
+    
 }
 
 extension Login: LoginView{
+    
+    func showEmail(_ email: String){
+        tfEmail.text = email
+    }
+    func showPassword(_ password: String){
+        tfPassword.text = password
+    }
+    
     func showError(){
         Alert.showInfo(title: "Thông báo", message: "Vui lòng điền đầy đủ thông tin.", on: self, callback: nil)
     }
@@ -50,6 +71,7 @@ extension Login: LoginView{
     
     func showPhoneNumberViewController(){
         let viewController = PhoneNumberVC()
+        viewController.presenter = PhoneNumberPresenter(view: viewController, phoneNumber: DetailPost.shared.phoneNumber ?? User.share.phonenNumber ?? "")
         navigationController?.pushViewController(viewController, animated: true)
     }
     

@@ -10,7 +10,7 @@ class PhoneNumberVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
-        presenter = PhoneNumberPresenter(view: self)
+        
         presenter?.viewOnReady()
     }
     

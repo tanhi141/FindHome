@@ -5,14 +5,13 @@ import UIKit
 
 protocol DetailPresenting: class {
     func viewOnReady();
-//    func tappedButtonCall()
-//    func tappedButtonMessenger()
     
     func selectNextImage();
     func selectBackImage();
     
     func tappedButtonCall()
     func tappedButtonMessenger()
+    
 }
 
 protocol DetailView: class {

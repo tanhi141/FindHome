@@ -3,6 +3,7 @@
 import UIKit
 import CoreData
 import Firebase
+import FirebaseDatabase
 import FirebaseAuth
 
 @UIApplicationMain
@@ -15,34 +16,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let navigation = UINavigationController(rootViewController: HomeVC())
         window?.rootViewController = navigation
-        
-        UINavigationBar.appearance().barTintColor = Colors.masterColor
+      
         navigation.view.backgroundColor = UIColor.white
         navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white];
+        UINavigationBar.appearance().barTintColor = Colors.masterColor
+        navigation.navigationItem.title = "Trang chủ";
+        
         window?.makeKeyAndVisible()
-    
         FirebaseApp.configure()
-//        let a = 2880000;
-//        var str: String = String(a)
-//        print("tien: \(str)");
-//        var index = str.index(str.endIndex, offsetBy: -3)
-//        print(index.hashValue)
-//        while (true) {
-//
-//            str.insert(".", at: str.index(str.endIndex, offsetBy: -3))
-//            print("index \(index)")
-//
-//
-//            index = str.index(index, offsetBy: -1)
-//            break;
-//        }
-        
-        
-//        print(str)
-        
-
+        Database.database().isPersistenceEnabled = true
         return true
     }
+    
+//    func setUpNavigationView(navigationVC: UINavigationController){
+//        
+//        let image = UIImageView()
+//        image.image = #imageLiteral(resourceName: "navigation")
+//        image.frame = CGRect(x: 0, y: 0, width: navigationVC.view.frame.width, height: 65)
+//        
+//        var label = UILabel()
+//        label.frame = CGRect(x: 0, y: 40, width: 20, height: 65)
+//        label.textAlignment = NSTextAlignment.center;
+//        label.text = navigationVC.title
+//        label.textColor = .white
+//        
+//        image.addSubview(label)
+//        navigationVC.view.addSubview(image)
+//    }
     
     @objc func back(navigation: UINavigationController, sender: Any){
         navigation.popViewController(animated: true)

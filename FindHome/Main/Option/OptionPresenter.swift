@@ -1,17 +1,30 @@
 
 import Foundation
-
+import FirebaseAuth
 class OptionPresenter: OptionPresenting{
     
     private weak var view: OptionView?
     
     var user: User?
-    init(view: OptionView, user: User){
+    init(view: OptionView, user: User?){
         self.view = view;
         self.user = user
     }
     
     func viewOnReady(){
+        
+    }
+    
+    func logOut(){
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            Check.checkAll.isLogin = false;
+            view?.showHome()
+            
+        } catch let signOutError as NSError {
+            view?.showSignOutFail()
+        }
         
     }
 }

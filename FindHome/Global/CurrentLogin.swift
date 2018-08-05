@@ -11,3 +11,5 @@ struct CurrentLogin {
 extension CurrentLogin{
     static let shared = CurrentLogin()
 }
+
+var defaults = UserDefaults.standard

@@ -8,7 +8,7 @@ class DetailPost {
     var address: Address?
     var area: String?
     var price: String?
-    
+    var idUser: String?
     var more: String?
     var title: String?
     var image: [UIImage]?
@@ -22,6 +22,7 @@ class DetailPost {
         self.more = ""
         self.title = ""
         self.image = []
+        self.idUser = User.share.idUser
     }
 }
 

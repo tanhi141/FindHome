@@ -6,11 +6,10 @@ class PhoneNumberPresenter: PhoneNumberPresenting{
     
     var phoneNumber: String?
     
-    init(view: PhoneNumberView) {
+    init(view: PhoneNumberView, phoneNumber: String) {
         self.view = view;
         
-        self.phoneNumber = DetailPost.shared.phoneNumber ?? ""
-
+        self.phoneNumber = phoneNumber
     }
     
     func viewOnReady(){

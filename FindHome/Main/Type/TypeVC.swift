@@ -53,6 +53,8 @@ extension TypeVC: UITableViewDelegate, UITableViewDataSource{
         } else if row == 3{
             cell?.lblType.text = Type.Kiot.rawValue
         }
+        
+        cell?.selectionStyle = .none
         return cell!
     }
     
