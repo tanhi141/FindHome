@@ -9,7 +9,7 @@ protocol AllPostOutput: class {
 protocol AllPostPresenting: class {
     func viewOnReady();
     
-    func fetchAllPost()
+    func getData() -> [DetailPost];
 }
 
 protocol AllPostView: class {

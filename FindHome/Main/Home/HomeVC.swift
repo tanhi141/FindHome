@@ -13,9 +13,6 @@ class HomeVC: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.title = "Trang chủ"
-//        navigationController?.setNavigationTitle(title: "Trang chủ", isHide: true)
-        
-        
     }
     
     override func viewDidLoad() {
@@ -62,10 +59,14 @@ class HomeVC: UITabBarController {
     
     
     func setUp(){
+        //set up allpost
+        let allPost = AllPostVC()
+        allPost.presenter = AllPostPresenter(view: allPost);
+        allPostVC = allPost
         
-        allPostVC = AllPostVC()
 //        allPostVC = ReviewVC()
         
+        //set up review
         myPostVC = ReviewVC()
         
         let vcOption = OptionVC()
@@ -75,10 +76,10 @@ class HomeVC: UITabBarController {
         
         if Check.checkAll.isLogin == true{
             let vc = PhoneNumberVC()
-            vc.presenter = PhoneNumberPresenter(view: vc, phoneNumber: DetailPost.shared.phoneNumber ?? User.share.phonenNumber ?? "");
             postVC = vc;
             
         } else {
+            
             let vc = Login()
             var account = UserAccount()
             

@@ -73,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FindHome/Main/All Post/AllPostPresenter.swift"
-            timestampString = "555152272.1335"
+            filePath = "FindHome/Main/Login/Login.swift"
+            timestampString = "555358749.357525"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "fetchAllPost()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "showPhoneNumberViewController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,45 +89,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FindHome/Main/Login/LoginPresenter.swift"
-            timestampString = "555150394.1385469"
+            filePath = "FindHome/Main/Login/Login.swift"
+            timestampString = "555358749.357663"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "getData()"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FindHome/Main/Home/HomeVC.swift"
-            timestampString = "555152272.133872"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FindHome/Main/All Post/AllPostPresenter.swift"
-            timestampString = "555152272.134138"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "fetchAllPost()"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "showPhoneNumberViewController()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

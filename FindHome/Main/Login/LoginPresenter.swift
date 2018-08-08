@@ -3,6 +3,7 @@
 import Foundation
 import FirebaseAuth
 import Firebase
+
 class LoginPresenter: LoginPresenting{
 
     private weak var view: LoginView?;

@@ -23,26 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigation.navigationItem.title = "Trang chủ";
         
         window?.makeKeyAndVisible()
-        FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
+        
+        
         return true
     }
     
-//    func setUpNavigationView(navigationVC: UINavigationController){
-//        
-//        let image = UIImageView()
-//        image.image = #imageLiteral(resourceName: "navigation")
-//        image.frame = CGRect(x: 0, y: 0, width: navigationVC.view.frame.width, height: 65)
-//        
-//        var label = UILabel()
-//        label.frame = CGRect(x: 0, y: 40, width: 20, height: 65)
-//        label.textAlignment = NSTextAlignment.center;
-//        label.text = navigationVC.title
-//        label.textColor = .white
-//        
-//        image.addSubview(label)
-//        navigationVC.view.addSubview(image)
-//    }
+    override init() {
+        super.init()
+        FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+    }
+    
     
     @objc func back(navigation: UINavigationController, sender: Any){
         navigation.popViewController(animated: true)

@@ -70,8 +70,10 @@ extension Login: LoginView{
 
     
     func showPhoneNumberViewController(){
+        
         let viewController = PhoneNumberVC()
-        viewController.presenter = PhoneNumberPresenter(view: viewController, phoneNumber: DetailPost.shared.phoneNumber ?? User.share.phonenNumber ?? "")
+        
+        viewController.presenter = PhoneNumberPresenter(view: viewController, phoneNumber: User.share.phonenNumber ?? "")
         navigationController?.pushViewController(viewController, animated: true)
     }
     

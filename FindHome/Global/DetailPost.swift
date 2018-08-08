@@ -22,7 +22,7 @@ class DetailPost {
         self.more = ""
         self.title = ""
         self.image = []
-        self.idUser = User.share.idUser
+        self.idUser = ""
     }
 }
 

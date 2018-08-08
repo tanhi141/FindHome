@@ -9,8 +9,10 @@ class PhoneNumberVC: UIViewController {
     var presenter: PhoneNumberPresenter?;
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUp()
         
+        presenter = PhoneNumberPresenter(view: self, phoneNumber: DetailPost.shared.phoneNumber ?? (User.share.phonenNumber ?? ""));
+        
+        setUp()
         presenter?.viewOnReady()
     }
     
