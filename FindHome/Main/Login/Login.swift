@@ -29,14 +29,6 @@ class Login: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
-        
-        let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "navigation");
-        imageView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height);
-        
-        
-//        self.navigationController?.navigationBar.isHidden = true
-        
     }
     
 }

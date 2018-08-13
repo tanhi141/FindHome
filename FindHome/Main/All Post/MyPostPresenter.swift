@@ -7,13 +7,16 @@ class MyPostPresenter: AllPostPresenting{
     private weak var view: AllPostVC?
     
     var postList : [DetailPost]? = []
-
+    var postListDisplay: [DetailPost]? = []
+    
+    var keyword: String? = ""
     init(view: AllPostVC){
         self.view = view
     }
     
     func viewOnReady() {
         fetchMyPost()
+        view?.updateNavigationTitle("Của tôi")
     }
     
     func getData() -> [DetailPost] {
@@ -22,6 +25,11 @@ class MyPostPresenter: AllPostPresenting{
     
     func selectPost(post: DetailPost) {
         view?.showDetailViewController(post: post)
+    }
+    
+    func inputSearchKeyword(_ key: String) {
+        self.keyword = key;
+        applySeaching();
     }
 }
 
@@ -42,7 +50,7 @@ extension MyPostPresenter{
             
             if !existsSwitch{
                 self.postList = self.fetchAll(snapshot: snapshot);
-                self.view?.updateView()
+                self.view?.updateView(self.postList ?? [])
                 return;
             }
             
@@ -74,7 +82,21 @@ extension MyPostPresenter{
             
             list?.append(p)
         }
-        print(list?.count)
         return list ?? []
+    }
+    
+    func applySeaching(){
+        guard let keyword = keyword,
+            keyword.isEmpty == false else {
+                postListDisplay = postList;
+                view?.updateView(postListDisplay ?? []);
+                return;
+        }
+        
+        postListDisplay = postList?.filter {
+            ($0.title?.localizedCaseInsensitiveContains(keyword))!
+                || ($0.phoneNumber?.localizedCaseInsensitiveContains(keyword))!
+        };
+        view?.updateView(postListDisplay ?? [])
     }
 }

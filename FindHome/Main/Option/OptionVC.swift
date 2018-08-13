@@ -46,6 +46,10 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
         case 0:
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_user")
             cell?.lblOption.text = "Tài khoản";
+            if Check.checkAll.isLogin == false{
+                cell?.selectionStyle = .none
+                cell?.lblOption.textColor = .gray
+            }
             break;
         
         case 1:
@@ -87,7 +91,6 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
         default:
             break;
         }
-        cell?.selectionStyle = .blue
         return cell!;
     }
     

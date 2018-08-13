@@ -48,6 +48,9 @@
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="x13-E0-5uF"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,6 +58,7 @@
                         <constraint firstItem="MmX-ig-aL6" firstAttribute="leading" secondItem="xvJ-CG-6fS" secondAttribute="leading" constant="10" id="6Dy-8o-QaX"/>
                         <constraint firstAttribute="bottom" secondItem="MmX-ig-aL6" secondAttribute="bottom" id="7A9-sf-stA"/>
                         <constraint firstAttribute="trailing" secondItem="MmX-ig-aL6" secondAttribute="trailing" constant="10" id="9jl-c2-reY"/>
+                        <constraint firstItem="yWg-iI-Zm2" firstAttribute="centerY" secondItem="xvJ-CG-6fS" secondAttribute="centerY" id="E5l-Lg-Szt"/>
                         <constraint firstAttribute="height" constant="70" id="HUf-yd-Z2J"/>
                         <constraint firstItem="yWg-iI-Zm2" firstAttribute="leading" secondItem="xvJ-CG-6fS" secondAttribute="leading" constant="30" id="OWk-CV-Vqh"/>
                         <constraint firstAttribute="trailing" secondItem="yWg-iI-Zm2" secondAttribute="trailing" constant="30" id="Qov-AC-x0J"/>
@@ -141,7 +145,6 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xXF-Ux-glY" secondAttribute="trailing" id="5or-uP-Ygh"/>
                 <constraint firstItem="xvJ-CG-6fS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7Mm-tk-3DT"/>
                 <constraint firstItem="xXF-Ux-glY" firstAttribute="top" secondItem="xvJ-CG-6fS" secondAttribute="bottom" id="98R-ZB-dkE"/>
-                <constraint firstItem="yWg-iI-Zm2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="MWR-24-fsY"/>
                 <constraint firstItem="xvJ-CG-6fS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Za1-bd-sb0"/>
                 <constraint firstItem="xvJ-CG-6fS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e5R-jA-fUU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JYF-yd-zch" secondAttribute="trailing" id="erA-2A-2vb"/>

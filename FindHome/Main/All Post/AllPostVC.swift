@@ -37,7 +37,7 @@ class AllPostVC: UIViewController {
 //        self.postList = presenter?.getData()
 //        listDisplay = postList
         
-        updateView()
+        updateView(postList ?? [])
         
     }
 
@@ -107,10 +107,14 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
         navigationController?.pushViewController(viewController, animated: true)
     }
     
-    func updateView() {
-        self.postList = presenter?.getData()
+    func updateView(_ list: [DetailPost]) {
+        self.postList = list
         listDisplay = postList
         self.tbPost.reloadData()
+    }
+    
+    func updateNavigationTitle(_ title: String){
+        navigationItem.title = title
     }
 }
  
@@ -124,7 +128,13 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
  }
  
  
- 
+ extension AllPostVC: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        presenter?.inputSearchKeyword(tfSearch.text ?? "")
+        return true
+    }
+    
+ }
  
  
  

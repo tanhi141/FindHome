@@ -17,6 +17,7 @@ class AllPostPresenter: AllPostPresenting{
     
     func viewOnReady() {
         fetchAllPost()
+        view?.updateNavigationTitle("Trang chủ")
     }
     
     func getData() -> [DetailPost]{
@@ -26,6 +27,10 @@ class AllPostPresenter: AllPostPresenting{
 
     func selectPost(post: DetailPost) {
         view?.showDetailViewController(post: post)
+    }
+    
+    func inputSearchKeyword(_ key: String){
+        
     }
 }
 
@@ -46,7 +51,7 @@ extension AllPostPresenter{
             
             if !existsSwitch{
                 self.postList = self.fetchAll(snapshot: snapshot);
-                self.view?.updateView()
+                self.view?.updateView(self.postList ?? [])
                 return;
             }
             

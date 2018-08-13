@@ -68,7 +68,10 @@ class RegisterPresenter: RegisterPresenting{
                 
                 self.view?.showIndicatorView(false)
                 self.view?.showSuccess();
-                
+                User.share.idUser = idUser?.key ?? "";
+                User.share.email = self.email;
+                User.share.fullName = self.fullName;
+                User.share.phonenNumber = self.phoneNumber;
             } else {
                 self.view?.showErrorForrmatEmail()
                 self.view?.showIndicatorView(false)

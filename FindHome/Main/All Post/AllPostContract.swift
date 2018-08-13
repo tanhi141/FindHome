@@ -11,9 +11,11 @@ protocol AllPostPresenting: class {
     
     func getData() -> [DetailPost];
     func selectPost(post: DetailPost);
+    func inputSearchKeyword(_ key: String);
 }
 
 protocol AllPostView: class {
-    func updateView();
+    func updateView(_ list: [DetailPost]);
+    func updateNavigationTitle(_ title: String);
     func showDetailViewController(post: DetailPost)
 }
