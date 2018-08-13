@@ -6,7 +6,8 @@ import  UIKit
 extension String{
     
     enum RegularExpressions: String {
-        case phone = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$"
+//        case phone = "^\\s*(?:\\+?(\\d{1,3}))?([-. (]*(\\d{3})[-. )]*)?((\\d{3})[-. ]*(\\d{2,4})(?:[-.x ]*(\\d+))?)\\s*$"
+        case phone = ""
     }
     
     func isValid(regex: RegularExpressions) -> Bool {
@@ -23,7 +24,7 @@ extension String{
         return String(String.UnicodeScalarView(filtredUnicodeScalars))
     }
     
-    func makeAColl() {
+    func makeACall() {
         if isValid(regex: .phone) {
             if let url = URL(string: "tel://\(self.onlyDigits())"), UIApplication.shared.canOpenURL(url) {
                 if #available(iOS 10, *) {

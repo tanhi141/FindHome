@@ -28,6 +28,8 @@
 	<string>Camera will be used to data for your post</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Library will be uesd to data for your post and this safe</string>
+	<key>NSContactsUsageDescription</key>
+	<string>$(PRODUCT_NAME) used to call</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
