@@ -44,12 +44,12 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
         
         switch indexPath.row {
         case 0:
-            cell?.iconImage.image = #imageLiteral(resourceName: "ic_myAccount")
+            cell?.iconImage.image = #imageLiteral(resourceName: "ic_user")
             cell?.lblOption.text = "Tài khoản";
             break;
         
         case 1:
-            cell?.iconImage.image = #imageLiteral(resourceName: "ic_edit")
+            cell?.iconImage.image = #imageLiteral(resourceName: "ic_edit-1")
             cell?.lblOption.text = "Chỉnh sửa thông tin";
             break;
         
@@ -99,7 +99,7 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
         case 6:
            
             if Check.checkAll.isLogin{
-                 presenter?.logOut()
+                 presenter?.signOut()
             }
         default:
             break

@@ -10,16 +10,21 @@ import UIKit
 
 class AddressCell: UITableViewCell {
 
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var btSelecte: UIButton!
+    @IBOutlet weak var lblAddress: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        if selected{
+            btSelecte.imageView?.image = #imageLiteral(resourceName: "ic_selected")
+        } else {
+            btSelecte.imageView?.image = #imageLiteral(resourceName: "ic_disselect")
+        }
     }
     
 }

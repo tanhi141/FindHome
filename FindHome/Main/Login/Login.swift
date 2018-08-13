@@ -79,7 +79,9 @@ extension Login: LoginView{
     
     func showHome(){
         let viewController = HomeVC()
-        navigationController?.pushViewController(viewController, animated: true)
+//        let navigation = UINavigationController(rootViewController: viewController);
+        navigationController?.pushViewController(viewController, animated: true);
+        
     }
 }
 
@@ -117,7 +119,8 @@ extension Login{
     
     @IBAction func tapButtonRegister(_ sender: Any){
         let viewController = RegisterVC()
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.navigationController
+//        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

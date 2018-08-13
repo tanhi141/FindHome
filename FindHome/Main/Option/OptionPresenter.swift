@@ -2,7 +2,7 @@
 import Foundation
 import FirebaseAuth
 class OptionPresenter: OptionPresenting{
-    
+
     private weak var view: OptionView?
     
     var user: User?
@@ -15,7 +15,7 @@ class OptionPresenter: OptionPresenting{
         
     }
     
-    func logOut(){
+    func signOut(){
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()

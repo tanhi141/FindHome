@@ -48,23 +48,41 @@ extension DetailVC: DetailView{
         self.imageView.image = list[idImage]
     }
     
-    func showAddress(_ address: String) {
-        self.lblAddress.text = address
+    func showAddress(_ address: Address) {
+        var str: String?
+        if address.street != nil{
+            str = address.street
+        }
+        if address.ward != nil {
+            str = str ?? "" + address.ward!
+        }
+        if address.district != nil {
+            str = str ?? "" + address.district!
+        }
+        if address.city != nil {
+            str = str ?? "" + address.district!
+        }
+        self.lblAddress.text = "Địa chỉ: \(str ?? "")";
     }
     
     func showArea(_ area: String) {
-        self.lblArea.text = area
+        self.lblArea.text = "Diện tích: \(area) m2"
     }
     
     func showPrice(_ price: String) {
-        self.lblPrice.text = price
+        self.lblPrice.text = "Giá cho thuê: \(price) / 1 tháng";
     }
     
     func showMore(_ more: String) {
         self.lblMore.text = more
     }
     
-    func showError() {
+    func showError(success: Bool){
+        if success {
+            Alert.showInfo(title: "Thành công" , message: nil, on: self, callback: nil)
+        } else {
+            Alert.showInfo(title: "Thất bại" , message: "Quá trình đăng thất bại. Vui lòng thử lại lần sau.", on: self, callback: nil)
+        }
         
     }
     
@@ -92,6 +110,8 @@ extension DetailVC: DetailView{
             btnCallOrPost.setTitle("Đăng tin", for: .normal)
             btnMsgOrEdit.setTitle("Chỉnh sửa", for: .normal)
             self.navigationItem.title = "Chi tiết"
+        case .unknow:
+            break;
         }
     }
     

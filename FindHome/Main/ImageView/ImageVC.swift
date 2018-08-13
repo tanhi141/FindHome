@@ -109,7 +109,7 @@ extension ImageVC: ImageView{
     //output
     func showDetailViewController(animated: Bool?, type: TypePost){
         let viewController = DetailVC()
-        viewController.presenter = DetailPresenter(view: viewController, type: type)
+        viewController.presenter = DetailPresenter(view: viewController, type: type, post: DetailPost.shared)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

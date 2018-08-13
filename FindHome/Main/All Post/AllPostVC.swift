@@ -22,12 +22,11 @@ class AllPostVC: UIViewController {
         
         presenter?.viewOnReady()
         tbPost.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "PostCell");
-        
         setUp()
+        formatPrice("1000000");
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        self.postList = presenter?.getData()
     }
     
     func setUp() {
@@ -77,7 +76,8 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
         
         cell?.lblTitle?.text = infoPost.title;
         cell?.lblArea?.text = infoPost.address?.city;
-        cell?.lblType?.text = infoPost.type?.rawValue
+        cell?.lblType?.text = infoPost.type?.rawValue;
+        cell?.lblPrice?.text = infoPost.price;
             
         
         
@@ -88,15 +88,46 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100;
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let listDisplay = listDisplay else {
+            return
+        }
+        
+        presenter?.selectPost(post: listDisplay[indexPath.row])
+    }
 }
 
 //MARK: AllPostView
-extension AllPostVC: AllPostView{
+ extension AllPostVC: AllPostView{
+    
+    func showDetailViewController(post: DetailPost) {
+        let viewController = DetailVC()
+        viewController.presenter = DetailPresenter(view: viewController, type: .read, post: post)
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func updateView() {
         self.postList = presenter?.getData()
         listDisplay = postList
         self.tbPost.reloadData()
     }
-    
-    
 }
+ 
+ //MARK: AllPostVC
+ extension AllPostVC{
+    
+    func formatPrice(_ price: String){
+        print(price.count)
+       
+    }
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

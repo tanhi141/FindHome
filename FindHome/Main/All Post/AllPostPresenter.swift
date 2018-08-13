@@ -11,10 +11,8 @@ class AllPostPresenter: AllPostPresenting{
     
     var postList : [DetailPost]? = []
     
-//    init(view: AllPostView, postList: [DetailPost]) {
     init(view: AllPostView) {
         self.view = view;
-        
     }
     
     func viewOnReady() {
@@ -26,6 +24,9 @@ class AllPostPresenter: AllPostPresenting{
     }
     
 
+    func selectPost(post: DetailPost) {
+        view?.showDetailViewController(post: post)
+    }
 }
 
 extension AllPostPresenter{

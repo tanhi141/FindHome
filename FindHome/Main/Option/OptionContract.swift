@@ -10,6 +10,6 @@ protocol OptionView:class {
 
 protocol OptionPresenting:class {
     func viewOnReady()
-    func logOut();
+    func signOut();
 }
 

@@ -58,7 +58,6 @@
                         <constraint firstAttribute="height" constant="70" id="HUf-yd-Z2J"/>
                         <constraint firstItem="yWg-iI-Zm2" firstAttribute="leading" secondItem="xvJ-CG-6fS" secondAttribute="leading" constant="30" id="OWk-CV-Vqh"/>
                         <constraint firstAttribute="trailing" secondItem="yWg-iI-Zm2" secondAttribute="trailing" constant="30" id="Qov-AC-x0J"/>
-                        <constraint firstItem="yWg-iI-Zm2" firstAttribute="centerY" secondItem="xvJ-CG-6fS" secondAttribute="centerY" id="q5f-Iq-ujX"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXF-Ux-glY" userLabel="ViewButton">
@@ -142,6 +141,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xXF-Ux-glY" secondAttribute="trailing" id="5or-uP-Ygh"/>
                 <constraint firstItem="xvJ-CG-6fS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7Mm-tk-3DT"/>
                 <constraint firstItem="xXF-Ux-glY" firstAttribute="top" secondItem="xvJ-CG-6fS" secondAttribute="bottom" id="98R-ZB-dkE"/>
+                <constraint firstItem="yWg-iI-Zm2" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="MWR-24-fsY"/>
                 <constraint firstItem="xvJ-CG-6fS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Za1-bd-sb0"/>
                 <constraint firstItem="xvJ-CG-6fS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e5R-jA-fUU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JYF-yd-zch" secondAttribute="trailing" id="erA-2A-2vb"/>
