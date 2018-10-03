@@ -3,7 +3,7 @@ import Foundation
 
 struct Check {
     var isLogin = false;
-    
+    var isEdit = false;
     init() {
         isLogin = false
         

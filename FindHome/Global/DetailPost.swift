@@ -27,5 +27,5 @@ class DetailPost {
 }
 
 extension DetailPost{
-    static let shared = DetailPost()
+    static var shared = DetailPost()
 }

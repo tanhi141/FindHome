@@ -4,4 +4,5 @@ enum TypePost{
     case read;
     case write;
     case unknow;
+//    case edit;
 }

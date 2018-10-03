@@ -8,6 +8,7 @@ typealias SuccessCallback = (_ success: Bool) -> Void
 typealias ErrorCallback = (_ error: Error) -> Void
 typealias OptionCallback = (_ action: TypeAddImage) -> Void
 
+
 extension UIAlertAction{
     static func okAction(_ callback: SimpleCallback?) -> UIAlertAction {
         return titledAction("OK", callback: callback)
@@ -39,7 +40,6 @@ extension UIAlertAction{
         })
 
     }
-    
     
 }
 

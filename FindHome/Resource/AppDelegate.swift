@@ -14,16 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let navigation = UINavigationController(rootViewController: HomeVC())
-        window?.rootViewController = navigation
-      
-        navigation.view.backgroundColor = UIColor.white
-        navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white];
-        UINavigationBar.appearance().barTintColor = Colors.masterColor
-        navigation.navigationItem.title = "Trang chủ";
-        
-        window?.makeKeyAndVisible()
-        
+        let rootCoordinator = RootCoordinator()
+        rootCoordinator.start(with: window);
+//        let navigation = UINavigationController(rootViewController: WelcomeVC())
+//        window?.rootViewController = navigation
+//
+//        navigation.view.backgroundColor = UIColor.white
+//        navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white];
+//        UINavigationBar.appearance().barTintColor = Colors.masterColor
+//        navigation.navigationItem.title = "Trang chủ";
+//
+//        window?.makeKeyAndVisible()
+//        
         
         return true
     }
