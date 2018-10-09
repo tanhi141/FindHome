@@ -25,6 +25,8 @@ class WelcomeVC: UIViewController {
     
     func initUI(){
         tbvFunction.isScrollEnabled = false;
+        self.navigationController?.navigationBar.isHidden = true
+        
     }
     
 }
@@ -76,27 +78,35 @@ extension WelcomeVC: UITableViewDelegate, UITableViewDataSource{
             break;
         }
         
+        cell.delegate = self
         return cell;
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        case 0:
-            presenter?.tappedAllPost()
+
+}
+
+extension WelcomeVC: WelcomeTbvCellDelegate{
+    func didSelectButton(_ cell: WelcomeTbvCell, onTapped button: UIButton) {
+        let indexPath = tbvFunction.indexPath(for: cell);
         
+        switch indexPath?.section {
+        case 0:
+            presenter?.tappedAllPost();
+            
         case 1:
             break;
-            
+        
         case 2:
             break;
+            
         case 3:
-            break;
+            break
         default:
             break;
         }
     }
+    
+    
 }
-
 //MaARK: - View
 extension WelcomeVC: WelcomeView{
     

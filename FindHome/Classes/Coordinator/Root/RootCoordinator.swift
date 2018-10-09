@@ -15,29 +15,40 @@ class RootCoordinator{
     var rootVC: UIViewController;
 
     private(set) lazy var mainCoordinator = MainCoordinator(output: self);
+    var navigationController: UINavigationController?
     
     init() {
         factory = RootFactory();
-        rootVC = factory.rootViewController();
+        rootVC = UIViewController();
+        navigationController = UINavigationController()
     }
     
     
     func start(with window: UIWindow?) {
-        rootVC = factory.welcomeViewController(output: self);
-        window?.rootViewController = rootVC;
-         startMain()
+        self.navigationController = UINavigationController(rootViewController: factory.welcomeViewController(output: self));
+                window?.rootViewController = self.navigationController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible();
+        
     }
     
-    func startMain() {
-        mainCoordinator.startWithViewController()
+//    func startMain() {
+//        let viewController = mainCoordinator.start();
+//        rootVC.navigationController?.pushViewController(viewController, animated: true)
+//    }
+    
+    func showAllPostViewController(){
+        let viewController = factory.allPostViewController(output: self);
+        self.navigationController?.pushViewController(viewController, animated: true);
+        
     }
 }
 
 //MARK: - WelcomeOutput
 extension RootCoordinator: WelcomeOutput{
     func welcome(showAllPost: Any?) {
-        mainCoordinator.start();
+        showAllPostViewController();
+//        startMain()
     }
     
     func welcome(showHistory: Any?) {
@@ -61,4 +72,9 @@ extension RootCoordinator: WelcomeOutput{
 
 //MARK: - MainCoordinatorOutput
 extension RootCoordinator: MainCoordinatorOutput{
+}
+
+
+//MARK: - AllPostOutput
+extension RootCoordinator: AllPostOutput{
 }

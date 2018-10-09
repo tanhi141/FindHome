@@ -19,9 +19,10 @@ class AllPostVC: UIViewController {
         
         super.viewDidLoad()
         
+        setUp()
         presenter?.viewOnReady()
         tbPost.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "PostCell");
-        setUp()
+        
     }
     
     
@@ -32,10 +33,11 @@ class AllPostVC: UIViewController {
     func setUp() {
         let frame = UIEdgeInsetsInsetRect(self.view.bounds, UIEdgeInsets.zero);
         self.view.frame = frame;
-        self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight];
+        self.navigationItem.title = "Tất cả";
+//        self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight];
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
         updateView(postList ?? [])
-        tbPost.setContentOffset(.zero, animated: true)
+//        tbPost.setContentOffset(.zero, animated: true)
         
     }
 

@@ -21,13 +21,10 @@ class MainCoordinator{
         self.output = output;
         self.navigationController = factory.navigationoController();
     }
-
-    func startWithViewController(){
-        showAllPostViewController();
-    }
     
-    func start(){
-        showAllPostViewController();
+    func start() -> UIViewController{
+        return factory.allPostViewController(output: self)
+//        showAllPostViewController();
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2404C26D21666BB4008C60CC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2404C26C21666BB4008C60CC /* UIViewController+Extension.swift */; };
 		240A3C822106EB4C00342229 /* CurrentLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A3C812106EB4C00342229 /* CurrentLogin.swift */; };
 		243000E32115EABA00250134 /* Navigation+ Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243000E22115EABA00250134 /* Navigation+ Extension.swift */; };
 		2431D46C20FF923A0003A3EA /* DetailPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431D46B20FF923A0003A3EA /* DetailPost.swift */; };
@@ -133,6 +134,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2404C26C21666BB4008C60CC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		240A3C812106EB4C00342229 /* CurrentLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLogin.swift; sourceTree = "<group>"; };
 		243000E22115EABA00250134 /* Navigation+ Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation+ Extension.swift"; sourceTree = "<group>"; };
 		2431D46B20FF923A0003A3EA /* DetailPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPost.swift; sourceTree = "<group>"; };
@@ -402,6 +404,7 @@
 				2471885F20F86A0A008B0EAD /* UIButton+Extension.swift */,
 				2482B4602110CDED00A953C7 /* Extension+String.swift */,
 				2443036221174868009803E6 /* FireBase.swift */,
+				2404C26C21666BB4008C60CC /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1021,6 +1024,7 @@
 				248B539B20F9BD3900B6421F /* Login.swift in Sources */,
 				248794BE2110A9C500048003 /* OptionVC.swift in Sources */,
 				24F4C53A20F7837B00A6D5A8 /* FindHome.xcdatamodeld in Sources */,
+				2404C26D21666BB4008C60CC /* UIViewController+Extension.swift in Sources */,
 				24439AE520FE50CD00D4726E /* PhoneNumberVC.swift in Sources */,
 				24739012216271DF0055F39C /* RootCoordinator.swift in Sources */,
 				24E180EF2108CACF00714086 /* TypePost.swift in Sources */,

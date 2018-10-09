@@ -8,13 +8,20 @@
 
 import UIKit
 
+protocol WelcomeTbvCellDelegate: class {
+    func didSelectButton(_ cell: WelcomeTbvCell, onTapped button: UIButton);
+}
+
 class WelcomeTbvCell: UITableViewCell {
     
     @IBOutlet weak var btnFunction: UIButton!
+    weak var delegate: WelcomeTbvCellDelegate?;
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
         btnFunction.setNextStyle();
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -24,3 +31,9 @@ class WelcomeTbvCell: UITableViewCell {
     }
     
 }
+extension WelcomeTbvCell{
+    @IBAction func didSelectButtonFunction(sender: Any){
+        delegate?.didSelectButton(self, onTapped: self.btnFunction)
+    }
+}
+
