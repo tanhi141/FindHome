@@ -8,5 +8,5 @@ struct CurrentUser {
 }
 
 extension CurrentUser{
-//    static let currentUser = CurrentUser()
+    static let currentUser = CurrentUser()
 }

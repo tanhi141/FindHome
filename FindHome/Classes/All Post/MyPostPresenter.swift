@@ -39,7 +39,7 @@ extension MyPostPresenter{
     
     func fetchMyPost(){
         
-        let ref = Database.database().reference().child("Post").queryOrdered(byChild: "idUser").queryEqual(toValue: User.share.idUser ?? "")
+        let ref = Database.database().reference().child("Post").queryOrdered(byChild: "idUser").queryEqual(toValue: User.shared.idUser ?? "")
         var existsSwitch = false
         ref.observeSingleEvent(of: .value, with: { snapshot in
             ref.removeAllObservers()

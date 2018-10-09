@@ -11,5 +11,5 @@ struct Check {
 }
 
 extension Check {
-    static var checkAll = Check()
+    static var shared = Check()
 }

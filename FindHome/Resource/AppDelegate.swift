@@ -16,24 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let rootCoordinator = RootCoordinator()
         rootCoordinator.start(with: window);
-//        let navigation = UINavigationController(rootViewController: WelcomeVC())
-//        window?.rootViewController = navigation
-//
-//        navigation.view.backgroundColor = UIColor.white
-//        navigation.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white];
-//        UINavigationBar.appearance().barTintColor = Colors.masterColor
-//        navigation.navigationItem.title = "Trang chủ";
-//
-//        window?.makeKeyAndVisible()
-//        
         
         return true
     }
     
     override init() {
         super.init()
-        FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
+        FirebaseApp.configure();
+        Database.database().isPersistenceEnabled = true;
     }
     
     

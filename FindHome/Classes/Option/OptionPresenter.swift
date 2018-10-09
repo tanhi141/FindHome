@@ -19,7 +19,7 @@ class OptionPresenter: OptionPresenting{
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            Check.checkAll.isLogin = false;
+            Check.shared.isLogin = false;
             view?.showHome()
             
         } catch let signOutError as NSError {

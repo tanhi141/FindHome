@@ -32,7 +32,7 @@ class WelcomePresenter: WelcomePresenting{
     }
     
     func tappedAccount(){
-        
+        output.welcome(showAccount: nil);
     }
     
     

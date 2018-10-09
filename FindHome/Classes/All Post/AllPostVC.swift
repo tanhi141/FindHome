@@ -31,14 +31,12 @@ class AllPostVC: UIViewController {
         
     }
     func setUp() {
-        let frame = UIEdgeInsetsInsetRect(self.view.bounds, UIEdgeInsets.zero);
-        self.view.frame = frame;
-        self.navigationItem.title = "Tất cả";
-//        self.view.autoresizingMask = [.flexibleWidth, .flexibleHeight];
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
-        updateView(postList ?? [])
-//        tbPost.setContentOffset(.zero, animated: true)
+
+        setTitleNavigation(title: "Tất cả");
         
+        updateView(postList ?? [])
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
     }
 
 }

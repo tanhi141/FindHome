@@ -83,9 +83,9 @@ extension DetailVC: DetailView{
     
     func showError(success: Bool){
         if success {
-            Alert.showInfo(title: "Thành công" , message: nil, on: self, callback: nil)
+            Alert.showInfo(message: nil, on: self, callback: nil)
         } else {
-            Alert.showInfo(title: "Thất bại" , message: "Quá trình đăng thất bại. Vui lòng thử lại lần sau.", on: self, callback: nil)
+            Alert.showInfo(message: "Quá trình đăng thất bại. Vui lòng thử lại lần sau.", on: self, callback: nil)
         }
         
     }
@@ -97,10 +97,10 @@ extension DetailVC: DetailView{
     }
     
     func showHome(_ animate: Any?) {
-        let vc = HomeVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = HomeVC()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     func showPhoneNumber(_ phoneNumber: String) {
         self.lblPhoneNumber.text = "Điện thoại: \(phoneNumber)"
     }

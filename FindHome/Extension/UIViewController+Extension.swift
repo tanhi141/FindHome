@@ -10,5 +10,13 @@ import Foundation
 import UIKit
 
 extension UIViewController{
-    
+    func setTitleNavigation(title: String){
+        self.navigationItem.title = title;
+//        self.navigationController?.navigationBar.backgroundColor = Colors.masterColor;
+        self.navigationController?.navigationBar.tintColor = Colors.masterColor;
+        navigationController?.navigationBar.isHidden = false;
+        navigationController?.navigationBar.tintColor = Colors.masterColor;
+        
+    }
+
 }

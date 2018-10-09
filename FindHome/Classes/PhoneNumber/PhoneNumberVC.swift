@@ -41,7 +41,7 @@ extension PhoneNumberVC{
     
     @IBAction func tapButtonGetPhoneNumber(_ sender: Any){
         self.view?.endEditing(true)
-        presenter?.inputPhoneNumber(User.share.phonenNumber ?? "")
+        presenter?.inputPhoneNumber(User.shared.phonenNumber ?? "")
     }
 }
 
@@ -55,8 +55,7 @@ extension PhoneNumberVC: PhoneNumberView{
     }
     
     func showError(){
-        Alert.showInfo(title: Messages.PhoneNumber.errorTitle,
-                       message: Messages.PhoneNumber.errorMessage,
+        Alert.showInfo(message: Messages.PhoneNumber.errorMessage,
                        on: self, callback: nil)
     }
     

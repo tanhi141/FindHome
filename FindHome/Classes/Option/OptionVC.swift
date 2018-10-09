@@ -20,12 +20,12 @@ class OptionVC: UIViewController {
 extension OptionVC: OptionView{
     
     func showSignOutFail() {
-        Alert.showInfo(title: "Thông báo", message: "Đăng xuất thất bại!", on: self, callback: nil)
+        Alert.showInfo(message: "Đăng xuất thất bại!", on: self, callback: nil)
     }
     
     func showHome(){
-        let vc = HomeVC()
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let vc = HomeVC()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -46,7 +46,7 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
         case 0:
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_user")
             cell?.lblOption.text = "Tài khoản";
-            if Check.checkAll.isLogin == false{
+            if Check.shared.isLogin == false{
                 cell?.selectionStyle = .none
                 cell?.lblOption.textColor = .gray
             }
@@ -83,7 +83,7 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
            
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_logOut")
             cell?.lblOption.text = "Đăng xuất";
-            if Check.checkAll.isLogin == false{
+            if Check.shared.isLogin == false{
                 cell?.selectionStyle = .none
                 cell?.lblOption.textColor = .gray
             }
@@ -101,7 +101,7 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
             self.navigationController?.pushViewController(viewController, animated: true)
         case 6:
            
-            if Check.checkAll.isLogin{
+            if Check.shared.isLogin{
                  presenter?.signOut()
             }
         default:

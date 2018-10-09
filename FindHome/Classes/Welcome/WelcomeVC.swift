@@ -11,12 +11,19 @@ import UIKit
 class WelcomeVC: UIViewController {
         
     @IBOutlet weak var tbvFunction: UITableView!
+    @IBOutlet weak var imvBackground: UIImageView!
+    
+    let idCell = "WelcomeTbvCell";
     var presenter: WelcomePresenting?
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tbvFunction.register(UINib(nibName: "WelcomeTbvCell", bundle: nil), forCellReuseIdentifier: "WelcomeTbvCell");
+        tbvFunction.register(UINib(nibName: idCell, bundle: nil), forCellReuseIdentifier: idCell);
         
         initUI();
         presenter?.viewOnReady()
@@ -26,7 +33,8 @@ class WelcomeVC: UIViewController {
     func initUI(){
         tbvFunction.isScrollEnabled = false;
         self.navigationController?.navigationBar.isHidden = true
-        
+        imvBackground.image = UIImage(named: "background");
+        tbvFunction.backgroundColor = UIColor.clear;
     }
     
 }
@@ -58,23 +66,27 @@ extension WelcomeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tbvFunction.dequeueReusableCell(withIdentifier: "WelcomeTbvCell", for: indexPath) as! WelcomeTbvCell
+        let cell = tbvFunction.dequeueReusableCell(withIdentifier: idCell, for: indexPath) as! WelcomeTbvCell
         
         switch indexPath.section {
         case 0:
-            cell.btnFunction.setTitle("Tất cả", for: .normal);
+            cell.btnFunction.setTitle(Title.allPostTitle, for: .normal);
             break;
         case 1:
-            cell.btnFunction.setTitle("Lịch sử", for: .normal);
+            cell.btnFunction.setTitle(Title.historyTitle, for: .normal);
             break;
         case 2:
-            cell.btnFunction.setTitle("Tài khoản", for: .normal);
+            if Check.shared.isLogin{
+                    cell.btnFunction.setTitle(Title.accountTitle, for: .normal);
+            } else {
+                cell.btnFunction.setTitle(Title.loginTitle, for: .normal);
+            }
+            
             break;
         case 3:
-            cell.btnFunction.setTitle("Thêm", for: .normal);
+            cell.btnFunction.setTitle(Title.moreTitle, for: .normal);
             break;
         default:
-            cell.btnFunction.titleLabel?.text = "Unknow";
             break;
         }
         
@@ -96,6 +108,7 @@ extension WelcomeVC: WelcomeTbvCellDelegate{
             break;
         
         case 2:
+            presenter?.tappedAccount()
             break;
             
         case 3:

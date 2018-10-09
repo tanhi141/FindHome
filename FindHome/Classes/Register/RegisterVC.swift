@@ -101,26 +101,26 @@ extension RegisterVC{
 //MARK: -  RegisterView
 extension RegisterVC: RegisterView{
     func showErrorInvalid() {
-        Alert.showInfo(title: "Thông báo", message: "Vui lòng kiểm tra lại thông tin", on: self, callback: nil)
+        Alert.showInfo(message: "Vui lòng kiểm tra lại thông tin", on: self, callback: nil)
     }
     
     func showSuccess(){
-            Alert.showInfo(title: "Thông báo", message: "Đăng kí thành công.", on: self, callback: {
+            Alert.showInfo(message: "Đăng kí thành công.", on: self, callback: {
                 self.showHome()
             })
     }
     
     func showErrorConfirmPassword() {
-        Alert.showInfo(title: "Thông báo", message: "Mật khẩu chưa trùng nhau. Vui lòng kiểm tra lại.", on: self, callback: nil)
+        Alert.showInfo(message: "Mật khẩu chưa trùng nhau. Vui lòng kiểm tra lại.", on: self, callback: nil)
     }
     
     func showErrorForrmatEmail() {
-        Alert.showInfo(title: "Đăng kí thất bại.", message: "Vui lòng kiểm tra lại email và thử lại trong lần sau.", on: self, callback: nil)
+        Alert.showInfo(message: "Vui lòng kiểm tra lại email và thử lại trong lần sau.", on: self, callback: nil)
     }
     
     func showDetail() {
-        let detailVC = HomeVC();
-        navigationController?.pushViewController(detailVC, animated: true)
+//        let detailVC = HomeVC();
+//        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func showIndicatorView(_ show: Bool){
@@ -134,14 +134,14 @@ extension RegisterVC: RegisterView{
     }
     
     func showHome(){
-        let loginVC = HomeVC();
-        navigationController?.pushViewController(loginVC, animated: true)
+//        let loginVC = HomeVC();
+//        navigationController?.pushViewController(loginVC, animated: true)
         
     }
     func showLogin(){
-        let loginVC = Login();
-        loginVC.presenter = LoginPresenter(view: loginVC, userAccount: nil)
-        navigationController?.pushViewController(loginVC, animated: true)
+//        let loginVC = Login();
+//        loginVC.presenter = LoginPresenter(view: loginVC, userAccount: nil)
+//        navigationController?.pushViewController(loginVC, animated: true)
         
     }
 }

@@ -30,5 +30,11 @@ class RootFactory {
         viewController.presenter = AllPostPresenter(view: viewController, output: output)
         return viewController
     }
+    
+    func loginViewController(output: LoginOutput, account: UserAccount?) -> UIViewController{
+        let viewController = LoginVC();
+        viewController.presenter = LoginPresenter(view: viewController, output: output, userAccount: account)
+        return viewController
+    }
 }
 

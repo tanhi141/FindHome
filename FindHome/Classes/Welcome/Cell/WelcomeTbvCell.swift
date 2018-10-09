@@ -20,8 +20,13 @@ class WelcomeTbvCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        initUI();
+    }
+    
+    func initUI(){
         btnFunction.setNextStyle();
-        
+        btnFunction.mask?.clipsToBounds = true
+        self.backgroundColor = UIColor.clear;
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

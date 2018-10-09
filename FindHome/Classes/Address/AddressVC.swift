@@ -55,7 +55,7 @@ extension AddressVC: AddressView{
     }
     
     func showError(){
-        Alert.showInfo(title: "Thông báo", message: "Vui lòng điền tên thành phố và quận", on: self, callback: nil);
+        Alert.showInfo(message: "Vui lòng điền tên thành phố và quận", on: self, callback: nil);
     }
 }
 

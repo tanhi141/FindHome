@@ -4,16 +4,25 @@ import Foundation
 import UIKit
 struct Alert{
     
-    static func showInfo(title: String?, message: String?, on viewController: UIViewController, callback: SimpleCallback?) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+    static func showInfo(message: String?,
+                         on viewController: UIViewController,
+                         callback: SimpleCallback?) {
+        let alert = UIAlertController(title: Messages.notificationString,
+                                      message: message,
+                                      preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction.okAction(callback)
         alert.addAction(okAction)
-        viewController.present(alert, animated: true, completion: nil)
+        viewController.present(alert, animated: true, completion: nil);
     }
     
-    static func showOptionAddImage(title: String?, message: String?, on viewController: UIViewController, callback: OptionCallback?) {
+    static func showOptionAddImage(title: String?,
+                                   message: String?,
+                                   on viewController: UIViewController,
+                                   callback: OptionCallback?) {
         
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: UIAlertControllerStyle.alert)
         
         let cameraAction = UIAlertAction.cameraAction(callback)
         let librabyAction = UIAlertAction.libraryAction(callback)
