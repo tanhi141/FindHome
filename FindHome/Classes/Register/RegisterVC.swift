@@ -18,8 +18,7 @@ class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.presenter = RegisterPresenter(view: self)
+        
         setUp();
         presenter?.viewOnReady()
     }

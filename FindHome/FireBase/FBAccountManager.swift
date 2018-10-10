@@ -42,7 +42,7 @@ extension FBAccountManager{
 //            }
 //
 //
-//            let user = User(firebase: data.va, forKey: <#T##String#>)
+//            let user = User(firebase: data.value, forKey: "")
 //        }
 //
 //                let ref = Database.database().reference().child("User").queryOrdered(byChild: "email").queryEqual(toValue: email)

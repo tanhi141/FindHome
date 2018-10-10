@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let rootCoordinator = RootCoordinator()
         rootCoordinator.start(with: window);
-        
-        return true
+
+        return true;
     }
     
     override init() {

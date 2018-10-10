@@ -2,21 +2,23 @@
 
 import Foundation
 import FirebaseDatabase
-class MyPostPresenter: AllPostPresenting{
+class HistoryPresenter: AllPostPresenting{
     
     private weak var view: AllPostVC?
+    private weak var output: AllPostOutput?
     
     var postList : [DetailPost]? = []
     var postListDisplay: [DetailPost]? = []
     
     var keyword: String? = ""
-    init(view: AllPostVC){
-        self.view = view
+    init(view: AllPostVC, output: AllPostOutput){
+        self.view = view;
+        self.output = output;
     }
     
     func viewOnReady() {
         fetchMyPost()
-        view?.updateNavigationTitle("Của tôi")
+        view?.updateNavigationTitle(Title.historyTitle);
     }
     
     func getData() -> [DetailPost] {
@@ -35,7 +37,7 @@ class MyPostPresenter: AllPostPresenting{
     
 }
 
-extension MyPostPresenter{
+extension HistoryPresenter{
     
     func fetchMyPost(){
         

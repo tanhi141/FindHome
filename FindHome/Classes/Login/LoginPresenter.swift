@@ -4,7 +4,7 @@ import Foundation
 
 
 class LoginPresenter: LoginPresenting{
-    
+
     private weak var view: LoginView?;
     private weak var output: LoginOutput?;
     var email: String?
@@ -40,6 +40,10 @@ class LoginPresenter: LoginPresenting{
     func inputPassword(password: String) {
         self.password = password;
     }
+    
+    func tappedButtonRegister() {
+        output?.showRegisterViewController()
+    }
 }
 
 //MARK: - Other
@@ -68,7 +72,7 @@ extension LoginPresenter{
             if result == true{
                 strongSelf.getData()
                 strongSelf.view?.showLoading(isShow: false);
-                strongSelf.output?.showHome()
+                strongSelf.output?.showHomeViewController();
                 return;
                 
             } else {
@@ -80,25 +84,5 @@ extension LoginPresenter{
     }
     
     func getData(){
-        
-//        let ref = Database.database().reference().child("User").queryOrdered(byChild: "email").queryEqual(toValue: self.email ?? "")
-//
-//        ref.observeSingleEvent(of: .value, with: {[weak self] snapshot in
-//
-//            if !snapshot.exists(){
-//                return
-//            }
-//
-//            let user = snapshot.value as! [String: Any]
-//            let infoUser = user.values.first as? [String: String]
-//
-//            User.share.email = infoUser?["email"]  ?? ""
-//            User.share.fullName = infoUser?["fullName"] ?? ""
-//            User.share.phonenNumber = infoUser?["phoneNumber"] ?? ""
-//            User.share.idUser = infoUser?["idUser"] ?? ""
-//
-//        })
-//    }
-        
-}
+    }
 }

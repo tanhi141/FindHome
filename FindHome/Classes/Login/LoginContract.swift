@@ -2,8 +2,13 @@
 import Foundation
 
 protocol LoginOutput: class {
+//    func loginOutput(_ showPhoneNumberViewController: Any?);
+//    func showHomeViewController();
+//    func showRegisterViewController();
+//
     func showPhoneNumberViewController();
-    func showHome();
+    func showHomeViewController();
+    func showRegisterViewController();
 }
 
 protocol LoginView: class {
@@ -17,6 +22,7 @@ protocol LoginView: class {
 protocol LoginPresenting: class {
     func viewOnReady();
     func tappedButtonLogin();
+    func tappedButtonRegister();
     func inputEmail(email: String)
     func inputPassword(password: String)
     

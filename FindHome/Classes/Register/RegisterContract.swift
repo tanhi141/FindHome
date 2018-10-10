@@ -1,6 +1,12 @@
 
 import Foundation
 
+
+
+protocol RegisterOutput: class {
+
+}
+
 protocol RegisterPresenting: class {
     func inputPhoneNumber(_ phoneNumber: String);
     func inputFullName(_ name: String);

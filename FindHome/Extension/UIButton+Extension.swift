@@ -34,6 +34,18 @@ extension UIButton {
         self.setBackgroundImage(colorImage, for: forState);
     }
     
+    func enable(isEnable: Bool){
+//        if isEnable{
+        
+//        }
+        titleColor = Colors.grayColor;
+        titleLabel?.font = UIFont(name: "Trebuchet MN", size: 24);
+        backgroundColor = UIColor.clear
+        setBorder(color: Colors.grayColor , lineWidth: 2);
+        layer.cornerRadius = 18;
+        setShadow(shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 2), shadowRadius: 5, shadowColor: UIColor.lightGray);
+    }
+    
     func setNextStyle() {
         titleColor = Colors.masterColor;
         titleLabel?.font = UIFont(name: "Trebuchet MN", size: 24);

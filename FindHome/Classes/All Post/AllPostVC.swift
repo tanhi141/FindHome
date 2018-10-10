@@ -32,7 +32,7 @@ class AllPostVC: UIViewController {
     }
     func setUp() {
 
-        setTitleNavigation(title: "Tất cả");
+        setTitleNavigation(title: Title.allPostTitle);
         
         updateView(postList ?? [])
         

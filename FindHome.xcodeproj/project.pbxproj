@@ -79,7 +79,7 @@
 		24945CE92104A51900A2F65C /* ImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945CE82104A51900A2F65C /* ImagePresenter.swift */; };
 		24945CED2104A69300A2F65C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24945CEB2104A69300A2F65C /* ImageCell.swift */; };
 		24945CEE2104A69300A2F65C /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24945CEC2104A69300A2F65C /* ImageCell.xib */; };
-		24A833072121D4F5001792EE /* MyPostPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A833062121D4F5001792EE /* MyPostPresenter.swift */; };
+		24A833072121D4F5001792EE /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A833062121D4F5001792EE /* HistoryPresenter.swift */; };
 		24BC29E62105D8F6001F8511 /* TypeAddImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BC29E52105D8F5001F8511 /* TypeAddImage.swift */; };
 		24CC7333212170DC0027812A /* OptionAddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24CC7331212170DC0027812A /* OptionAddressVC.swift */; };
 		24CC7334212170DC0027812A /* OptionAddressVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24CC7332212170DC0027812A /* OptionAddressVC.xib */; };
@@ -204,7 +204,7 @@
 		24945CE82104A51900A2F65C /* ImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePresenter.swift; sourceTree = "<group>"; };
 		24945CEB2104A69300A2F65C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		24945CEC2104A69300A2F65C /* ImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
-		24A833062121D4F5001792EE /* MyPostPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostPresenter.swift; sourceTree = "<group>"; };
+		24A833062121D4F5001792EE /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
 		24BC29E52105D8F5001F8511 /* TypeAddImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAddImage.swift; sourceTree = "<group>"; };
 		24CC7331212170DC0027812A /* OptionAddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionAddressVC.swift; sourceTree = "<group>"; };
 		24CC7332212170DC0027812A /* OptionAddressVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionAddressVC.xib; sourceTree = "<group>"; };
@@ -692,7 +692,7 @@
 				24F4C56F20F78A8500A6D5A8 /* AllPostVC.swift */,
 				24F4C57320F78AA800A6D5A8 /* AllPostContract.swift */,
 				24F4C57020F78A8500A6D5A8 /* AllPostVC.xib */,
-				24A833062121D4F5001792EE /* MyPostPresenter.swift */,
+				24A833062121D4F5001792EE /* HistoryPresenter.swift */,
 			);
 			path = "All Post";
 			sourceTree = "<group>";
@@ -994,7 +994,7 @@
 				24CC7338212171030027812A /* OptionAddressContract.swift in Sources */,
 				248794CB2110AA2200048003 /* OptionCell.swift in Sources */,
 				24D2E44921003A5300B7C14B /* AreaAndPriceVC.swift in Sources */,
-				24A833072121D4F5001792EE /* MyPostPresenter.swift in Sources */,
+				24A833072121D4F5001792EE /* HistoryPresenter.swift in Sources */,
 				2405B05C216CEB9100FB2E6D /* UIActivityIndicatorView+Extension.swift in Sources */,
 				24E180E72108B9D000714086 /* DetailVC.swift in Sources */,
 				24945CE42104A4FE00A2F65C /* ImageVC.swift in Sources */,

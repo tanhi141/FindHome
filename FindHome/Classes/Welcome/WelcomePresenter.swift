@@ -20,7 +20,7 @@ class WelcomePresenter: WelcomePresenting{
     
     
     func viewOnReady() {
-        print("Ready");
+        
     }
     
     func tappedAllPost(){
@@ -28,7 +28,7 @@ class WelcomePresenter: WelcomePresenting{
     }
     
     func tappedHistory(){
-        
+        output.welcome(showHistory: nil)
     }
     
     func tappedAccount(){

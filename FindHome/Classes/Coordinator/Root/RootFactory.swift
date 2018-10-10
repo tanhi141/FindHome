@@ -14,6 +14,7 @@ class RootFactory {
     func navigationViewController() -> UINavigationController{
         return UINavigationController();
     }
+    
     func rootViewController() -> UIViewController {
         let viewController = UIViewController();
         return viewController;
@@ -34,6 +35,18 @@ class RootFactory {
     func loginViewController(output: LoginOutput, account: UserAccount?) -> UIViewController{
         let viewController = LoginVC();
         viewController.presenter = LoginPresenter(view: viewController, output: output, userAccount: account)
+        return viewController
+    }
+    
+    func registerViewController(output: RegisterOutput) -> UIViewController{
+        let viewController = RegisterVC();
+        viewController.presenter = RegisterPresenter(view: viewController, output: output);
+        return viewController
+    }
+    
+    func historyViewController(output: AllPostOutput) -> UIViewController{
+        let viewController = AllPostVC();
+        viewController.presenter = HistoryPresenter(view: viewController, output: output)
         return viewController
     }
 }

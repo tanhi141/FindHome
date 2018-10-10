@@ -15,15 +15,15 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         
         presenter?.viewOnReady()
-        setUp()
+        setUp();
         
     }
 
     func setUp(){
-        
-        setTitleNavigation(title: "Đăng nhập")
+        setTitleNavigation(title: Title.loginTitle);
         btnLogin.setNextStyle()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
+        let tap = UITapGestureRecognizer(target: self,
+                                         action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
     }
     
@@ -93,6 +93,7 @@ extension LoginVC{
     }
     
     @IBAction func tapButtonRegister(_ sender: Any){
+        
         let viewController = RegisterVC()
         self.navigationController?.pushViewController(viewController, animated: true)
     }

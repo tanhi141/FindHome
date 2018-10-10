@@ -17,5 +17,5 @@ protocol AllPostPresenting: class {
 protocol AllPostView: class {
     func updateView(_ list: [DetailPost]);
     func updateNavigationTitle(_ title: String);
-    func showDetailViewController(post: DetailPost, type: TypePost)
+    func showDetailViewController(post: DetailPost, type: TypePost);
 }

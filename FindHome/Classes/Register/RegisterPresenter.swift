@@ -6,13 +6,15 @@ import FirebaseDatabase
 class RegisterPresenter: RegisterPresenting{
     
     private weak var view: RegisterView?
+    private weak var output: RegisterOutput?
+    
     var phoneNumber: String
     var fullName: String
     var password: String
     var confirmPassword: String
     var email: String?
 
-    init(view: RegisterView) {
+    init(view: RegisterView, output: RegisterOutput) {
         self.view = view;
         self.phoneNumber = ""
         self.fullName = ""
@@ -55,7 +57,7 @@ class RegisterPresenter: RegisterPresenting{
         Auth.auth().createUser(withEmail: self.email!, password: self.password) { (user, error) in
             
             if error == nil {
-                print("You have successfully signed up")
+                
                 
                 var ref: DatabaseReference?
                 ref = Database.database().reference()

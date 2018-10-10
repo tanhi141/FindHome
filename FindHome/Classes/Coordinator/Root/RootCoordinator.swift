@@ -15,7 +15,6 @@ class RootCoordinator{
     var rootVC: UIViewController;
     var account: UserAccount? ;
     
-//    private(set) lazy var mainCoordinator = MainCoordinator(output: self);
     var navigationController: UINavigationController?
     
     init() {
@@ -23,8 +22,8 @@ class RootCoordinator{
         rootVC = UIViewController();
         navigationController = UINavigationController()
         
-        account?.email = defaults.string(forKey: "email");
-        account?.password = defaults.string(forKey: "password");
+        account?.email = defaults.string(forKey: Keys.Login.email);
+        account?.password = defaults.string(forKey: Keys.Login.password);
     }
     
     
@@ -40,11 +39,7 @@ class RootCoordinator{
     func showWelcomeViewController(){
         navigationController?.popToRootViewController(animated: true);
     }
-//    func startMain() {
-//        let viewController = mainCoordinator.start();
-//        rootVC.navigationController?.pushViewController(viewController, animated: true)
-//    }
-    
+
     func showAllPostViewController(){
         let viewController = factory.allPostViewController(output: self);
         self.navigationController?.pushViewController(viewController, animated: true);
@@ -55,6 +50,11 @@ class RootCoordinator{
         let viewController = factory.loginViewController(output: self, account: account);
         self.navigationController?.pushViewController(viewController, animated: true);
     }
+    
+    func showHistoryViewController(){
+        let viewController = factory.historyViewController(output: self);
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 //MARK: - WelcomeOutput
@@ -64,7 +64,7 @@ extension RootCoordinator: WelcomeOutput{
     }
     
     func welcome(showHistory: Any?) {
-        showLoginViewController()
+        showHistoryViewController();
     }
     
     func welcome(showAccount: Any?) {
@@ -97,16 +97,25 @@ extension RootCoordinator: AllPostOutput{
 
 //MARK: - LoginOutput
 extension RootCoordinator: LoginOutput{
+    func showHomeViewController() {
+        showWelcomeViewController();
+
+    }
+    
+    func showRegisterViewController() {
+        let viewController = factory.registerViewController(output: self);
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     func showPhoneNumberViewController() {
         
     }
     
-    func showHome() {
-        showWelcomeViewController();
-    }
+}
+//MARK: - RegisterOutput
+extension RootCoordinator: RegisterOutput{
     
 }
-
 
 //MARK: - UI
 extension RootCoordinator{

@@ -14,7 +14,7 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var imvBackground: UIImageView!
     
     let idCell = "WelcomeTbvCell";
-    var presenter: WelcomePresenting?
+    var presenter: WelcomePresenting?;
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = true
@@ -105,6 +105,7 @@ extension WelcomeVC: WelcomeTbvCellDelegate{
             presenter?.tappedAllPost();
             
         case 1:
+            presenter?.tappedHistory()
             break;
         
         case 2:
