@@ -6,7 +6,6 @@ struct Check {
     var isEdit = false;
     init() {
         isLogin = false
-        
     }
 }
 

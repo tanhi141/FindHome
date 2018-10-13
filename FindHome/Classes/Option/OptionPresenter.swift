@@ -4,11 +4,12 @@ import FirebaseAuth
 class OptionPresenter: OptionPresenting{
 
     private weak var view: OptionView?
+    private weak var output: OptionOutput?
     
-    var user: User?
-    init(view: OptionView, user: User?){
+//    var user: User?
+    init(view: OptionView,output: OptionOutput){
         self.view = view;
-        self.user = user
+//        self.user = user
     }
     
     func viewOnReady(){
@@ -22,9 +23,8 @@ class OptionPresenter: OptionPresenting{
             Check.shared.isLogin = false;
             view?.showHome()
             
-        } catch let signOutError as NSError {
+        } catch let _ as NSError {
             view?.showSignOutFail()
         }
-        
     }
 }

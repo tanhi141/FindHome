@@ -18,7 +18,7 @@ class HistoryPresenter: AllPostPresenting{
     
     func viewOnReady() {
         fetchMyPost()
-        view?.updateNavigationTitle(Title.historyTitle);
+        view?.updateNavigationTitle(Title.HISTORY_TITLE);
     }
     
     func getData() -> [DetailPost] {

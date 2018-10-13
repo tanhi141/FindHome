@@ -22,8 +22,8 @@ class RootCoordinator{
         rootVC = UIViewController();
         navigationController = UINavigationController()
         
-        account?.email = defaults.string(forKey: Keys.Login.email);
-        account?.password = defaults.string(forKey: Keys.Login.password);
+        account?.email = defaults.string(forKey: Keys.Login.EMAIL);
+        account?.password = defaults.string(forKey: Keys.Login.PASSWORD);
     }
     
     

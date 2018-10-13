@@ -7,7 +7,7 @@ struct Alert{
     static func showInfo(message: String?,
                          on viewController: UIViewController,
                          callback: SimpleCallback?) {
-        let alert = UIAlertController(title: Messages.notificationString,
+        let alert = UIAlertController(title: Messages.NOTIFI_TITLE,
                                       message: message,
                                       preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction.okAction(callback)

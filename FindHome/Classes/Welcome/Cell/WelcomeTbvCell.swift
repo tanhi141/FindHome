@@ -27,6 +27,7 @@ class WelcomeTbvCell: UITableViewCell {
         btnFunction.setNextStyle();
         btnFunction.mask?.clipsToBounds = true
         self.backgroundColor = UIColor.clear;
+        self.selectionStyle = .none;
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

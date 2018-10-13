@@ -1,6 +1,9 @@
 
 import Foundation
 
+protocol OptionOutput: class{
+    
+}
 protocol OptionView:class {
     
     func showSignOutFail()

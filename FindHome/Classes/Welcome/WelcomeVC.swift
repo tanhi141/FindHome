@@ -13,7 +13,7 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var tbvFunction: UITableView!
     @IBOutlet weak var imvBackground: UIImageView!
     
-    let idCell = "WelcomeTbvCell";
+    let IDENTIFIRE_CELL = "WelcomeTbvCell";
     var presenter: WelcomePresenting?;
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,7 +23,7 @@ class WelcomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tbvFunction.register(UINib(nibName: idCell, bundle: nil), forCellReuseIdentifier: idCell);
+        tbvFunction.register(UINib(nibName: IDENTIFIRE_CELL, bundle: nil), forCellReuseIdentifier: IDENTIFIRE_CELL);
         
         initUI();
         presenter?.viewOnReady()
@@ -66,26 +66,32 @@ extension WelcomeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tbvFunction.dequeueReusableCell(withIdentifier: idCell, for: indexPath) as! WelcomeTbvCell
+        let cell = tbvFunction.dequeueReusableCell(withIdentifier: IDENTIFIRE_CELL, for: indexPath) as! WelcomeTbvCell
         
         switch indexPath.section {
         case 0:
-            cell.btnFunction.setTitle(Title.allPostTitle, for: .normal);
+            cell.btnFunction.setTitle(Title.ALL_POST_TITLE, for: .normal);
             break;
+            
         case 1:
-            cell.btnFunction.setTitle(Title.historyTitle, for: .normal);
-            break;
-        case 2:
+            cell.btnFunction.setTitle(Title.HISTORY_TITLE, for: .normal);
+            
             if Check.shared.isLogin{
-                    cell.btnFunction.setTitle(Title.accountTitle, for: .normal);
+                cell.btnFunction.enable(isEnable: true);
             } else {
-                cell.btnFunction.setTitle(Title.loginTitle, for: .normal);
+                cell.btnFunction.enable(isEnable: false);
             }
+            break;
+            
+        case 2:
+            cell.btnFunction.setTitle(Title.ACCOUNT_TITLE, for: .normal);
             
             break;
+            
         case 3:
-            cell.btnFunction.setTitle(Title.moreTitle, for: .normal);
+            cell.btnFunction.setTitle(Title.MORE_TITLE, for: .normal);
             break;
+            
         default:
             break;
         }

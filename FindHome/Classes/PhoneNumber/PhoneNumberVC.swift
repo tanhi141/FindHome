@@ -55,7 +55,7 @@ extension PhoneNumberVC: PhoneNumberView{
     }
     
     func showError(){
-        Alert.showInfo(message: Messages.PhoneNumber.errorMessage,
+        Alert.showInfo(message: Messages.PhoneNumber.ERROR_VALIDATE,
                        on: self, callback: nil)
     }
     
@@ -64,5 +64,6 @@ extension PhoneNumberVC: PhoneNumberView{
         viewController.presenter = TypePresenter(view: viewController);
         navigationController?.pushViewController(viewController, animated: (animated != nil))
     }
+    
 }
 

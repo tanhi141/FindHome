@@ -1,10 +1,9 @@
 
 
 import Foundation
-
-
+import Alamofire
 class LoginPresenter: LoginPresenting{
-
+    
     private weak var view: LoginView?;
     private weak var output: LoginOutput?;
     var email: String?
@@ -53,7 +52,7 @@ extension LoginPresenter{
         
         guard self.email?.isEmpty == false,
             self.password?.isEmpty == false else {
-            view?.showError(message: Messages.Login.errorRequired)
+            view?.showError(message: Messages.Login.ERROE_REQUIRED)
             return false
         }
         
@@ -62,21 +61,29 @@ extension LoginPresenter{
     
     func login(){
         
+        guard  NetworkReachabilityManager()?.isReachable == true else {
+            view?.showError(message: Messages.Login.ERROR_CONNECT);
+            return;
+        }
+        
         view?.showLoading(isShow: true);
+
         let account = UserAccount(email: self.email, password: self.password);
-        FBAccountManager.shared.login(account: account) { [weak self](result) in
-            
+        
+        FBAccountManager.shared.login(account: account) { [weak self](error) in
             guard let strongSelf = self else{
                 return
             }
-            if result == true{
+            
+            if error == nil{
                 strongSelf.getData()
                 strongSelf.view?.showLoading(isShow: false);
                 strongSelf.output?.showHomeViewController();
                 return;
                 
             } else {
-                strongSelf.view?.showError(message: Messages.Login.errorValidate);
+                print(error!.localizedDescription);
+                strongSelf.view?.showError(message: Messages.Login.ERROR_VALIDATE);
                 strongSelf.view?.showLoading(isShow: false);
                 return;
             }

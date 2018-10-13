@@ -12,7 +12,7 @@ import Firebase
 
 class FBAccountManager{
     static let shared = FBAccountManager();
-    typealias LoginCallback = (Bool) -> Void;
+    typealias LoginCallback = (Error?) -> Void;
     typealias InfoAccountCallback = (User) -> Void;
     
     init() {
@@ -26,11 +26,7 @@ extension FBAccountManager{
         
         Auth.auth().signIn(withEmail: account.email ?? "",
                            password: account.password ?? "") {(_, error) in
-                            if error == nil{
-                                callback(true);
-                            } else {
-                                callback(false)
-                            }
+                            callback(error)
         }
     }
     

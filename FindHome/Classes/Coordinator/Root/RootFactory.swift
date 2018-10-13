@@ -49,5 +49,11 @@ class RootFactory {
         viewController.presenter = HistoryPresenter(view: viewController, output: output)
         return viewController
     }
+    
+    func moreViewController(output: OptionOutput) -> UIViewController{
+        let viewController = OptionVC();
+        viewController.presenter = OptionPresenter(view: viewController, output: output)
+        return viewController
+    }
 }
 

@@ -20,8 +20,8 @@ class LoginVC: UIViewController {
     }
 
     func setUp(){
-        setTitleNavigation(title: Title.loginTitle);
-        btnLogin.setNextStyle()
+        setTitleNavigation(title: Title.SIGN_TITLE);
+        btnLogin.setNextStyle();
         let tap = UITapGestureRecognizer(target: self,
                                          action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
@@ -32,11 +32,11 @@ class LoginVC: UIViewController {
 extension LoginVC: LoginView{
     
     func showEmail(_ email: String){
-        tfEmail.text = email
+        tfEmail.text = email;
     }
     
     func showPassword(_ password: String){
-        tfPassword.text = password
+        tfPassword.text = password;
     }
     
     func showLoading(isShow: Bool) {
@@ -60,10 +60,10 @@ extension LoginVC: UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
         
         if textField === tfEmail{
-            presenter?.inputEmail(email: self.tfEmail.text ?? "")
+            presenter?.inputEmail(email: self.tfEmail.text ?? "");
             
         } else if textField === tfPassword{
-            presenter?.inputPassword(password: tfPassword.text ?? "")
+            presenter?.inputPassword(password: tfPassword.text ?? "");
             self.view.endEditing(true)
         }
     }
@@ -71,10 +71,10 @@ extension LoginVC: UITextFieldDelegate{
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField === tfEmail{
-            tfPassword.becomeFirstResponder()
+            tfPassword.becomeFirstResponder();
             
         } else {
-            tfPassword.resignFirstResponder()
+            tfPassword.resignFirstResponder();
         }
         
         return true;
@@ -93,9 +93,8 @@ extension LoginVC{
     }
     
     @IBAction func tapButtonRegister(_ sender: Any){
-        
         let viewController = RegisterVC()
-        self.navigationController?.pushViewController(viewController, animated: true)
+        self.navigationController?.pushViewController(viewController, animated: true);
     }
 }
 
