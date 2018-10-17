@@ -37,7 +37,7 @@ class WelcomePresenter: WelcomePresenting{
     
     
     func tappedMore(){
-        
+        output.welcome(showMore: nil);
     }
     
 }

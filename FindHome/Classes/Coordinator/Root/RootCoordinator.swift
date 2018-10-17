@@ -55,6 +55,11 @@ class RootCoordinator{
         let viewController = factory.historyViewController(output: self);
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func showMoreViewController(){
+        let viewController = factory.moreViewController(output: self);
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
 
 //MARK: - WelcomeOutput
@@ -114,6 +119,10 @@ extension RootCoordinator: LoginOutput{
 }
 //MARK: - RegisterOutput
 extension RootCoordinator: RegisterOutput{
+    
+}
+
+extension RootCoordinator: OptionOutput{
     
 }
 

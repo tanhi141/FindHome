@@ -12,8 +12,8 @@ class AllPostVC: UIViewController {
     @IBOutlet weak var btnPriceSearch: UIButton!
     
     @IBOutlet weak var tbPost: UITableView!
-    var postList : [DetailPost]? = []
-    var listDisplay: [DetailPost]? = []
+    var postList : [DetailPost]? = [];
+    var postListDisplay: [DetailPost]? = [];
     
     override func viewDidLoad() {
         
@@ -37,13 +37,14 @@ class AllPostVC: UIViewController {
         updateView(postList ?? [])
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
+        self.view.addGestureRecognizer(tap);
     }
 
 }
 //MARK: AllPostView
 extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let listDisplay = listDisplay else {
+        guard let listDisplay = postListDisplay else {
             return 1
         }
         return listDisplay.count;
@@ -57,21 +58,22 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
         
         cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell;
         
-        if listDisplay?.count == 0 {
+        if postListDisplay?.count == 0 {
  
             return cell!;
         }
            
-        guard let listDisplay = listDisplay else{
+        guard let listDisplay = postListDisplay else{
             return cell!;
         }
-        presenter?.viewOnReady()
+        
+//        presenter?.viewOnReady()
         let infoPost = listDisplay[indexPath.row]
         
         cell?.lblTitle?.text = infoPost.title;
         cell?.lblArea?.text = "Diện tích: \(infoPost.address?.city ?? "") m2";
         cell?.lblType?.text = "Loại: \(infoPost.type?.rawValue ?? "")";
-        cell?.lblPrice?.text = "Gía:\(infoPost.price ?? "")";
+        cell?.lblPrice?.text = "Gía:\(formatPrice(price: infoPost.price ?? 0))";
         cell?.avatarImage?.image = infoPost.image?.first ?? #imageLiteral(resourceName: "homeDemo")
         
         
@@ -83,7 +85,7 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let listDisplay = listDisplay else {
+        guard let listDisplay = postListDisplay else {
             return
         }
         
@@ -104,7 +106,8 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func updateView(_ list: [DetailPost]) {
-        self.listDisplay = list
+        self.postListDisplay = list
+        self.postList = list
         self.tbPost.reloadData()
     }
     
@@ -115,10 +118,6 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
  
  //MARK: AllPostVC
  extension AllPostVC{
-    
-    func formatPrice(_ price: String){
-        print(price.count);
-    }
     
     @objc func dismissKeyboardWithTapGesture(_ tap: UIGestureRecognizer?) {
         self.view?.endEditing(true);
@@ -136,10 +135,49 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
         self.view?.endEditing(true);
         return true;
     }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        presenter?.inputSearchKeyword(tfSearch.text ?? "")
+        return true
+    }
+    
  }
  
- 
- 
+ extension AllPostVC{
+    
+    func formatPrice(price: Int) -> String{
+        var priceString = price.description;
+        var index = priceString.count - 3;
+        
+        while index > 0 {
+            priceString.insert(" ", at: priceString.index(priceString.startIndex, offsetBy: index));
+            index = index - 3;
+        }
+        
+        return priceString;
+    }
+    
+    func applySeaching(_ keyword: String?){
+        
+        guard let keyword = keyword,
+            keyword.isEmpty == false else {
+                postListDisplay = postList;
+                self.postListDisplay = self.postList;
+                return;
+        }
+        
+        postListDisplay = postList?.filter {
+            ($0.title?.localizedCaseInsensitiveContains(keyword))!
+                || ($0.address?.city?.localizedCaseInsensitiveContains(keyword))!
+                || ($0.type?.rawValue.localizedCaseInsensitiveContains(keyword))!
+            
+            
+        };
+//        view?.updateView(postListDisplay ?? [])
+        tbPost.reloadData()
+    }
+    
+ }
  
  
  

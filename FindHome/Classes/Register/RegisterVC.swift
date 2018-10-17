@@ -19,14 +19,14 @@ class RegisterVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setUp();
+        initUI();
         presenter?.viewOnReady()
     }
 
-    func setUp(){
+    func initUI(){
         self.navigationItem.title = "Đăng kí";
-        btnRegister.setNextStyle()
-        
+       btnRegister.enable(isEnable: false)
+        self.indicatorView.isHidden = true;
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
     }
@@ -67,13 +67,22 @@ extension RegisterVC: UITextFieldDelegate{
         return true
     }
     
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        
+        if let email = tfEmail.text, email != "",
+            let phone = tfPhoneNumber.text, phone != "",
+            let name = tfFullName.text,name != "",
+            let pass = tfPassword.text, pass != "",
+            let confirmPass = tfConfirmPassword.text, confirmPass != "" {
+            btnRegister.enable(isEnable: true)
+        } else {
+            btnRegister.enable(isEnable: false)
+        }
+        return true;
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-//        if textField === tfFullName{
-//            textField.text = ((textField.text! ?? "") + string).uppercased()
-//            textField.text?.removeLast()
-//        }
-//
         return true;
     }
 }
@@ -82,15 +91,9 @@ extension RegisterVC: UITextFieldDelegate{
 //MARK: -  Action
 extension RegisterVC{
     @IBAction func tapButtonRegister(_ sender: Any){
-        self.view?.endEditing(true)
-        guard !(tfPhoneNumber.text?.isEmpty)!,
-            !(tfFullName.text?.isEmpty)!,
-            !(tfPassword.text?.isEmpty)!,
-            !(tfConfirmPassword.text?.isEmpty)!,
-            !(tfEmail.text?.isEmpty)! else {
-            showErrorInvalid()
-            return
-        }
+        self.view?.endEditing(true);
+        
+        
         presenter?.tappedRegister()
     }
 }
@@ -122,13 +125,11 @@ extension RegisterVC: RegisterView{
 //        navigationController?.pushViewController(detailVC, animated: true)
     }
     
-    func showIndicatorView(_ show: Bool){
-        if show == false{
-            self.indicatorView.stopAnimating()
-            self.indicatorView.isHidden = true;
-        } else {
-            self.indicatorView.isHidden = false;
-            self.indicatorView.startAnimating()
+    func showLoading(_ show: Bool){
+        if show{
+            self.indicatorView.show();
+        } else{
+            self.indicatorView.hide();
         }
     }
     

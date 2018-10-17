@@ -43,6 +43,10 @@ extension DetailVC: UIScrollViewDelegate{
     
 }
 extension DetailVC: DetailView{
+    func showPrice(_ price: Int) {
+        
+    }
+    
     func showTitle(_ title: String) {
         self.lblTitle.text = title
     }

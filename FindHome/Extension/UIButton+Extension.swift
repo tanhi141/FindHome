@@ -36,10 +36,14 @@ extension UIButton {
     
     func enable(isEnable: Bool){
         if isEnable{
+            setNextStyle()
+            isEnabled = false;
+        } else {
+            
+            setNextStyle()
             titleColor = Colors.grayColor;
             setBorder(color: Colors.grayColor , lineWidth: 2);
-        } else {
-            setNextStyle()
+            isEnabled = true;
         }
     }
     
@@ -49,7 +53,10 @@ extension UIButton {
         backgroundColor = UIColor.clear
         setBorder(color: Colors.masterColor , lineWidth: 2);
         layer.cornerRadius = 18;
-        setShadow(shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 2), shadowRadius: 5, shadowColor: UIColor.lightGray);
+        setShadow(shadowOpacity: 1,
+                  shadowOffset: CGSize(width: 0, height: 2),
+                  shadowRadius: 5,
+                  shadowColor: UIColor.lightGray);
     }
     
     func setLoginStyle() {
@@ -58,6 +65,9 @@ extension UIButton {
         backgroundColor = UIColor.clear
         setBorder(color: .white , lineWidth: 2);
         layer.cornerRadius = 18;
-        setShadow(shadowOpacity: 1, shadowOffset: CGSize(width: 0, height: 2), shadowRadius: 5, shadowColor: UIColor.lightGray);
+        setShadow(shadowOpacity: 1,
+                  shadowOffset: CGSize(width: 0, height: 2),
+                  shadowRadius: 5,
+                  shadowColor: UIColor.lightGray);
     }
 }

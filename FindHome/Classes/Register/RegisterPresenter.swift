@@ -24,7 +24,7 @@ class RegisterPresenter: RegisterPresenting{
     }
     
     func viewOnReady() {
-        view?.showIndicatorView(false)
+//        view?.showLoading(false)
     }
     func inputPhoneNumber(_ phoneNumber: String) {
         self.phoneNumber = phoneNumber
@@ -51,7 +51,7 @@ class RegisterPresenter: RegisterPresenting{
             view?.showErrorConfirmPassword();
             return;
         }
-        view?.showIndicatorView(true)
+        self.view?.showLoading(true)
         
         
         Auth.auth().createUser(withEmail: self.email!, password: self.password) { (user, error) in
@@ -68,7 +68,7 @@ class RegisterPresenter: RegisterPresenting{
                                   "fullName": self.fullName,
                                   "phoneNumber": self.phoneNumber]);
                 
-                self.view?.showIndicatorView(false)
+                self.view?.showLoading(false)
                 self.view?.showSuccess();
                 User.shared.idUser = idUser?.key ?? "";
                 User.shared.email = self.email;
@@ -76,7 +76,7 @@ class RegisterPresenter: RegisterPresenting{
                 User.shared.phonenNumber = self.phoneNumber;
             } else {
                 self.view?.showErrorForrmatEmail()
-                self.view?.showIndicatorView(false)
+                self.view?.showLoading(false)
 
             }
         }

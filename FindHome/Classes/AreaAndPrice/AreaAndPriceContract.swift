@@ -6,7 +6,7 @@ protocol AreaAndPriceView:class {
     func updateTableView(currentType: Type?);
 
     func showArea(_ area: String)
-    func showPrice(_ price: String)
+    func showPrice(_ price: Int)
     
     func showWarning()
     
@@ -21,7 +21,7 @@ protocol AreaAndPricePresenting:class {
     
     func tappedButtonNext();
     func inputArea(_ area: String)
-    func inputPrice(_ price: String)
+    func inputPrice(_ price: Int)
 
 }
 

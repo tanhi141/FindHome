@@ -26,7 +26,7 @@ class DetailPresenter: DetailPresenting{
         view?.showTitle(currentPost?.title ?? "");
         view?.showAddress(currentPost?.address ?? Address());
         view?.showArea(currentPost?.area ?? "");
-        view?.showPrice(currentPost?.price ?? "");
+        view?.showPrice(currentPost?.price ?? 0);
         view?.showType(currentPost?.type ?? .Unknow);
         view?.showPhoneNumber(currentPost?.phoneNumber ?? "");
         view?.showMore(currentPost?.more ?? "");

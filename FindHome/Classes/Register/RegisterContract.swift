@@ -23,7 +23,7 @@ protocol RegisterView: class {
     func showErrorConfirmPassword()
     func showErrorForrmatEmail()
     func showDetail();
-    func showIndicatorView(_ show: Bool);
+    func showLoading(_ show: Bool);
     func showSuccess()
     func showLogin()
 }

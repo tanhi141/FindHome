@@ -41,7 +41,7 @@ extension AreaAndPriceVC: UITextFieldDelegate{
         if textField === tfArea{
             presenter?.inputArea(tfArea.text ?? "")
         } else if textField === tfPrice{
-            presenter?.inputPrice(tfPrice.text ?? "")
+//            presenter?.inputPrice(tfPrice?.text ?? "")
         }
     }
     
@@ -56,8 +56,8 @@ extension AreaAndPriceVC: AreaAndPriceView{
         tfArea.text = area
     }
     
-    func showPrice(_ price: String) {
-        tfPrice.text = price
+    func showPrice(_ price: Int) {
+        tfPrice.text = price.description
     }
     
     func showWarning(){

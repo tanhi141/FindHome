@@ -7,7 +7,7 @@ class DetailPost {
     var type: Type?
     var address: Address?
     var area: String?
-    var price: String?
+    var price: Int?
     var idUser: String?
     var more: String?
     var title: String?
@@ -18,7 +18,7 @@ class DetailPost {
         self.type = Type.Unknow;
         self.address = Address()
         self.area = ""
-        self.price = ""
+        self.price = 0;
         self.more = ""
         self.title = ""
         self.image = []
