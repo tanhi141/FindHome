@@ -14,7 +14,7 @@ struct Messages {
         static let ERROR_INVALID_EMAIL = "Địa chỉ email chưa đúng."; //Code = 17008
         static let ERROR_USER_NOT_FOUND = "Địa chỉ email không tồn tại. " //Code = 17011
         static let ERROR_WRONG_PASSWORD =  "Mật khẩu chưa đúng."; // Code = 17009
-        static let ERROE_REQUIRED =  "Vui lòng điền đầy đủ thông tin.";
+        static let ERROR_REQUIRED =  "Vui lòng điền đầy đủ thông tin.";
         static let ERROR_CONNECT =  "Vui lòng kiểm tra lại kết nối.";
 
     }

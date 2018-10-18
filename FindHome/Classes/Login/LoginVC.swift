@@ -20,7 +20,7 @@ class LoginVC: UIViewController {
     }
 
     func setUp(){
-        setTitleNavigation(title: Title.SIGN_TITLE);
+        setTitleNavigation(title: Title.SIGN_TITLE); 
         btnLogin.setNextStyle();
         let tap = UITapGestureRecognizer(target: self,
                                          action: #selector(dismissKeyboardWithTapGesture(_:)));

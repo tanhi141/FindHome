@@ -54,7 +54,7 @@ extension LoginPresenter{
         
         guard self.email?.isEmpty == false,
             self.password?.isEmpty == false else {
-            view?.showError(message: Messages.Login.ERROE_REQUIRED)
+            view?.showError(message: Messages.Login.ERROR_REQUIRED) //2.a.1
             return false
         }
         
@@ -63,7 +63,7 @@ extension LoginPresenter{
     
     func login(){
         
-        guard  NetworkReachabilityManager()?.isReachable == true else {
+        guard  NetworkReachabilityManager()?.isReachable == true else {  //2.a.5
             view?.showError(message: Messages.Login.ERROR_CONNECT);
             return;
         }
@@ -89,13 +89,13 @@ extension LoginPresenter{
                     
                     switch errCode {
                         
-                    case .wrongPassword:
+                    case .wrongPassword: //2.a.4
                         strongSelf.view?.showError(message: Messages.Login.ERROR_WRONG_PASSWORD);
                         
-                    case .invalidEmail:
+                    case .invalidEmail: //2.a.2
                         strongSelf.view?.showError(message: Messages.Login.ERROR_INVALID_EMAIL);
                         
-                    case .userNotFound:
+                    case .userNotFound: //2.a.3
                         strongSelf.view?.showError(message: Messages.Login.ERROR_USER_NOT_FOUND);
                     
                     default:
