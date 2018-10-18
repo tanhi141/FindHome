@@ -2,6 +2,8 @@
 
 import Foundation
 import Alamofire
+import FirebaseAuth
+
 class LoginPresenter: LoginPresenting{
     
     private weak var view: LoginView?;
@@ -71,6 +73,7 @@ extension LoginPresenter{
         let account = UserAccount(email: self.email, password: self.password);
         
         FBAccountManager.shared.login(account: account) { [weak self](error) in
+            
             guard let strongSelf = self else{
                 return
             }
@@ -82,14 +85,32 @@ extension LoginPresenter{
                 return;
                 
             } else {
-                print(error!.localizedDescription);
-                strongSelf.view?.showError(message: Messages.Login.ERROR_VALIDATE);
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
+                    
+                    switch errCode {
+                        
+                    case .wrongPassword:
+                        strongSelf.view?.showError(message: Messages.Login.ERROR_WRONG_PASSWORD);
+                        
+                    case .invalidEmail:
+                        strongSelf.view?.showError(message: Messages.Login.ERROR_INVALID_EMAIL);
+                        
+                    case .userNotFound:
+                        strongSelf.view?.showError(message: Messages.Login.ERROR_USER_NOT_FOUND);
+                    
+                    default:
+                        break;
+                        
+                    }
+                    
+                }
+                
                 strongSelf.view?.showLoading(isShow: false);
-                return;
             }
         }
     }
     
     func getData(){
+        
     }
 }

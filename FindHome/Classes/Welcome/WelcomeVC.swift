@@ -8,8 +8,7 @@
 
 import UIKit
 
-class WelcomeVC: UIViewController {
-        
+class WelcomeVC: BaseVC {
     @IBOutlet weak var tbvFunction: UITableView!
     @IBOutlet weak var imvBackground: UIImageView!
     

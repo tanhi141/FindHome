@@ -73,13 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FindHome/Classes/All Post/AllPostVC.swift"
-            timestampString = "561493372.181619"
+            filePath = "FindHome/Classes/Login/LoginPresenter.swift"
+            timestampString = "561577222.9867949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "textFieldShouldEndEditing(_:)"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "login()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

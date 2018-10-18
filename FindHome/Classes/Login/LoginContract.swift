@@ -2,10 +2,6 @@
 import Foundation
 
 protocol LoginOutput: class {
-//    func loginOutput(_ showPhoneNumberViewController: Any?);
-//    func showHomeViewController();
-//    func showRegisterViewController();
-//
     func showPhoneNumberViewController();
     func showHomeViewController();
     func showRegisterViewController();
