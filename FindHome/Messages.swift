@@ -18,6 +18,12 @@ struct Messages {
         static let ERROR_CONNECT =  "Vui lòng kiểm tra lại kết nối.";
 
     }
+    
+    struct Option {
+        static let ERROR_SIGNOUT_FAILED = "Đăng xuất thất bại!";
+    }
+    
+    
 }
 
 struct Title{
@@ -30,6 +36,16 @@ struct Title{
     static let MORE_TITLE = "Khác";
 //    static let backTitle = "Quay lại";
     
+    struct Option {
+        static let ACCOUNT_BUTTON = "Tài khoản";
+        static let EDIT_INFO_BUTTON = "Chỉnh sửa thông tin";
+        static let EDIT_PASSWORD_BUTTON = "Đổi mật khẩu";
+        static let SUPPORT_BUTTON = "Hỗ trợ";
+        static let SETTING_BUTTON = "Cài đặt";
+        static let SIGNOUT_BUTTON = "Đăng xuất";
+        static let SIGNUP_BUTTON = "Đăng xuất";
+    }
+    
 }
 
 struct Keys{
@@ -38,3 +54,4 @@ struct Keys{
         static let PASSWORD = "password";
     }
 }
+

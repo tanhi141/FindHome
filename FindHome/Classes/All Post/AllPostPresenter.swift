@@ -35,7 +35,6 @@ class AllPostPresenter: AllPostPresenting{
     }
     
     func inputSearchKeyword(_ key: String){
-        applySeaching(key)
     }
 }
 

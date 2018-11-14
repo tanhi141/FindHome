@@ -96,11 +96,7 @@ extension LoginVC{
         let viewController = RegisterVC()
         self.navigationController?.pushViewController(viewController, animated: true);
     }
-}
 
-
-//MARK: - Other
-extension LoginVC{
     @objc func dismissKeyboardWithTapGesture(_ tap: UIGestureRecognizer?) {
         self.view?.endEditing(true);
     }

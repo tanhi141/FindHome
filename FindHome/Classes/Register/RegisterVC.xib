@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,6 +42,7 @@
                                     <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                     <connections>
+                                        <action selector="onChangedEditing:" destination="-1" eventType="editingChanged" id="Rqa-Yg-26f"/>
                                         <outlet property="delegate" destination="-1" id="ub0-xu-mix"/>
                                     </connections>
                                 </textField>
@@ -66,6 +67,7 @@
                                     <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                     <connections>
+                                        <action selector="onChangedEditing:" destination="-1" eventType="editingChanged" id="hf2-KB-gC5"/>
                                         <outlet property="delegate" destination="-1" id="Ftb-dV-zN4"/>
                                     </connections>
                                 </textField>
@@ -85,6 +87,7 @@
                                     <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     <connections>
+                                        <action selector="onChangedEditing:" destination="-1" eventType="editingChanged" id="3ft-mc-22i"/>
                                         <outlet property="delegate" destination="-1" id="QGX-Cd-zeS"/>
                                     </connections>
                                 </textField>
@@ -104,6 +107,7 @@
                                     <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                     <connections>
+                                        <action selector="onChangedEditing:" destination="-1" eventType="editingChanged" id="7Jo-Tq-LoX"/>
                                         <outlet property="delegate" destination="-1" id="yFf-VR-2vc"/>
                                     </connections>
                                 </textField>
@@ -123,6 +127,7 @@
                                     <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     <connections>
+                                        <action selector="onChangedEditing:" destination="-1" eventType="editingChanged" id="wHz-ZS-P68"/>
                                         <outlet property="delegate" destination="-1" id="IDw-1U-RM6"/>
                                     </connections>
                                 </textField>
@@ -145,7 +150,7 @@
                                     </connections>
                                 </button>
                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ch4-a0-rXm">
-                                    <rect key="frame" x="167" y="303.5" width="40" height="40"/>
+                                    <rect key="frame" x="167.5" y="303.5" width="40" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="acl-Zn-ksP"/>
                                         <constraint firstAttribute="width" constant="40" id="cSe-rE-sS4"/>

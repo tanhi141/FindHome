@@ -1,78 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="KGk-i7-Jjw" customClass="PostCell" customModule="FindHome" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="PostCell" customModule="FindHome" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="438" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="438" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeDemo" translatesAutoresizingMaskIntoConstraints="NO" id="4vW-HE-gxo">
-                        <rect key="frame" x="15" y="10" width="90" height="79.5"/>
+                        <rect key="frame" x="10" y="15" width="106.5" height="89.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="90" id="PKF-Jp-Rhc"/>
-                            <constraint firstAttribute="width" secondItem="4vW-HE-gxo" secondAttribute="height" multiplier="17:15" id="ZUE-NR-CHE"/>
-                            <constraint firstAttribute="height" constant="79.5" id="ghz-tk-JI5"/>
+                            <constraint firstAttribute="width" secondItem="4vW-HE-gxo" secondAttribute="height" multiplier="19:16" id="pEf-Zz-ahc"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhà nguyên căn trong khu dân cư, gần chợ" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4D-1s-sId">
-                        <rect key="frame" x="115" y="10" width="190" height="40"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhà nguyên căn trong khu dân cư, gần chợ" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4D-1s-sId">
+                        <rect key="frame" x="128.5" y="10" width="219" height="36"/>
                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quận 9 - TP.Hồ Chí Minh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aC-w1-ndH">
-                        <rect key="frame" x="114.5" y="55.5" width="190.5" height="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.9 km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PZ-Lg-noz">
+                        <rect key="frame" x="121.5" y="21" width="291.5" height="14"/>
                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
-                        <color key="textColor" white="0.33048502604166669" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá: 3 Triệu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A0-8O-NRO">
-                        <rect key="frame" x="232" y="72.5" width="73" height="17"/>
-                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
-                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhà nguyên căn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFN-r6-orh">
-                        <rect key="frame" x="114.5" y="72.5" width="85" height="17"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5y2-aD-ocp">
+                        <rect key="frame" x="116.5" y="46" width="321.5" height="63.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quận 9 - TP.Hồ Chí Minh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aC-w1-ndH">
+                                <rect key="frame" x="12" y="7.5" width="129" height="14"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
+                                <color key="textColor" white="0.33048502604166669" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Diện tích: 20m2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgg-hF-0lU">
+                                <rect key="frame" x="12" y="28.5" width="85.5" height="14"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhà nguyên căn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFN-r6-orh">
+                                <rect key="frame" x="12" y="49.5" width="85" height="14"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
+                                <color key="textColor" white="0.33048502604166669" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Giá: 3 000 000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0A0-8O-NRO">
+                                <rect key="frame" x="206" y="48.5" width="90.5" height="16.5"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <constraints>
-                            <constraint firstAttribute="height" constant="17" id="Khk-Pg-jih"/>
+                            <constraint firstItem="SFN-r6-orh" firstAttribute="top" secondItem="pgg-hF-0lU" secondAttribute="bottom" constant="7" id="CjW-D1-LDB"/>
+                            <constraint firstItem="0A0-8O-NRO" firstAttribute="centerY" secondItem="SFN-r6-orh" secondAttribute="centerY" id="VGz-Cb-KcB"/>
+                            <constraint firstAttribute="bottom" secondItem="SFN-r6-orh" secondAttribute="bottom" id="Xc7-y7-4SJ"/>
+                            <constraint firstItem="pgg-hF-0lU" firstAttribute="top" secondItem="9aC-w1-ndH" secondAttribute="bottom" constant="7" id="jPC-8n-zwp"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
-                        <color key="textColor" white="0.33048502604166669" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="9aC-w1-ndH" firstAttribute="trailing" secondItem="D4D-1s-sId" secondAttribute="trailing" id="JJF-7x-7gY"/>
-                    <constraint firstItem="SFN-r6-orh" firstAttribute="bottom" secondItem="4vW-HE-gxo" secondAttribute="bottom" id="KFU-fn-mjX"/>
-                    <constraint firstAttribute="bottom" secondItem="4vW-HE-gxo" secondAttribute="bottom" constant="10" id="KME-Rn-1NC"/>
-                    <constraint firstItem="SFN-r6-orh" firstAttribute="leading" secondItem="9aC-w1-ndH" secondAttribute="leading" id="NGV-Gr-2sy"/>
-                    <constraint firstItem="SFN-r6-orh" firstAttribute="top" secondItem="9aC-w1-ndH" secondAttribute="bottom" id="PIn-wZ-wn8"/>
-                    <constraint firstItem="9aC-w1-ndH" firstAttribute="height" secondItem="SFN-r6-orh" secondAttribute="height" id="TNs-4p-puo"/>
-                    <constraint firstItem="0A0-8O-NRO" firstAttribute="centerY" secondItem="SFN-r6-orh" secondAttribute="centerY" id="V22-R5-3Xv"/>
-                    <constraint firstItem="9aC-w1-ndH" firstAttribute="leading" secondItem="D4D-1s-sId" secondAttribute="leading" id="i9f-Kn-zWp"/>
-                    <constraint firstItem="D4D-1s-sId" firstAttribute="leading" secondItem="4vW-HE-gxo" secondAttribute="trailing" constant="10" id="kFv-KL-nGN"/>
-                    <constraint firstItem="0A0-8O-NRO" firstAttribute="height" secondItem="SFN-r6-orh" secondAttribute="height" id="mLh-HD-Zlw"/>
-                    <constraint firstAttribute="trailing" secondItem="D4D-1s-sId" secondAttribute="trailing" constant="15" id="mx3-Ip-cGM"/>
-                    <constraint firstItem="9aC-w1-ndH" firstAttribute="top" secondItem="D4D-1s-sId" secondAttribute="bottom" constant="5" id="s4B-7e-kcf"/>
-                    <constraint firstAttribute="trailing" secondItem="0A0-8O-NRO" secondAttribute="trailing" constant="15" id="x33-6M-u9h"/>
-                    <constraint firstItem="4vW-HE-gxo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="xo6-BF-Uu5"/>
-                    <constraint firstItem="4vW-HE-gxo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="y8T-Au-3vg"/>
-                    <constraint firstItem="D4D-1s-sId" firstAttribute="top" secondItem="4vW-HE-gxo" secondAttribute="top" id="yDp-p2-wko"/>
+                    <constraint firstItem="9aC-w1-ndH" firstAttribute="leading" secondItem="D4D-1s-sId" secondAttribute="leading" id="5m2-7N-Bn1"/>
+                    <constraint firstItem="D4D-1s-sId" firstAttribute="top" secondItem="4vW-HE-gxo" secondAttribute="top" constant="-5" id="957-Ny-ntR"/>
+                    <constraint firstItem="5y2-aD-ocp" firstAttribute="bottom" secondItem="4vW-HE-gxo" secondAttribute="bottom" constant="5" id="COJ-GL-wRP"/>
+                    <constraint firstItem="4vW-HE-gxo" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="I3N-qa-xxq"/>
+                    <constraint firstItem="D4D-1s-sId" firstAttribute="leading" secondItem="4vW-HE-gxo" secondAttribute="trailing" constant="12" id="JQ3-0w-X6l"/>
+                    <constraint firstAttribute="trailing" secondItem="5y2-aD-ocp" secondAttribute="trailing" id="Ksc-2F-lsC"/>
+                    <constraint firstItem="5y2-aD-ocp" firstAttribute="top" secondItem="D4D-1s-sId" secondAttribute="bottom" id="LcM-0p-gdB"/>
+                    <constraint firstItem="5y2-aD-ocp" firstAttribute="leading" secondItem="4vW-HE-gxo" secondAttribute="trailing" id="P1q-6u-e7D"/>
+                    <constraint firstItem="4vW-HE-gxo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="TxX-y3-DEZ"/>
+                    <constraint firstItem="0A0-8O-NRO" firstAttribute="trailing" secondItem="9PZ-Lg-noz" secondAttribute="trailing" id="USK-fI-9Jm"/>
+                    <constraint firstItem="9PZ-Lg-noz" firstAttribute="centerY" secondItem="D4D-1s-sId" secondAttribute="centerY" id="ZHJ-64-U4G"/>
+                    <constraint firstAttribute="bottom" secondItem="4vW-HE-gxo" secondAttribute="bottom" constant="15" id="kjF-6Y-bHE"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="9PZ-Lg-noz" secondAttribute="trailing" constant="5" id="lQk-Xb-BWG"/>
+                    <constraint firstItem="D4D-1s-sId" firstAttribute="height" secondItem="4vW-HE-gxo" secondAttribute="height" multiplier="0.4" id="sdi-ut-cOh"/>
+                    <constraint firstItem="D4D-1s-sId" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="t7V-pe-Jht"/>
+                    <constraint firstItem="9PZ-Lg-noz" firstAttribute="leading" secondItem="4vW-HE-gxo" secondAttribute="trailing" constant="5" id="v4L-65-0Ur"/>
+                    <constraint firstItem="SFN-r6-orh" firstAttribute="leading" secondItem="D4D-1s-sId" secondAttribute="leading" id="wbq-rT-gnt"/>
+                    <constraint firstItem="pgg-hF-0lU" firstAttribute="leading" secondItem="D4D-1s-sId" secondAttribute="leading" id="zuQ-5I-Qyz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -83,7 +102,7 @@
                 <outlet property="lblTitle" destination="D4D-1s-sId" id="Ryg-YN-ihw"/>
                 <outlet property="lblType" destination="SFN-r6-orh" id="4Xa-et-9kT"/>
             </connections>
-            <point key="canvasLocation" x="42" y="104.5"/>
+            <point key="canvasLocation" x="136" y="113.3433283358321"/>
         </tableViewCell>
     </objects>
     <resources>

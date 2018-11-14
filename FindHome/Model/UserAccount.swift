@@ -13,7 +13,5 @@ class UserAccount{
 }
 
 extension UserAccount{
-    
     static var shared = UserAccount(email: "", password: "");
-
 }

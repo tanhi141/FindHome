@@ -24,7 +24,7 @@ class RegisterPresenter: RegisterPresenting{
     }
     
     func viewOnReady() {
-//        view?.showLoading(false)
+        view?.showLoading(false)
     }
     func inputPhoneNumber(_ phoneNumber: String) {
         self.phoneNumber = phoneNumber
@@ -48,40 +48,13 @@ class RegisterPresenter: RegisterPresenting{
     
     func tappedRegister(){
         guard password == confirmPassword else {
-            view?.showErrorConfirmPassword();
+                //not confirm
             return;
         }
         self.view?.showLoading(true)
         
         
-        Auth.auth().createUser(withEmail: self.email!, password: self.password) { (user, error) in
-            
-            if error == nil {
-                
-                
-                var ref: DatabaseReference?
-                ref = Database.database().reference()
-                    
-                let idUser = ref?.child("User").childByAutoId()
-                idUser?.setValue(["idUser": idUser?.key ?? "",
-                                  "email" : self.email,
-                                  "fullName": self.fullName,
-                                  "phoneNumber": self.phoneNumber]);
-                
-                self.view?.showLoading(false)
-                self.view?.showSuccess();
-                User.shared.idUser = idUser?.key ?? "";
-                User.shared.email = self.email;
-                User.shared.fullName = self.fullName;
-                User.shared.phonenNumber = self.phoneNumber;
-            } else {
-                self.view?.showErrorForrmatEmail()
-                self.view?.showLoading(false)
-
-            }
-        }
-        
-        
+        //login
     }
 }
 

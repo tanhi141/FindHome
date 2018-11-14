@@ -7,10 +7,11 @@ class OptionVC: UIViewController {
     
     @IBOutlet weak var tbOption: UITableView!
     
+    let IDENTIFIRE_CELL = "OptionCell";
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tbOption.register(UINib(nibName: "OptionCell", bundle: nil), forCellReuseIdentifier: "OptionCell");
+        tbOption.register(UINib(nibName: IDENTIFIRE_CELL, bundle: nil), forCellReuseIdentifier: IDENTIFIRE_CELL);
 
     }
 
@@ -20,7 +21,7 @@ class OptionVC: UIViewController {
 extension OptionVC: OptionView{
     
     func showSignOutFail() {
-        Alert.showInfo(message: "Đăng xuất thất bại!", on: self, callback: nil)
+        Alert.showInfo(message: Messages.Option.ERROR_SIGNOUT_FAILED, on: self, callback: nil)
     }
     
     func showHome(){
@@ -40,12 +41,12 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: OptionCell? = nil;
-        cell = tbOption.dequeueReusableCell(withIdentifier: "OptionCell", for: indexPath) as! OptionCell;
+        cell = tbOption.dequeueReusableCell(withIdentifier: IDENTIFIRE_CELL, for: indexPath) as? OptionCell;
         
         switch indexPath.row {
         case 0:
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_user")
-            cell?.lblOption.text = "Tài khoản";
+            cell?.lblOption.text = Title.Option.ACCOUNT_BUTTON;
             if Check.shared.isLogin == false{
                 cell?.selectionStyle = .none
                 cell?.lblOption.textColor = .gray
@@ -54,35 +55,35 @@ extension OptionVC: UITableViewDelegate, UITableViewDataSource{
         
         case 1:
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_edit-1")
-            cell?.lblOption.text = "Chỉnh sửa thông tin";
+            cell?.lblOption.text = Title.Option.EDIT_INFO_BUTTON;
             break;
         
         case 2:
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_editPass")
-            cell?.lblOption.text = "Đổi mật khẩu";
+            cell?.lblOption.text = Title.Option.EDIT_PASSWORD_BUTTON;
             break;
             
         case 3:
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_register")
-            cell?.lblOption.text = "Đăng ký tài khoản";
+            cell?.lblOption.text = Title.Option.SIGNUP_BUTTON;
             
             break;
         case 4:
             
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_help")
-            cell?.lblOption.text = "Hỗ trợ";
+            cell?.lblOption.text = Title.Option.SUPPORT_BUTTON
             break;
         
         case 5:
             
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_setting")
-            cell?.lblOption.text = "Cài đặt";
+            cell?.lblOption.text = Title.Option.SETTING_BUTTON
             break;
             
         case 6:
            
             cell?.iconImage.image = #imageLiteral(resourceName: "ic_logOut")
-            cell?.lblOption.text = "Đăng xuất";
+            cell?.lblOption.text = Title.Option.SIGNOUT_BUTTON;
             if Check.shared.isLogin == false{
                 cell?.selectionStyle = .none
                 cell?.lblOption.textColor = .gray

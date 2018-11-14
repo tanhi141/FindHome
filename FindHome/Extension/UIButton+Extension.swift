@@ -37,13 +37,13 @@ extension UIButton {
     func enable(isEnable: Bool){
         if isEnable{
             setNextStyle()
-            isEnabled = false;
+            isEnabled = true;
         } else {
             
             setNextStyle()
             titleColor = Colors.grayColor;
-            setBorder(color: Colors.grayColor , lineWidth: 2);
-            isEnabled = true;
+            setBorder(color: Colors.grayColor , lineWidth: 3);
+            isEnabled = false;
         }
     }
     
@@ -51,23 +51,16 @@ extension UIButton {
         titleColor = Colors.masterColor;
         titleLabel?.font = UIFont(name: "Trebuchet MN", size: 24);
         backgroundColor = UIColor.clear
-        setBorder(color: Colors.masterColor , lineWidth: 2);
+        setBorder(color: Colors.masterColor , lineWidth: 3);
         layer.cornerRadius = 18;
-        setShadow(shadowOpacity: 1,
-                  shadowOffset: CGSize(width: 0, height: 2),
-                  shadowRadius: 5,
-                  shadowColor: UIColor.lightGray);
+        
     }
     
     func setLoginStyle() {
         titleColor = .white
         titleLabel?.font = UIFont(name: "Trebuchet MN", size: 24);
         backgroundColor = UIColor.clear
-        setBorder(color: .white , lineWidth: 2);
+        setBorder(color: .white , lineWidth: 3);
         layer.cornerRadius = 18;
-        setShadow(shadowOpacity: 1,
-                  shadowOffset: CGSize(width: 0, height: 2),
-                  shadowRadius: 5,
-                  shadowColor: UIColor.lightGray);
     }
 }

@@ -19,11 +19,6 @@ protocol RegisterPresenting: class {
 }
 
 protocol RegisterView: class {
-    func showErrorInvalid();
-    func showErrorConfirmPassword()
-    func showErrorForrmatEmail()
-    func showDetail();
     func showLoading(_ show: Bool);
-    func showSuccess()
-    func showLogin()
+    func showMessage(_ message: String);
 }

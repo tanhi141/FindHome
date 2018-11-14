@@ -55,7 +55,7 @@
 		247721202100F21700B7452E /* PreviewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2477211F2100F21700B7452E /* PreviewContract.swift */; };
 		247721222100F22400B7452E /* PreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247721212100F22400B7452E /* PreviewPresenter.swift */; };
 		2477438B2178266800CCEDA7 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2477438A2178266800CCEDA7 /* BaseVC.swift */; };
-		2482B4612110CDED00A953C7 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482B4602110CDED00A953C7 /* Extension+String.swift */; };
+		2482B4612110CDED00A953C7 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2482B4602110CDED00A953C7 /* String+Extension.swift */; };
 		248794BE2110A9C500048003 /* OptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248794BC2110A9C500048003 /* OptionVC.swift */; };
 		248794BF2110A9C500048003 /* OptionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248794BD2110A9C500048003 /* OptionVC.xib */; };
 		248794C12110A9D200048003 /* OptionContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 248794C02110A9D200048003 /* OptionContract.swift */; };
@@ -181,7 +181,7 @@
 		2477211F2100F21700B7452E /* PreviewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContract.swift; sourceTree = "<group>"; };
 		247721212100F22400B7452E /* PreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPresenter.swift; sourceTree = "<group>"; };
 		2477438A2178266800CCEDA7 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
-		2482B4602110CDED00A953C7 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		2482B4602110CDED00A953C7 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		248794BC2110A9C500048003 /* OptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionVC.swift; sourceTree = "<group>"; };
 		248794BD2110A9C500048003 /* OptionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionVC.xib; sourceTree = "<group>"; };
 		248794C02110A9D200048003 /* OptionContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionContract.swift; sourceTree = "<group>"; };
@@ -390,7 +390,7 @@
 			children = (
 				243000E22115EABA00250134 /* UINavigationViewController+ Extension.swift */,
 				2471885F20F86A0A008B0EAD /* UIButton+Extension.swift */,
-				2482B4602110CDED00A953C7 /* Extension+String.swift */,
+				2482B4602110CDED00A953C7 /* String+Extension.swift */,
 				2443036221174868009803E6 /* FireBase.swift */,
 				2404C26C21666BB4008C60CC /* UIViewController+Extension.swift */,
 				2405B05B216CEB9100FB2E6D /* UIActivityIndicatorView+Extension.swift */,
@@ -980,7 +980,7 @@
 				2431D47920FFA84A0003A3EA /* AddressPresenter.swift in Sources */,
 				248B53AC20F9F48400B6421F /* UserAccount.swift in Sources */,
 				2469C98920FF18AD005E3C4F /* TypeCell.swift in Sources */,
-				2482B4612110CDED00A953C7 /* Extension+String.swift in Sources */,
+				2482B4612110CDED00A953C7 /* String+Extension.swift in Sources */,
 				248B53AF20FA09F500B6421F /* RegisterVC.swift in Sources */,
 				248B53AA20F9F0E600B6421F /* Alert.swift in Sources */,
 				24945CE72104A50E00A2F65C /* ImageContract.swift in Sources */,

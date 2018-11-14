@@ -49,12 +49,15 @@ class LoginPresenter: LoginPresenting{
 
 //MARK: - Other
 extension LoginPresenter{
-    
+//    (2) Xử lý đăng nhập
+//    2. Xử lý check
+//    a. Check hạng mục
     func checkRequied() -> Bool{
-        
+    
+        //2. Xử lý check 2.a.1
         guard self.email?.isEmpty == false,
             self.password?.isEmpty == false else {
-            view?.showError(message: Messages.Login.ERROR_REQUIRED) //2.a.1
+            view?.showError(message: Messages.Login.ERROR_REQUIRED)
             return false
         }
         
@@ -63,7 +66,8 @@ extension LoginPresenter{
     
     func login(){
         
-        guard  NetworkReachabilityManager()?.isReachable == true else {  //2.a.5
+        //2. Xử lý check 2.a.5
+        guard  NetworkReachabilityManager()?.isReachable == true else {
             view?.showError(message: Messages.Login.ERROR_CONNECT);
             return;
         }
@@ -88,14 +92,17 @@ extension LoginPresenter{
                 if let errCode = AuthErrorCode(rawValue: error!._code) {
                     
                     switch errCode {
-                        
-                    case .wrongPassword: //2.a.4
+                    
+                    //2. Xử lý check 2.a.4
+                    case .wrongPassword:
                         strongSelf.view?.showError(message: Messages.Login.ERROR_WRONG_PASSWORD);
-                        
-                    case .invalidEmail: //2.a.2
+                    
+                    //2. Xử lý check 2.a.2
+                    case .invalidEmail:
                         strongSelf.view?.showError(message: Messages.Login.ERROR_INVALID_EMAIL);
-                        
-                    case .userNotFound: //2.a.3
+                    
+                    //2. Xử lý check 2.a.3
+                    case .userNotFound:
                         strongSelf.view?.showError(message: Messages.Login.ERROR_USER_NOT_FOUND);
                     
                     default:
@@ -110,6 +117,7 @@ extension LoginPresenter{
         }
     }
     
+    //(1) Lấy thông tin user
     func getData(){
         
     }

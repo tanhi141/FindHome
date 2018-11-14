@@ -11,22 +11,41 @@ import FirebaseAuth
 import Firebase
 
 class FBAccountManager{
+//    private let databaseRef: DatabaseReference;
     static let shared = FBAccountManager();
+
     typealias LoginCallback = (Error?) -> Void;
     typealias InfoAccountCallback = (User) -> Void;
+    typealias SignUpCallback = (Error?) -> Void;
     
     init() {
+        
     }
 }
 
 
 //MARK: - Login
 extension FBAccountManager{
+    
     func login(account: UserAccount, callback: @escaping LoginCallback){
         
         Auth.auth().signIn(withEmail: account.email ?? "",
                            password: account.password ?? "") {(_, error) in
                             callback(error)
+        }
+    }
+    
+    func signUp(user: User, password: String, callback: @escaping SignUpCallback){
+        Auth.auth().createUser(withEmail: user.email ?? "", password: password) { (user, error) in
+            
+            if error == nil {
+                
+                self.signUpsRef()?.setValue(user);
+
+
+            } else {
+                
+            }
         }
     }
     
@@ -57,5 +76,12 @@ extension FBAccountManager{
 //
 //                })
 //
+    }
+}
+
+//MARK:
+extension FBAccountManager{
+    func signUpsRef() -> DatabaseReference? {
+        return  Database.database().reference().child("User").childByAutoId();
     }
 }

@@ -24,7 +24,7 @@ class RegisterVC: UIViewController {
     }
 
     func initUI(){
-        self.navigationItem.title = "Đăng kí";
+        self.navigationItem.title = Title.SIGNUP_TITLE;
        btnRegister.enable(isEnable: false)
         self.indicatorView.isHidden = true;
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
@@ -67,8 +67,7 @@ extension RegisterVC: UITextFieldDelegate{
         return true
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        
+    @IBAction func onChangedEditing(_ sender: UITextField){
         if let email = tfEmail.text, email != "",
             let phone = tfPhoneNumber.text, phone != "",
             let name = tfFullName.text,name != "",
@@ -78,12 +77,6 @@ extension RegisterVC: UITextFieldDelegate{
         } else {
             btnRegister.enable(isEnable: false)
         }
-        return true;
-    }
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        return true;
     }
 }
 
@@ -92,8 +85,6 @@ extension RegisterVC: UITextFieldDelegate{
 extension RegisterVC{
     @IBAction func tapButtonRegister(_ sender: Any){
         self.view?.endEditing(true);
-        
-        
         presenter?.tappedRegister()
     }
 }
@@ -102,28 +93,14 @@ extension RegisterVC{
 
 //MARK: -  RegisterView
 extension RegisterVC: RegisterView{
-    func showErrorInvalid() {
-        Alert.showInfo(message: "Vui lòng kiểm tra lại thông tin", on: self, callback: nil)
+    func showMessage(_ message: String) {
+        Alert.showInfo(message: message,
+                       on: self,
+                       callback: nil);
     }
     
-    func showSuccess(){
-            Alert.showInfo(message: "Đăng kí thành công.", on: self, callback: {
-                self.showHome()
-            })
-    }
     
-    func showErrorConfirmPassword() {
-        Alert.showInfo(message: "Mật khẩu chưa trùng nhau. Vui lòng kiểm tra lại.", on: self, callback: nil)
-    }
     
-    func showErrorForrmatEmail() {
-        Alert.showInfo(message: "Vui lòng kiểm tra lại email và thử lại trong lần sau.", on: self, callback: nil)
-    }
-    
-    func showDetail() {
-//        let detailVC = HomeVC();
-//        navigationController?.pushViewController(detailVC, animated: true)
-    }
     
     func showLoading(_ show: Bool){
         if show{
@@ -131,18 +108,6 @@ extension RegisterVC: RegisterView{
         } else{
             self.indicatorView.hide();
         }
-    }
-    
-    func showHome(){
-//        let loginVC = HomeVC();
-//        navigationController?.pushViewController(loginVC, animated: true)
-        
-    }
-    func showLogin(){
-//        let loginVC = Login();
-//        loginVC.presenter = LoginPresenter(view: loginVC, userAccount: nil)
-//        navigationController?.pushViewController(loginVC, animated: true)
-        
     }
 }
 //MARK: - Other

@@ -10,19 +10,18 @@ class AllPostVC: UIViewController {
     @IBOutlet weak var btnTypeSearch: UIButton!
     @IBOutlet weak var btnAreaSearch: UIButton!
     @IBOutlet weak var btnPriceSearch: UIButton!
-    
     @IBOutlet weak var tbPost: UITableView!
+    
     var postList : [DetailPost]? = [];
     var postListDisplay: [DetailPost]? = [];
     
+    let identifierAndNibNameCell = "PostCell";
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         setUp()
         presenter?.viewOnReady()
-        tbPost.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "PostCell");
-        
     }
     
     
@@ -31,10 +30,9 @@ class AllPostVC: UIViewController {
         
     }
     func setUp() {
-
+        tbPost.register(UINib(nibName: identifierAndNibNameCell, bundle: nil), forCellReuseIdentifier: identifierAndNibNameCell);
         setTitleNavigation(title: Title.ALL_POST_TITLE);
-        
-        updateView(postList ?? [])
+        updateView(postList ?? []);
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
@@ -56,32 +54,26 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : PostCell? = nil;
         
-        cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell;
-        
-        if postListDisplay?.count == 0 {
- 
-            return cell!;
-        }
+        cell = tableView.dequeueReusableCell(withIdentifier: identifierAndNibNameCell, for: indexPath) as? PostCell;
+
            
-        guard let listDisplay = postListDisplay else{
+        guard let listDisplay = postListDisplay, listDisplay.count > 0  else{
             return cell!;
         }
         
-//        presenter?.viewOnReady()
         let infoPost = listDisplay[indexPath.row]
         
         cell?.lblTitle?.text = infoPost.title;
-        cell?.lblArea?.text = "Diện tích: \(infoPost.address?.city ?? "") m2";
-        cell?.lblType?.text = "Loại: \(infoPost.type?.rawValue ?? "")";
-        cell?.lblPrice?.text = "Gía:\(formatPrice(price: infoPost.price ?? 0))";
-        cell?.avatarImage?.image = infoPost.image?.first ?? #imageLiteral(resourceName: "homeDemo")
-        
+        cell?.lblArea?.text = infoPost.getStringArea();
+        cell?.lblType?.text = infoPost.getStringType();
+        cell?.lblPrice?.text = infoPost.getStringPrice();
+        cell?.avatarImage?.image = infoPost.image?.first ?? #imageLiteral(resourceName: "homeDemo");
         
         return cell!;
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100;
+        return 120;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -116,7 +108,7 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
     }
 }
  
- //MARK: AllPostVC
+ //MARK: Action
  extension AllPostVC{
     
     @objc func dismissKeyboardWithTapGesture(_ tap: UIGestureRecognizer?) {
@@ -124,60 +116,44 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
     }
  }
  
- 
+ //MARK: - UITextFieldDelegate
  extension AllPostVC: UITextFieldDelegate{
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        presenter?.inputSearchKeyword(tfSearch.text ?? "")
-        return true;
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view?.endEditing(true);
         return true;
     }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        presenter?.inputSearchKeyword(tfSearch.text ?? "")
-        return true
-    }
-    
- }
- 
- extension AllPostVC{
-    
-    func formatPrice(price: Int) -> String{
-        var priceString = price.description;
-        var index = priceString.count - 3;
-        
-        while index > 0 {
-            priceString.insert(" ", at: priceString.index(priceString.startIndex, offsetBy: index));
-            index = index - 3;
-        }
-        
-        return priceString;
-    }
-    
-    func applySeaching(_ keyword: String?){
-        
-        guard let keyword = keyword,
+
+    @IBAction func onDidChanged(_ textfield: UITextField){
+        guard let keyword = textfield.text,
             keyword.isEmpty == false else {
                 postListDisplay = postList;
-                self.postListDisplay = self.postList;
+                tbPost.reloadData();
                 return;
         }
         
-        postListDisplay = postList?.filter {
-            ($0.title?.localizedCaseInsensitiveContains(keyword))!
-                || ($0.address?.city?.localizedCaseInsensitiveContains(keyword))!
-                || ($0.type?.rawValue.localizedCaseInsensitiveContains(keyword))!
-            
-            
-        };
-//        view?.updateView(postListDisplay ?? [])
-        tbPost.reloadData()
+        applySearch(keyword);
+        tbPost.reloadData();
+        return;
+        
+        
     }
-    
+}
+ 
+ //MARK: - Other
+ extension AllPostVC{
+
+    func applySearch(_ keyword: String?){
+        if keyword?.isEmpty == true{
+            self.postListDisplay = self.postList;
+            return;
+        }
+        
+        postListDisplay = postList?.filter {
+            ($0.title?.localizedCaseInsensitiveContains(keyword ?? ""))!
+                || ($0.address?.city?.localizedCaseInsensitiveContains(keyword ?? ""))!
+                || ($0.type?.rawValue.localizedCaseInsensitiveContains(keyword ?? ""))!
+        };
+    }
  }
- 
- 
  
