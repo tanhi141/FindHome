@@ -11,12 +11,18 @@ import FirebaseAuth
 import Firebase
 
 class FBAccountManager{
+    let KEY_USER = "User";
+    let KEY_FULLNAME = "fullName";
+    let KEY_PHONENUMBER = "phoneNumber";
+    let KEY_EMAIL = "email";
+    
+    
 //    private let databaseRef: DatabaseReference;
     static let shared = FBAccountManager();
 
     typealias LoginCallback = (Error?) -> Void;
     typealias InfoAccountCallback = (User) -> Void;
-    typealias SignUpCallback = (Error?) -> Void;
+    typealias SuccessCallback = (Error?) -> Void;
     
     init() {
         
@@ -35,19 +41,16 @@ extension FBAccountManager{
         }
     }
     
-    func signUp(user: User, password: String, callback: @escaping SignUpCallback){
-        Auth.auth().createUser(withEmail: user.email ?? "", password: password) { (user, error) in
-            
-            if error == nil {
-                
-                self.signUpsRef()?.setValue(user);
-
-
-            } else {
-                
-            }
-        }
-    }
+//    func signUp(user: User, password: String, callback: @escaping SuccessCallback){
+//        Auth.auth().createUser(withEmail: user.email ?? "", password: password) { (user, error) in
+//            if error == nil {
+//                self.userRef()?.setValue(user);
+//
+//            } else {
+//
+//            }
+//        }
+//    }
     
     func getInfoAccount(email: String, callback: @escaping InfoAccountCallback){
         
@@ -79,9 +82,33 @@ extension FBAccountManager{
     }
 }
 
-//MARK:
+//MARK: Reference
 extension FBAccountManager{
-    func signUpsRef() -> DatabaseReference? {
-        return  Database.database().reference().child("User").childByAutoId();
+    
+    func userRef() -> DatabaseReference?{
+        return Database.database().reference().child(KEY_USER);
+    }
+}
+
+//MARK: Register
+extension FBAccountManager{
+    
+    func register(user: User, password: String, callback:  @escaping SuccessCallback){
+        Auth.auth().createUser(withEmail: user.email ?? "", password: password) { (result, error) in
+            if error == nil,let account = result?.user{
+                self.addUserProfile(id: account.uid, user: user);
+            }
+            
+            callback(error);
+        }
+    }
+    
+    func addUserProfile(id: String,user: User){
+        
+        let userProfile = [KEY_EMAIL: user.email ?? "",
+                           KEY_FULLNAME: user.fullName ?? "",
+                           KEY_PHONENUMBER: user.phonenNumber ?? ""];
+        
+        userRef()?.child(id).setValue(userProfile);
     }
 }

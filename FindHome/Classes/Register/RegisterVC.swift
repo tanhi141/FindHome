@@ -10,8 +10,6 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var tfFullName: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
-    
-    
     @IBOutlet weak var btnRegister: UIButton!
     @IBOutlet weak var tfConfirmPassword: UITextField!
     
@@ -25,7 +23,7 @@ class RegisterVC: UIViewController {
 
     func initUI(){
         self.navigationItem.title = Title.SIGNUP_TITLE;
-       btnRegister.enable(isEnable: false)
+        btnRegister.setNextStyle();
         self.indicatorView.isHidden = true;
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
@@ -66,18 +64,6 @@ extension RegisterVC: UITextFieldDelegate{
         
         return true
     }
-    
-    @IBAction func onChangedEditing(_ sender: UITextField){
-        if let email = tfEmail.text, email != "",
-            let phone = tfPhoneNumber.text, phone != "",
-            let name = tfFullName.text,name != "",
-            let pass = tfPassword.text, pass != "",
-            let confirmPass = tfConfirmPassword.text, confirmPass != "" {
-            btnRegister.enable(isEnable: true)
-        } else {
-            btnRegister.enable(isEnable: false)
-        }
-    }
 }
 
 
@@ -93,14 +79,10 @@ extension RegisterVC{
 
 //MARK: -  RegisterView
 extension RegisterVC: RegisterView{
-    func showMessage(_ message: String) {
-        Alert.showInfo(message: message,
-                       on: self,
-                       callback: nil);
+
+    func showMessage(_ message: String, callback: SimpleCallback?) {
+        Alert.showInfo(message: message, on: self, callback: callback);
     }
-    
-    
-    
     
     func showLoading(_ show: Bool){
         if show{

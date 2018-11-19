@@ -4,28 +4,26 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class RegisterPresenter: RegisterPresenting{
+    let PHONENUMBER_REQUIRE = 10;
     
     private weak var view: RegisterView?
     private weak var output: RegisterOutput?
     
-    var phoneNumber: String
-    var fullName: String
-    var password: String
-    var confirmPassword: String
+    var phoneNumber: String?
+    var fullName: String?
+    var password: String?
+    var confirmPassword: String?
     var email: String?
 
     init(view: RegisterView, output: RegisterOutput) {
         self.view = view;
-        self.phoneNumber = ""
-        self.fullName = ""
-        self.password = ""
-        self.confirmPassword = ""
-        self.email = ""
+        self.output = output;
     }
     
     func viewOnReady() {
-        view?.showLoading(false)
+        view?.showLoading(false);
     }
+    
     func inputPhoneNumber(_ phoneNumber: String) {
         self.phoneNumber = phoneNumber
     }
@@ -47,15 +45,55 @@ class RegisterPresenter: RegisterPresenting{
     }
     
     func tappedRegister(){
-        guard password == confirmPassword else {
-                //not confirm
+        
+        guard let _ = self.email,
+        let _ = self.fullName,
+        let phoneNumber = self.phoneNumber,
+        let password = self.password,
+        let confirmPassword = self.confirmPassword else {
+            view?.showMessage(Messages.Register.ERROR_REQUIRED, callback: nil);
+            return
+        }
+        
+        guard phoneNumber.count == PHONENUMBER_REQUIRE else {
+            view?.showMessage(Messages.Register.ERROR_WRONG_PHONE_NUMBER, callback: nil);
             return;
         }
+        
+        guard password == confirmPassword else {
+            view?.showMessage(Messages.Register.ERROR_WRONG_PASSWORD, callback: nil);
+            return;
+        }
+        
+        var user = User();
+        user.email = self.email ?? "";
+        user.fullName = self.fullName;
+        user.phonenNumber = self.phoneNumber;
+        
+        register(user: user, password: password);
+    }
+    
+    func register(user: User, password: String){
         self.view?.showLoading(true)
         
-        
-        //login
+        FBAccountManager.shared.register(user: user, password: password) { [weak self](error) in
+            guard let strongSelf = self else {
+                return;
+            }
+            
+            strongSelf.view?.showLoading(false);
+            
+            if error == nil{
+                strongSelf.view?.showMessage(Messages.Register.SUCCESS, callback: {
+                    strongSelf.output?.register(success: nil);
+                })
+                
+            } else {
+                strongSelf.view?.showMessage(Messages.Register.ERROR_FAILED, callback: nil);
+            }
+        }
     }
+    
 }
 
 

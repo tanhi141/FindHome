@@ -40,23 +40,23 @@ class HistoryPresenter: AllPostPresenting{
 extension HistoryPresenter{
     
     func fetchMyPost(){
-        
-        let ref = Database.database().reference().child("Post").queryOrdered(byChild: "idUser").queryEqual(toValue: User.shared.idUser ?? "")
-        var existsSwitch = false
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            ref.removeAllObservers()
-            if !snapshot.exists() {
-                existsSwitch =  true
-                return;
-            }
-            
-            if !existsSwitch{
-                self.postList = self.fetchAll(snapshot: snapshot);
-                self.view?.updateView(self.postList ?? [])
-                return;
-            }
-            
-        })
+//        
+//        let ref = Database.database().reference().child("Post").queryOrdered(byChild: "idUser").queryEqual(toValue: User.shared.idUser ?? "")
+//        var existsSwitch = false
+//        ref.observeSingleEvent(of: .value, with: { snapshot in
+//            ref.removeAllObservers()
+//            if !snapshot.exists() {
+//                existsSwitch =  true
+//                return;
+//            }
+//            
+//            if !existsSwitch{
+//                self.postList = self.fetchAll(snapshot: snapshot);
+//                self.view?.updateView(self.postList ?? [])
+//                return;
+//            }
+//            
+//        })
         
     }
     

@@ -68,7 +68,7 @@ extension LoginPresenter{
         
         //2. Xử lý check 2.a.5
         guard  NetworkReachabilityManager()?.isReachable == true else {
-            view?.showError(message: Messages.Login.ERROR_CONNECT);
+            view?.showError(message: Messages.ERROR_CONNECT);
             return;
         }
         

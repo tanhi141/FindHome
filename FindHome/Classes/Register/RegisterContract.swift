@@ -1,10 +1,9 @@
 
 import Foundation
-
-
+import UIKit
 
 protocol RegisterOutput: class {
-
+    func register(success: Any?);
 }
 
 protocol RegisterPresenting: class {
@@ -20,5 +19,5 @@ protocol RegisterPresenting: class {
 
 protocol RegisterView: class {
     func showLoading(_ show: Bool);
-    func showMessage(_ message: String);
+    func showMessage(_ message: String,  callback: SimpleCallback?);
 }

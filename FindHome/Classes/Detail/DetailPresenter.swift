@@ -111,7 +111,7 @@ extension DetailPresenter{
 
         var dict = [String:Any]()
         
-        dict.updateValue(User.shared.idUser ?? "", forKey: "idUser")
+//        dict.updateValue(User.shared.idUser ?? "", forKey: "idUser")
         dict.updateValue(currentPost?.title ?? "", forKey: "title")
         dict.updateValue(currentPost?.address?.city ?? "", forKey: "address")
         dict.updateValue(currentPost?.area ?? "", forKey: "area")

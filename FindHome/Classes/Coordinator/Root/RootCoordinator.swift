@@ -119,7 +119,9 @@ extension RootCoordinator: LoginOutput{
 }
 //MARK: - RegisterOutput
 extension RootCoordinator: RegisterOutput{
-    
+    func register(success: Any?) {
+        navigationController?.popViewController(animated: true);
+    }
 }
 
 extension RootCoordinator: OptionOutput{

@@ -93,8 +93,9 @@ extension LoginVC{
     }
     
     @IBAction func tapButtonRegister(_ sender: Any){
-        let viewController = RegisterVC()
-        self.navigationController?.pushViewController(viewController, animated: true);
+        presenter?.tappedButtonRegister();
+//        let viewController = RegisterVC()
+//        self.navigationController?.pushViewController(viewController, animated: true);
     }
 
     @objc func dismissKeyboardWithTapGesture(_ tap: UIGestureRecognizer?) {
