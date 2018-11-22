@@ -30,18 +30,21 @@ class AreaAndPricePresenter: AreaAndPricePresenting{
     
     func tappedButtonNext() {
         
-        guard self.area?.isEmpty == false  else {
-            //show warning
+//        4.10. Xử lý chi tiết
+//        4.10.(1) Hiển thị ban đầu
+//        4.10.(2) Xử lý check
+//        4.10.(1).1: Diện tích
+//        4.10.(1).2: Giá cho thuê
+        
+        guard self.area?.isEmpty == false, self.price != nil  else {
+            self.view?.showError(Messages.Area.ERROR_REQUIRED);
             return;
         }
+        
         DetailPost.shared.price = self.price ?? 0
         DetailPost.shared.area = self.area ?? ""
         
         view?.showReviewViewController(animated: true)
     }
-    
 }
 
-//extension AreaAndPricePresenter{
-//
-//}

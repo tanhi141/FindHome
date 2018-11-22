@@ -4,24 +4,26 @@ import UIKit
  
 class AllPostVC: UIViewController {
 
+    let IDENTIFIER_CELL = "PostCell";
     var presenter : AllPostPresenting?
     
     @IBOutlet weak var tfSearch: UITextField!
-    @IBOutlet weak var btnTypeSearch: UIButton!
-    @IBOutlet weak var btnAreaSearch: UIButton!
-    @IBOutlet weak var btnPriceSearch: UIButton!
     @IBOutlet weak var tbPost: UITableView!
     
-    var postList : [DetailPost]? = [];
-    var postListDisplay: [DetailPost]? = [];
-    
-    let identifierAndNibNameCell = "PostCell";
+    var postList : [DetailPost] = [];
+    var postListDisplay: [DetailPost] = []{
+        didSet{
+            tbPost.reloadData();
+        }
+    };
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUp()
         presenter?.viewOnReady()
+        self.postList = presenter?.getData();
+        self.postListDisplay = presenter?.getData();
     }
     
     
@@ -30,7 +32,8 @@ class AllPostVC: UIViewController {
         
     }
     func setUp() {
-        tbPost.register(UINib(nibName: identifierAndNibNameCell, bundle: nil), forCellReuseIdentifier: identifierAndNibNameCell);
+        tbPost.register(UINib(nibName: IDENTIFIER_CELL, bundle: nil),
+                        forCellReuseIdentifier: IDENTIFIER_CELL);
         setTitleNavigation(title: Title.ALL_POST_TITLE);
         updateView(postList ?? []);
         
@@ -54,7 +57,7 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell : PostCell? = nil;
         
-        cell = tableView.dequeueReusableCell(withIdentifier: identifierAndNibNameCell, for: indexPath) as? PostCell;
+        cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_CELL, for: indexPath) as? PostCell;
 
            
         guard let listDisplay = postListDisplay, listDisplay.count > 0  else{
@@ -151,7 +154,7 @@ extension AllPostVC: UITableViewDelegate, UITableViewDataSource{
         
         postListDisplay = postList?.filter {
             ($0.title?.localizedCaseInsensitiveContains(keyword ?? ""))!
-                || ($0.address?.city?.localizedCaseInsensitiveContains(keyword ?? ""))!
+                || ($0.address?.localizedCaseInsensitiveContains(keyword ?? ""))!
                 || ($0.type?.rawValue.localizedCaseInsensitiveContains(keyword ?? ""))!
         };
     }

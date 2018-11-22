@@ -8,6 +8,12 @@ class PhoneNumberVC: UIViewController {
     
     var presenter: PhoneNumberPresenter?;
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated);
+        tfPhoneNumber.resignFirstResponder();
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
                 
@@ -16,18 +22,14 @@ class PhoneNumberVC: UIViewController {
     }
     
     func setUp(){
-        navigationItem.title = "Liên hệ";
+        setTitleNavigation(title:  Title.PHONENUMBER_TITLE);
         btnNext.setNextStyle()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
-        self.view.addGestureRecognizer(tap);
+        tfPhoneNumber.resignFirstResponder()
     }
 
 }
 //MARK: - Other
 extension PhoneNumberVC{
-    @objc func dismissKeyboardWithTapGesture(_ tap: UIGestureRecognizer?) {
-        self.view?.endEditing(true);
-    }
 }
 
 
@@ -39,30 +41,16 @@ extension PhoneNumberVC{
         presenter?.tappedButtonNext()
     }
     
-    @IBAction func tapButtonGetPhoneNumber(_ sender: Any){
-        self.view?.endEditing(true)
-        presenter?.inputPhoneNumber(User.shared.phonenNumber ?? "")
-    }
 }
 
-extension PhoneNumberVC: PhoneNumberView{
-    func phoneNumberOutput(currentPost: DetailPost?) {
-        
-    }
-    
+extension PhoneNumberVC: PhoneNumberView{    
     func showPhoneNumber(phoneNumber: String) {
         self.tfPhoneNumber.text = phoneNumber;
     }
     
     func showError(){
         Alert.showInfo(message: Messages.PhoneNumber.ERROR_VALIDATE,
-                       on: self, callback: nil)
-    }
-    
-    func phoneNumberOutput(_ animated: Any?){
-        let viewController = TypeVC()
-        viewController.presenter = TypePresenter(view: viewController);
-        navigationController?.pushViewController(viewController, animated: (animated != nil))
+                       on: self, callback: nil);
     }
     
 }

@@ -20,4 +20,8 @@ struct User{
     }
 
     static var shared = User();
+    static var currentUserLogin = User();
+    static var uid: String = "";
 }
+
+    var idUser: String = "";

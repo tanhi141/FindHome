@@ -4,30 +4,39 @@ import Foundation
 class TypePresenter: TypePresenting{
 
     private weak var view: TypeView?
+    private weak var output: TypeOutput?
     
     var type: Type?;
-    init(view: TypeView) {
-        self.view = view
+    
+    init(view: TypeView, output: TypeOutput) {
+        self.view = view;
+        self.output = output;
         
-        self.type = DetailPost.shared.type
+        
+        
     }
     
     func viewOnReady(){
-        let currentType = DetailPost.shared.type
+        self.type = DetailPost.shared.type;
+        view?.getType(type: type);
         
-        view?.updateTableView(currentType: currentType)
+        
     }
     
     func tappedButtonNext(){
+//        1.10. Xử lý chi tiết
+//        1.10.(1) Hiển thị ban đầu
+//        1.10.(2) Xử lý check
         guard self.type != nil else {
-            //hiện label thông báo
+            view?.showError(message: Messages.TypeOption.ERROR_REQUIRED);
             return;
         }
         
-        DetailPost.shared.type = self.type
+        DetailPost.shared.type = self.type;
         view?.showAddressViewController(animated: true)
     }
     func inputType(_ type: Type) {
         self.type = type
+        DetailPost.shared.type = type
     }
 }

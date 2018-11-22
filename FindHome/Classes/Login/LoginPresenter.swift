@@ -85,6 +85,8 @@ extension LoginPresenter{
             if error == nil{
                 strongSelf.getData()
                 strongSelf.view?.showLoading(isShow: false);
+                Check.shared.isLogin = true;
+
                 strongSelf.output?.showHomeViewController();
                 return;
                 

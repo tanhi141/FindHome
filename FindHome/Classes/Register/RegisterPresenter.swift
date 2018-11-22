@@ -6,8 +6,8 @@ import FirebaseDatabase
 class RegisterPresenter: RegisterPresenting{
     let PHONENUMBER_REQUIRE = 10;
     
-    private weak var view: RegisterView?
-    private weak var output: RegisterOutput?
+    private weak var view: RegisterView?;
+    private weak var output: RegisterOutput?;
     
     var phoneNumber: String?
     var fullName: String?
@@ -45,6 +45,9 @@ class RegisterPresenter: RegisterPresenting{
     }
     
     func tappedRegister(){
+//        10. Xử lý chi tiết
+//        (1) Hiển thị ban đầu
+//        2. Xử lý check
         
         guard let _ = self.email,
         let _ = self.fullName,

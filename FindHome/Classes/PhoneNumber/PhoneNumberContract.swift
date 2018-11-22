@@ -2,7 +2,8 @@
 import Foundation
 
 protocol PhoneNumberOutput:class {
-    func phoneNumberOutput(_ animated: Any?)
+    func phoneNumberOutput(_ showType: Any?);
+    
 }
 
 protocol PhoneNumberPresenting:class {
@@ -16,8 +17,5 @@ protocol PhoneNumberPresenting:class {
 
 protocol PhoneNumberView:class {
     func showPhoneNumber(phoneNumber: String);
-
-    func phoneNumberOutput(currentPost: DetailPost?)
-    func phoneNumberOutput(_ animated: Any?);
     func showError();
 }

@@ -20,6 +20,9 @@ class LoginVC: UIViewController {
     }
 
     func setUp(){
+        tfEmail.text = "ta.nhi.633@gmail.com";
+        tfPassword.text = "123123";
+        
         setTitleNavigation(title: Title.SIGN_TITLE); 
         btnLogin.setNextStyle();
         let tap = UITapGestureRecognizer(target: self,
@@ -94,8 +97,6 @@ extension LoginVC{
     
     @IBAction func tapButtonRegister(_ sender: Any){
         presenter?.tappedButtonRegister();
-//        let viewController = RegisterVC()
-//        self.navigationController?.pushViewController(viewController, animated: true);
     }
 
     @objc func dismissKeyboardWithTapGesture(_ tap: UIGestureRecognizer?) {

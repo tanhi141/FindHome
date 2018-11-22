@@ -2,11 +2,14 @@
 import UIKit
 
 class TypeVC: UIViewController {
-
+    let IDENTIFIER_CELL = "TypeCell";
     var presenter: TypePresenter?
     
     @IBOutlet weak var tbType: UITableView!
     @IBOutlet weak var btnNext: UIButton!
+    
+    let imageSelected = UIImage.init(named: "ic_selected");
+    let imageDeselected = UIImage.init(named: "ic_disselect");
     
     var type: Type?
     override func viewDidLoad() {
@@ -14,7 +17,6 @@ class TypeVC: UIViewController {
 
         setUp()
         tbType.register(UINib(nibName: "TypeCell", bundle: nil), forCellReuseIdentifier: "TypeCell");
-        
         presenter?.viewOnReady()
     }
 
@@ -40,20 +42,54 @@ extension TypeVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         var cell : TypeCell? = nil
-        cell = tableView.dequeueReusableCell(withIdentifier: "TypeCell", for: indexPath) as? TypeCell;
+        cell = tableView.dequeueReusableCell(withIdentifier: IDENTIFIER_CELL, for: indexPath) as? TypeCell;
         
         let row = indexPath.row
+        let type = self.type ?? Type.Unknow;
         if row == 0 {
             cell?.lblType.text = Type.House.rawValue
+            if type == .House {
+                cell?.isSelected = true;
+                cell?.icImageView.image = self.imageSelected
+            } else {
+                cell?.isSelected = false
+                cell?.icImageView.image = self.imageDeselected;
+            }
+            
         } else if row == 1{
             cell?.lblType.text = Type.Room.rawValue
+            if type == .Room {
+                cell?.isSelected = true;
+                cell?.icImageView.image = self.imageSelected
+            } else {
+                cell?.isSelected = false
+                cell?.icImageView.image = self.imageDeselected;
+            }
+            
         } else if row == 2{
             cell?.lblType.text = Type.WithWhom.rawValue
+            if type == .WithWhom {
+                cell?.isSelected = true;
+                cell?.icImageView.image = self.imageSelected
+            } else {
+                cell?.isSelected = false
+                cell?.icImageView.image = self.imageDeselected;
+            }
+            
         } else if row == 3{
             cell?.lblType.text = Type.Kiot.rawValue
+            if type == .Kiot {
+                cell?.isSelected = true;
+                cell?.icImageView.image = self.imageSelected
+            } else {
+                cell?.isSelected = false
+                cell?.icImageView.image = self.imageDeselected;
+            }
         }
         
+     
         cell?.selectionStyle = .none
         return cell!
     }
@@ -74,24 +110,14 @@ extension TypeVC: UITableViewDelegate, UITableViewDataSource{
 }
 
 extension TypeVC: TypeView{
-    func updateTableView(currentType: Type?) {
-        guard type != nil else{
-            return
-        }
-        var cell = TypeCell()
-        switch currentType! {
-        case .House:
-            cell = tbType.cellForRow(at: IndexPath(row: 0, section: 0)) as! TypeCell;
-        case .Room:
-            cell = tbType.cellForRow(at: IndexPath(row: 1, section: 0)) as! TypeCell;
-        case .WithWhom:
-            cell = tbType.cellForRow(at: IndexPath(row: 2, section: 0)) as! TypeCell;
-        case .Kiot:
-            cell = tbType.cellForRow(at: IndexPath(row: 3, section: 0)) as! TypeCell;
-        default:
-            break
-        }
-        
+    func showError(message: String) {
+        Alert.showInfo(message: message, on: self, callback: nil);
+    }
+    
+    func getType(type: Type?){
+        self.type = type;
+        tbType.reloadData()
+
     }
     
     //output

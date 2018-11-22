@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageDetailCell" rowHeight="176" id="KGk-i7-Jjw" userLabel="ImageDetailCell" customClass="DetailCell" customModule="FindHome" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="176"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="175.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mku-7U-bgg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="175.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IDf-7g-z9N">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="175.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkG-HG-pO1">
+                                <rect key="frame" x="0.0" y="53" width="50" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Zpg-VF-ntU"/>
+                                    <constraint firstAttribute="height" constant="70" id="u23-aW-ama"/>
+                                </constraints>
+                                <state key="normal" image="ic_back"/>
+                                <connections>
+                                    <action selector="didSelectButtonBackWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="GTr-i1-iSN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IDf-7g-z9N" firstAttribute="centerY" secondItem="mku-7U-bgg" secondAttribute="centerY" id="8es-yz-4tj"/>
+                            <constraint firstItem="IDf-7g-z9N" firstAttribute="width" secondItem="mku-7U-bgg" secondAttribute="width" id="PF6-iy-Hw8"/>
+                            <constraint firstItem="IDf-7g-z9N" firstAttribute="centerX" secondItem="mku-7U-bgg" secondAttribute="centerX" id="Ubb-NC-bMH"/>
+                            <constraint firstItem="dkG-HG-pO1" firstAttribute="leading" secondItem="mku-7U-bgg" secondAttribute="leading" id="ds4-LX-6SD"/>
+                            <constraint firstItem="IDf-7g-z9N" firstAttribute="height" secondItem="mku-7U-bgg" secondAttribute="height" id="uWc-ox-5IJ"/>
+                        </constraints>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F6D-gG-tFS">
+                        <rect key="frame" x="270" y="53" width="50" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="LdX-th-LTW"/>
+                            <constraint firstAttribute="width" constant="50" id="rou-pn-Sex"/>
+                        </constraints>
+                        <state key="normal" title="Button" image="ic_next"/>
+                        <connections>
+                            <action selector="didSelectButtonNextWithSender:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Roj-Mb-AuC"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="F6D-gG-tFS" firstAttribute="centerY" secondItem="mku-7U-bgg" secondAttribute="centerY" id="CGv-Ui-pIV"/>
+                    <constraint firstItem="mku-7U-bgg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="E3Z-EB-bnA"/>
+                    <constraint firstAttribute="bottom" secondItem="mku-7U-bgg" secondAttribute="bottom" id="FiX-zs-hZA"/>
+                    <constraint firstAttribute="trailing" secondItem="mku-7U-bgg" secondAttribute="trailing" id="KbY-fj-KsW"/>
+                    <constraint firstAttribute="trailing" secondItem="F6D-gG-tFS" secondAttribute="trailing" id="SFs-SM-xb9"/>
+                    <constraint firstItem="mku-7U-bgg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="s8j-bA-AZi"/>
+                    <constraint firstItem="dkG-HG-pO1" firstAttribute="centerY" secondItem="F6D-gG-tFS" secondAttribute="centerY" id="uOH-Hd-SoN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="btnBackImage" destination="dkG-HG-pO1" id="6z0-oM-esR"/>
+                <outlet property="btnNextImage" destination="F6D-gG-tFS" id="2zm-ey-uCb"/>
+                <outlet property="imvImageHome" destination="IDf-7g-z9N" id="fog-eu-y19"/>
+            </connections>
+            <point key="canvasLocation" x="129.59999999999999" y="62.968515742128943"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="ic_back" width="512" height="512"/>
+        <image name="ic_next" width="512" height="512"/>
+    </resources>
+</document>

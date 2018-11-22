@@ -8,7 +8,6 @@ struct Messages {
     
     struct PhoneNumber{
         static let ERROR_VALIDATE = "Chưa nhập hoặc số điện thoại không hợp lệ.\nVui lòng kiểm tra lại thông tin.";
-        static let ERROR_REQUIRED = "Vui lòng nhập số điện thoại.";
     }
     
     struct Login{
@@ -18,6 +17,33 @@ struct Messages {
         static let ERROR_REQUIRED =  "Vui lòng điền đầy đủ thông tin.";
         
 
+    }
+    
+    struct Detail{
+        static let ERROR_FAILED = "Quá trình đăng thất bại. Vui lòng thử lại sau."; //Code =
+        
+        static let BUTTON_CALL = "Gọi điện";
+        static let BUTTON_MESSAGE = "Nhắn tin";
+        static let BUTTON_EDIT = "Chỉnh sửa";
+        static let BUTTON_POST = "Đăng tin";
+    }
+    
+    struct Address{
+        static let ERROR_REQUIRED =  "Vui lòng điền đầy đủ Thành phố & Quận/huyện.";
+        
+        
+    }
+    
+    struct Area{
+        static let ERROR_REQUIRED =  "Vui lòng điền đầy đủ thông tin.";
+    }
+    
+    struct More{
+        static let ERROR_REQUIRED =  "Vui lòng điền đầy đủ thông tin.";
+    }
+    
+    struct TypeOption{
+        static let ERROR_REQUIRED =  "Vui lòng chọn loại căn hộ.";
     }
     
     struct Option {
@@ -42,6 +68,13 @@ struct Title{
     static let SIGNOUT_TITLE = "Đăng xuất";
     static let ACCOUNT_TITLE = "Tài khoản";
     static let MORE_TITLE = "Khác";
+    static let POST_TITLE = "Đăng bài";
+    static let PHONENUMBER_TITLE = "Liên hệ";
+    static let CONFIRM_TITLE = "Xem lại";
+    static let DETAIL_TITLE = "Chi tiết";
+    static let MORE_REVIEW_TITLE = "Mô tả";
+    static let ACCOUNT_INFO = "Thông tin";
+    
 //    static let backTitle = "Quay lại";
     
     struct Option {

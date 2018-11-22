@@ -8,7 +8,7 @@ protocol AreaAndPriceView:class {
     func showArea(_ area: String)
     func showPrice(_ price: Int)
     
-    func showWarning()
+    func showError(_ message: String);
     
     //output
     func showReviewViewController(animated: Bool?);

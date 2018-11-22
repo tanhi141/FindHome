@@ -12,6 +12,9 @@
 		2405B05F216CED7D00FB2E6D /* FBAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2405B05E216CED7D00FB2E6D /* FBAccountManager.swift */; };
 		240A3C822106EB4C00342229 /* CurrentLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A3C812106EB4C00342229 /* CurrentLogin.swift */; };
 		243000E32115EABA00250134 /* UINavigationViewController+ Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243000E22115EABA00250134 /* UINavigationViewController+ Extension.swift */; };
+		243070FE21A5ACB200E36C5E /* ImageDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 243070FC21A5ACB200E36C5E /* ImageDetailCell.xib */; };
+		2430710021A5B0AA00E36C5E /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243070FF21A5B0AA00E36C5E /* DetailCell.swift */; };
+		2430710221A5B5D200E36C5E /* DetailCellxib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2430710121A5B5D200E36C5E /* DetailCellxib.xib */; };
 		2431D46C20FF923A0003A3EA /* DetailPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431D46B20FF923A0003A3EA /* DetailPost.swift */; };
 		2431D47020FF997B0003A3EA /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431D46F20FF997B0003A3EA /* Messages.swift */; };
 		2431D47420FFA8310003A3EA /* AddressVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2431D47220FFA8310003A3EA /* AddressVC.swift */; };
@@ -138,6 +141,9 @@
 		2405B05E216CED7D00FB2E6D /* FBAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAccountManager.swift; sourceTree = "<group>"; };
 		240A3C812106EB4C00342229 /* CurrentLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLogin.swift; sourceTree = "<group>"; };
 		243000E22115EABA00250134 /* UINavigationViewController+ Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationViewController+ Extension.swift"; sourceTree = "<group>"; };
+		243070FC21A5ACB200E36C5E /* ImageDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailCell.xib; sourceTree = "<group>"; };
+		243070FF21A5B0AA00E36C5E /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		2430710121A5B5D200E36C5E /* DetailCellxib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCellxib.xib; sourceTree = "<group>"; };
 		2431D46B20FF923A0003A3EA /* DetailPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPost.swift; sourceTree = "<group>"; };
 		2431D46F20FF997B0003A3EA /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		2431D47220FFA8310003A3EA /* AddressVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressVC.swift; sourceTree = "<group>"; };
@@ -311,6 +317,16 @@
 				24CC7332212170DC0027812A /* OptionAddressVC.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		243070F821A5AB2D00E36C5E /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				243070FC21A5ACB200E36C5E /* ImageDetailCell.xib */,
+				2430710121A5B5D200E36C5E /* DetailCellxib.xib */,
+				243070FF21A5B0AA00E36C5E /* DetailCell.swift */,
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		2431D47120FFA7FD0003A3EA /* Address */ = {
@@ -579,6 +595,7 @@
 		24E180E42108B9BA00714086 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				243070F821A5AB2D00E36C5E /* New Group */,
 				24E180EC2108B9EA00714086 /* DetailContract.swift */,
 				24E180E92108B9DC00714086 /* DetailPresenter.swift */,
 				24E180E52108B9D000714086 /* DetailVC.swift */,
@@ -824,6 +841,7 @@
 				248B539C20F9BD3900B6421F /* LoginVC.xib in Resources */,
 				24CC7334212170DC0027812A /* OptionAddressVC.xib in Resources */,
 				248794CC2110AA2200048003 /* OptionCell.xib in Resources */,
+				2430710221A5B5D200E36C5E /* DetailCellxib.xib in Resources */,
 				2477211E2100F20C00B7452E /* PreviewVC.xib in Resources */,
 				24F4C53F20F7837D00A6D5A8 /* LaunchScreen.storyboard in Resources */,
 				24945CE52104A4FE00A2F65C /* ImageVC.xib in Resources */,
@@ -831,6 +849,7 @@
 				24439AF120FE578400D4726E /* TypeVC.xib in Resources */,
 				245E39C82163037000BD7FB2 /* WelcomeTbvCell.xib in Resources */,
 				24D2E4542100503D00B7C14B /* ReviewVC.xib in Resources */,
+				243070FE21A5ACB200E36C5E /* ImageDetailCell.xib in Resources */,
 				24439AE620FE50CD00D4726E /* PhoneNumberVC.xib in Resources */,
 				2471886520F89911008B0EAD /* PostCell.xib in Resources */,
 				24F4C53C20F7837D00A6D5A8 /* Assets.xcassets in Resources */,
@@ -953,6 +972,7 @@
 			files = (
 				247390102162717B0055F39C /* RootFactory.swift in Sources */,
 				24E180ED2108B9EA00714086 /* DetailContract.swift in Sources */,
+				2430710021A5B0AA00E36C5E /* DetailCell.swift in Sources */,
 				247721152100DE7100B7452E /* AreaAndPriceContract.swift in Sources */,
 				248794C32110A9E500048003 /* OptionPresenter.swift in Sources */,
 				245E39BE2162F7CC00BD7FB2 /* WelcomeContract.swift in Sources */,

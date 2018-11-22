@@ -10,34 +10,38 @@ import Foundation
 
 class WelcomePresenter: WelcomePresenting{
     
-    var view: WelcomeView;
-    var output: WelcomeOutput;
+    var view: WelcomeView?;
+    var output: WelcomeOutput?;
 
     init(view: WelcomeView, output: WelcomeOutput) {
         self.view = view;
         self.output = output;
     }
     
-    
     func viewOnReady() {
         
     }
     
     func tappedAllPost(){
-        self.output.welcome(showAllPost: nil);
+        self.output?.welcome(showAllPost: nil);
     }
     
     func tappedHistory(){
-        output.welcome(showHistory: nil)
+        output?.welcome(showHistory: nil)
     }
     
     func tappedAccount(){
-        output.welcome(showAccount: nil);
+        if Check.shared.isLogin{
+            output?.welcome(showPhoneNumber: nil);
+        } else{
+            output?.welcome(showAccount: nil);
+        }
+        
     }
     
     
     func tappedMore(){
-        output.welcome(showMore: nil);
+        output?.welcome(showMore: nil);
     }
     
 }

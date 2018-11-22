@@ -17,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let rootCoordinator = RootCoordinator()
         rootCoordinator.start(with: window);
 
+        
+//        var post = DetailPost();
+//        post.title = "Nhà nguyên căn";
+//        post.area = "25";
+//        post.price = 2000000;
+//        post.address = "thành phố hồ chí minh";
+//        post.more = "dsaidsaifhdsjnckxzjciasd";
+//        
+//                FBAccountManager.shared.post(detailPost: post);
+        
+        
         return true;
     }
     

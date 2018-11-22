@@ -20,7 +20,7 @@ class ReviewVC: UIViewController {
     }
     
     func setUp(){
-        self.navigationItem.title = "Mô tả"
+        self.navigationItem.title = Title.MORE_REVIEW_TITLE;
         btnNext.setNextStyle()
         viewText.layer.borderColor = UIColor.gray.cgColor
         viewText.layer.borderWidth = 1;
@@ -66,8 +66,8 @@ extension ReviewVC: ReviewView{
         self.tfTitle.text = title
     }
     
-    func showWarning() {
-        
+    func showError(_ message: String){
+        Alert.showInfo(message: message, on: self, callback: nil);
     }
     
     func showMore(_ more: String) {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,10 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddressVC" customModule="FindHome" customModuleProvider="target">
             <connections>
                 <outlet property="btnNext" destination="eTn-Um-DTZ" id="gwa-jt-Xq1"/>
-                <outlet property="tfCity" destination="Ia9-6E-Pzc" id="x45-YV-kf7"/>
-                <outlet property="tfDistrict" destination="SXr-Pp-14Z" id="gA0-5d-gW3"/>
-                <outlet property="tfStreet" destination="Z04-8S-ezp" id="8nU-it-bMW"/>
-                <outlet property="tfWard" destination="DqC-DV-A21" id="qyh-Ql-o3k"/>
+                <outlet property="tfAddress" destination="Z04-8S-ezp" id="o6p-DO-0Xq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewOption" destination="r6u-FF-LbG" id="S0F-ui-C15"/>
             </connections>
@@ -27,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTn-Um-DTZ">
-                    <rect key="frame" x="97.5" y="537" width="180" height="60"/>
+                    <rect key="frame" x="97.5" y="140" width="180" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="180" id="NWh-Ax-W4y"/>
                         <constraint firstAttribute="height" constant="60" id="bcO-le-J88"/>
@@ -37,52 +34,36 @@
                         <action selector="tapButtonNext:" destination="-1" eventType="touchUpInside" id="CUM-4U-wuw"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tỉnh, thành phố" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ia9-6E-Pzc">
-                    <rect key="frame" x="20" y="70" width="335" height="30"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Địa chỉ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z04-8S-ezp">
+                    <rect key="frame" x="20" y="70" width="335" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="gnE-N8-Nww"/>
+                        <constraint firstAttribute="height" constant="40" id="CzB-np-FUD"/>
                     </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quận, huyện" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SXr-Pp-14Z">
-                    <rect key="frame" x="20" y="108" width="335" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phường, xã" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DqC-DV-A21">
-                    <rect key="frame" x="20" y="146" width="335" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số nhà, tên đường (nếu có)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z04-8S-ezp">
-                    <rect key="frame" x="20" y="184" width="335" height="30"/>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="le6-OA-cgT" userLabel="Line2">
+                    <rect key="frame" x="20" y="109" width="335" height="1"/>
+                    <color key="backgroundColor" red="0.1058823529" green="0.30980392159999998" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="yck-5W-Ioh"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="SXr-Pp-14Z" firstAttribute="leading" secondItem="Ia9-6E-Pzc" secondAttribute="leading" id="2bR-4g-NvI"/>
+                <constraint firstItem="le6-OA-cgT" firstAttribute="trailing" secondItem="Z04-8S-ezp" secondAttribute="trailing" id="2jc-ME-K2W"/>
                 <constraint firstItem="eTn-Um-DTZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="7o2-Zi-kJz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Ia9-6E-Pzc" secondAttribute="trailing" constant="20" id="7zk-Pv-Zbl"/>
-                <constraint firstItem="Ia9-6E-Pzc" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="AhT-Su-fHa"/>
-                <constraint firstItem="SXr-Pp-14Z" firstAttribute="top" secondItem="Ia9-6E-Pzc" secondAttribute="bottom" constant="8" id="Htj-UN-Lcg"/>
-                <constraint firstItem="DqC-DV-A21" firstAttribute="leading" secondItem="SXr-Pp-14Z" secondAttribute="leading" id="NPc-ZQ-KMw"/>
-                <constraint firstItem="DqC-DV-A21" firstAttribute="trailing" secondItem="SXr-Pp-14Z" secondAttribute="trailing" id="NYX-ni-LZd"/>
-                <constraint firstItem="Z04-8S-ezp" firstAttribute="leading" secondItem="DqC-DV-A21" secondAttribute="leading" id="Ntl-W8-wNx"/>
-                <constraint firstItem="Z04-8S-ezp" firstAttribute="top" secondItem="DqC-DV-A21" secondAttribute="bottom" constant="8" id="Ths-6C-HGW"/>
-                <constraint firstItem="Ia9-6E-Pzc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="XI8-HX-3Gf"/>
-                <constraint firstItem="Z04-8S-ezp" firstAttribute="trailing" secondItem="DqC-DV-A21" secondAttribute="trailing" id="XJ3-AN-jMg"/>
-                <constraint firstItem="DqC-DV-A21" firstAttribute="top" secondItem="SXr-Pp-14Z" secondAttribute="bottom" constant="8" id="ZJf-Wd-D0t"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eTn-Um-DTZ" secondAttribute="bottom" constant="70" id="nNt-15-Z5K"/>
-                <constraint firstItem="SXr-Pp-14Z" firstAttribute="trailing" secondItem="Ia9-6E-Pzc" secondAttribute="trailing" id="v87-Lx-2JL"/>
+                <constraint firstItem="Z04-8S-ezp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="8iF-D3-90a"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Z04-8S-ezp" secondAttribute="trailing" constant="20" id="Cd7-Va-WyP"/>
+                <constraint firstItem="le6-OA-cgT" firstAttribute="leading" secondItem="Z04-8S-ezp" secondAttribute="leading" id="Lsp-Yd-Avr"/>
+                <constraint firstItem="Z04-8S-ezp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="N0e-Po-ww2"/>
+                <constraint firstItem="le6-OA-cgT" firstAttribute="bottom" secondItem="Z04-8S-ezp" secondAttribute="bottom" id="Z5U-2g-FaY"/>
+                <constraint firstItem="eTn-Um-DTZ" firstAttribute="top" secondItem="Z04-8S-ezp" secondAttribute="bottom" constant="30" id="u0f-96-yJ6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="160.80000000000001" y="79.610194902548727"/>
         </view>
         <view contentMode="scaleToFill" id="r6u-FF-LbG">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>

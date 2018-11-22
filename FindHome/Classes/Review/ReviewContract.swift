@@ -6,7 +6,7 @@ protocol ReviewView:class {
     func showTitle(_ title: String)
     func showMore(_ more: String)
     
-    func showWarning()
+    func showError(_ message: String);
     
     //output
     func showImageViewController(animated: Bool?);

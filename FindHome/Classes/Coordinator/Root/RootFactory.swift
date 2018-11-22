@@ -52,8 +52,20 @@ class RootFactory {
     
     func moreViewController(output: OptionOutput) -> UIViewController{
         let viewController = OptionVC();
-        viewController.presenter = OptionPresenter(view: viewController, output: output)
+        viewController.presenter = OptionPresenter(view: viewController, output: output);
         return viewController
+    }
+    
+    func phoneNumberViewController(output: PhoneNumberOutput) -> UIViewController{
+        let viewController = PhoneNumberVC();
+        viewController.presenter = PhoneNumberPresenter(view: viewController,output: output);
+        return viewController
+    }
+    
+    func typeViewController(output: TypeOutput) -> UIViewController{
+        let viewController = TypeVC();
+        viewController.presenter = TypePresenter(view: viewController, output: output)
+        return viewController;
     }
 }
 

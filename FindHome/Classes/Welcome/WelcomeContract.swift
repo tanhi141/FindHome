@@ -12,6 +12,7 @@ protocol WelcomeOutput:class {
     func welcome(showHistory: Any?);
     func welcome(showAccount: Any?);
     func welcome(showMore: Any?);
+    func welcome(showPhoneNumber: Any?);
 }
 
 protocol WelcomeView: class {

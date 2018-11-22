@@ -5,7 +5,7 @@ class DetailPost {
     var idPost: String?;
     var phoneNumber: String?;
     var type: Type?;
-    var address: Address?;
+    var address: String?;
     var area: String?;
     var price: Int?;
     var idUser: String?;
@@ -17,7 +17,7 @@ class DetailPost {
     init() {
         self.phoneNumber = "";
         self.type = Type.Unknow;
-        self.address = Address();
+        self.address = "";
         self.area = "";
         self.price = 0;
         self.more = "";
@@ -36,7 +36,7 @@ class DetailPost {
     }
     
     func getStringAddress() -> String{
-        return "Địa chỉ: " + (self.address?.city ?? "Không có");
+        return "Địa chỉ: " + (self.address ?? "Không có");
     }
     
     func getStringArea() -> String{

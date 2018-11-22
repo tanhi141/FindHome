@@ -37,6 +37,7 @@ class WelcomeTbvCell: UITableViewCell {
     }
     
 }
+
 extension WelcomeTbvCell{
     @IBAction func didSelectButtonFunction(sender: Any){
         delegate?.didSelectButton(self, onTapped: self.btnFunction)

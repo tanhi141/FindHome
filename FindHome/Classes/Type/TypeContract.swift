@@ -13,8 +13,9 @@ protocol TypePresenting:class {
 }
 
 protocol TypeView:class {
-    func updateTableView(currentType: Type?);
+    func getType(type: Type?);
     func showAddressViewController(animated: Bool?)
+    func showError(message: String);
 //    func showAreaAndPrice(animated: Bool?)
     
 }

@@ -19,7 +19,7 @@ class AreaAndPriceVC: UIViewController {
     }
     
     func setUp(){
-        navigationItem.title = "Tổng quan"
+        navigationItem.title = Title.ACCOUNT_INFO
         btnNext.setNextStyle();
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardWithTapGesture(_:)));
         self.view.addGestureRecognizer(tap);
@@ -41,7 +41,7 @@ extension AreaAndPriceVC: UITextFieldDelegate{
         if textField === tfArea{
             presenter?.inputArea(tfArea.text ?? "")
         } else if textField === tfPrice{
-//            presenter?.inputPrice(tfPrice?.text ?? "")
+            presenter?.inputPrice(Int(tfPrice?.text ?? "0") ?? 0);
         }
     }
     
@@ -60,8 +60,8 @@ extension AreaAndPriceVC: AreaAndPriceView{
         tfPrice.text = price.description
     }
     
-    func showWarning(){
-        //them label hien thi warning
+    func showError(_ message: String){
+        Alert.showInfo(message: message, on: self, callback: nil);
     }
     
     //output

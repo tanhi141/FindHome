@@ -4,7 +4,6 @@ import UIKit
 
 class PostCell: UITableViewCell {
 
-    
      @IBOutlet weak var avatarImage: UIImageView?;
     
     @IBOutlet weak var lblTitle: UILabel?

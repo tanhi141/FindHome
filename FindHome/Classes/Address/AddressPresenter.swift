@@ -5,60 +5,35 @@ class AddressPresenter: AddressPresenting{
 
     private weak var view: AddressView?
     
-    var city: String?
-    var street: String?
-    var district: String?
-    var ward: String?
-    
-    let address = DetailPost.shared.address
+    var address: String;
+   
     init(view: AddressView) {
-        self.view = view
-        self.city = address?.city
-        self.street = address?.street ?? ""
-        self.district = address?.district ?? ""
-        self.ward = address?.ward ?? ""
+        self.view = view;
+        self.address =  DetailPost.shared.address ?? "";
     }
     
     func viewOnReady(){
-        view?.showCity(address?.city ?? "")
-        view?.showWard(address?.ward ?? "")
-        view?.showDistrict(address?.district ?? "")
-        view?.showDistrict(address?.district ?? "")
+        view?.showAddress(self.address)
     }
     
     func tappedButtonNext(){
-        if self.city?.isEmpty == true ||
-            self.district?.isEmpty == true{
-            view?.showError()
-            print("thieu");
+//        3.10. Xử lý chi tiết
+//        (1) Hiển thị ban đầu
+//        (2) Xử lý check
+        //1.Địa chỉ
+        guard self.address.count > 0 else {
+            view?.showError(Messages.Address.ERROR_REQUIRED);
+            return
         }
-        
-        DetailPost.shared.address?.city = self.city;
-        DetailPost.shared.address?.district = self.district;
-        DetailPost.shared.address?.ward = self.ward;
-        DetailPost.shared.address?.street = self.street;
-        
+    
+        DetailPost.shared.address = self.address
         view?.showAreaAndPrice(animated: true);
     }
     
     func inputAddress(_ address: String) {
-        
+        self.address = address;
     }
-    
-    func inputCity(_ city: String) {
-        self.city = city
-    }
-    
-    func inputStreet(_ street: String) {
-        self.street = street
-    }
-    
-    func inputDistrict(_ district: String) {
-        self.district = district
-    }
-    
-    func inputWard(_ ward: String) {
-        self.ward = ward
-    }
+
+
 }
 

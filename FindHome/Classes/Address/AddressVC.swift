@@ -6,11 +6,8 @@ class AddressVC: UIViewController {
 
     @IBOutlet var viewOption: UIView!
     @IBOutlet weak var btnNext: UIButton!
-    @IBOutlet weak var tfCity: UITextField!
-     @IBOutlet weak var tfDistrict: UITextField!
-     @IBOutlet weak var tfWard: UITextField!
-     @IBOutlet weak var tfStreet: UITextField!
     
+    @IBOutlet weak var tfAddress: UITextField!
     var presenter: AddressPresenter?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +28,16 @@ class AddressVC: UIViewController {
 
 
 extension AddressVC: AddressView{
-    func showAddress(cell: AddressCell, _ address: String) {
-        
+    func showAddress(_ address: String) {
+        tfAddress.text = address;
     }
     
-    func showCity(_ city: String){
-        self.tfCity.text = city
+    func showError(_ message: String) {
+        Alert.showInfo(message: message, on: self, callback: nil);
     }
-    func showStreet(_ street: String){
-        self.tfStreet.text = street
-    }
-    func showDistrict(_ district: String){
-        self.tfDistrict.text = district;
-    }
-    func showWard(_ ward: String){
-        self.tfWard.text = ward
+    
+    func showAddress(cell: AddressCell, _ address: String) {
+        
     }
     
     func showAreaAndPrice(animated: Bool?){
@@ -55,7 +47,7 @@ extension AddressVC: AddressView{
     }
     
     func showError(){
-        Alert.showInfo(message: "Vui lòng điền tên thành phố và quận", on: self, callback: nil);
+        Alert.showInfo(message: Messages.Address.ERROR_REQUIRED, on: self, callback: nil);
     }
 }
 
@@ -68,11 +60,7 @@ extension AddressVC{
     
     
     @IBAction func tapButtonNext(_ sender: Any){
-        presenter?.inputCity(tfCity.text ?? "")
-        presenter?.inputDistrict(tfDistrict.text ?? "")
-        presenter?.inputWard(tfWard.text ?? "")
-        presenter?.inputStreet(tfStreet.text ?? "")
-        
+        presenter?.inputAddress(tfAddress.text ?? "");
         presenter?.tappedButtonNext()
     }
 }

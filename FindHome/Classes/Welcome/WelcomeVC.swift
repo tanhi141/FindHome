@@ -16,6 +16,7 @@ class WelcomeVC: BaseVC {
     var presenter: WelcomePresenting?;
     
     override func viewWillAppear(_ animated: Bool) {
+        tbvFunction.reloadData()
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -34,6 +35,7 @@ class WelcomeVC: BaseVC {
         self.navigationController?.navigationBar.isHidden = true
         imvBackground.image = UIImage(named: "background");
         tbvFunction.backgroundColor = UIColor.clear;
+
     }
     
 }
@@ -74,17 +76,16 @@ extension WelcomeVC: UITableViewDelegate, UITableViewDataSource{
             
         case 1:
             cell.btnFunction.setTitle(Title.HISTORY_TITLE, for: .normal);
+            cell.btnFunction.enable(isEnable: Check.shared.isLogin);
             
-            if Check.shared.isLogin{
-                cell.btnFunction.enable(isEnable: true);
-            } else {
-                cell.btnFunction.enable(isEnable: false);
-            }
             break;
             
         case 2:
-            cell.btnFunction.setTitle(Title.ACCOUNT_TITLE, for: .normal);
-            
+            if Check.shared.isLogin{
+                cell.btnFunction.setTitle(Title.POST_TITLE, for: .normal);
+            } else {
+                cell.btnFunction.setTitle(Title.ACCOUNT_TITLE, for: .normal);
+            }
             break;
             
         case 3:

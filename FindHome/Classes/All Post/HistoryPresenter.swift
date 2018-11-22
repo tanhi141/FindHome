@@ -74,7 +74,7 @@ extension HistoryPresenter{
             let p = DetailPost()
             
             p.title = value?["title"] as? String;
-            p.address?.city = value?["address"] as? String
+//            p.address?.city = value?["address"] as? String
             p.area = value?["area"] as? String
             p.idPost = value?["idPost"] as? String
             p.idUser = value?["idUser"] as? String
@@ -101,7 +101,7 @@ extension HistoryPresenter{
         postListDisplay = postList?.filter {
             ($0.title?.localizedCaseInsensitiveContains(keyword))!
                 || ($0.phoneNumber?.localizedCaseInsensitiveContains(keyword))!
-                || ($0.address?.city?.localizedCaseInsensitiveContains(keyword))!
+                || ($0.address?.localizedCaseInsensitiveContains(keyword))!
                 || ($0.type?.rawValue.localizedCaseInsensitiveContains(keyword))!
             
         };

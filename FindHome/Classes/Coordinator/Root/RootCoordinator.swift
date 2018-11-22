@@ -22,8 +22,8 @@ class RootCoordinator{
         rootVC = UIViewController();
         navigationController = UINavigationController()
         
-        account?.email = defaults.string(forKey: Keys.Login.EMAIL);
-        account?.password = defaults.string(forKey: Keys.Login.PASSWORD);
+//        account?.email = defaults.string(forKey: Keys.Login.EMAIL);
+//        account?.password = defaults.string(forKey: Keys.Login.PASSWORD);
     }
     
     
@@ -60,10 +60,25 @@ class RootCoordinator{
         let viewController = factory.moreViewController(output: self);
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func showPhoneNumberViewController(){
+        let viewController = factory.phoneNumberViewController(output: self);
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    func showTypeViewController(){
+        let viewController = factory.typeViewController(output: self);
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
 }
 
 //MARK: - WelcomeOutput
 extension RootCoordinator: WelcomeOutput{
+    func welcome(showPhoneNumber: Any?) {
+        showPhoneNumberViewController()
+    }
+    
     func welcome(showAllPost: Any?) {
         showAllPostViewController();
     }
@@ -73,11 +88,7 @@ extension RootCoordinator: WelcomeOutput{
     }
     
     func welcome(showAccount: Any?) {
-//        if Check.checkAll.isLogin{
-            showLoginViewController()
-//        } else{
-        
-//        }
+        showLoginViewController()
     }
     
     func welcome(showMore: Any?) {
@@ -111,22 +122,32 @@ extension RootCoordinator: LoginOutput{
         let viewController = factory.registerViewController(output: self);
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
-    func showPhoneNumberViewController() {
-        
-    }
-    
+
 }
+
 //MARK: - RegisterOutput
 extension RootCoordinator: RegisterOutput{
     func register(success: Any?) {
         navigationController?.popViewController(animated: true);
     }
 }
-
+//MARK: - OptionOutput
 extension RootCoordinator: OptionOutput{
     
 }
+
+//MARK: - PhoneNumberOutput
+extension RootCoordinator: PhoneNumberOutput{
+    func phoneNumberOutput(_ showType: Any?) {
+        showTypeViewController()
+    }
+}
+
+//MARK: - TypeOutput
+extension RootCoordinator: TypeOutput{
+    
+}
+
 
 //MARK: - UI
 extension RootCoordinator{
